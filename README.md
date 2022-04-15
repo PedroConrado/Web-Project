@@ -3,7 +3,7 @@ This is the final project of the Inroduction to Web Development course taught in
 
 ## Group
 * Pedro Henrique Conrado - 
-* Victor Lutes - 
+* Victor Paulo Cruz Lutes - 11795512
 * Gabriel Vicente Rodrigues - 11795377
 
 
@@ -36,6 +36,7 @@ Create a functionality that is specific to your application. It does not have to
 
 
 # 2. Project Description
+Nosso projeto é uma loja de produtos esportivos. Ela permite que administradores e clientes facam login ou que clientes criem sua propria conta. Os clientes serao apresentados os produtos da loja e poderao adicionar produtos no carrinho, mudar os dados da sua conta e fazer o pagamento. Os administradores podem modificar os dados da sua conta, registrar outros administradores ou clientes e gerenciar os produtos da loja.
 
 # 3. Comments About the Code
 
