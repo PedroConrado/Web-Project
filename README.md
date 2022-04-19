@@ -1,5 +1,7 @@
 # Web-Project
-This is the final project of the Inroduction to Web Development course taught in the first semester of 2022.
+This is the final project of the Introduction to Web Development course taught in the first semester of 2022.
+
+This consists of a virtual sports shop, where users can buy things to practice their favorite sport and administrators can manage their products and users.
 
 ## Group
 * Pedro Henrique Conrado - 
@@ -36,7 +38,22 @@ Create a functionality that is specific to your application. It does not have to
 
 
 # 2. Project Description
-Nosso projeto é uma loja de produtos esportivos. Ela permite que administradores e clientes facam login ou que clientes criem sua propria conta. Os clientes serao apresentados os produtos da loja e poderao adicionar produtos no carrinho, mudar os dados da sua conta e fazer o pagamento. Os administradores podem modificar os dados da sua conta, registrar outros administradores ou clientes e gerenciar os produtos da loja.
+Our project is a sports products store. It allows admins and clients to login and clients to create their own account.
+
+The clients are presented to the products of the store and are allowed to add them to their cart, change their personal data and buy the products on the cart.
+
+The admins are allowed to change their personal data, register new admins and clients and manage the products of the store.
+
+### Navigation Diagram
+Image here
+
+The images of the mockup are in the directory ```/mockup```
+
+### Funcionalities
+Funcionalities here
+
+### Server
+Info saved on the server here
 
 # 3. Comments About the Code
 
