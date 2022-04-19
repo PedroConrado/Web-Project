@@ -32,7 +32,7 @@ Products are selected, their quantity chosen, and are included in a cart. Produc
 Administrators can create/update/read/delete (crud) new products and services. For example, they can change the stock quantity.
 
 ### Your functionality: 
-Create a functionality that is specific to your application. It does not have to be something complicated. For instance, if you are selling cars, you may allow users to use an accelerator to hear how each car engine roars up and down.   
+Our current idea is for the user to be able to see a 3d model of the product you want to buy
 
 ### The system must provide accessibility requirements and provide good usability. The system must be responsive.
 
