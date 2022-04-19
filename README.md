@@ -49,6 +49,8 @@ The admins are allowed to change their personal data, register new admins and cl
 
 The images of the mockup are in the directory ```/mockups```
 
+You can also see our [Figma](https://www.figma.com/file/ijJYtFiTaDnPejZwvTwijs/Mockups), where we designed these screens.
+
 ### Funcionalities
 Funcionalities here
 
