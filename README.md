@@ -52,10 +52,37 @@ The images of the mockup are in the directory ```/mockups```
 You can also see our [Figma](https://www.figma.com/file/ijJYtFiTaDnPejZwvTwijs/Mockups), where we designed these screens.
 
 ### Funcionalities
-Funcionalities here
+* The user can log in using his email and password
+* A new client can create his account
+* The user can view and modify his personal data
+* The admin can register, view, update and delete users and products
+* The client can view the products available in the store
+* The client can view information about a specific product
+* The client can add a quantity of a product to his personal cart
+* The client can buy the products present in his cart with a credit card
 
 ### Server
-Info saved on the server here
+Info saved on the server:
+
+#### Accounts
+* Id (PK)
+* Name
+* Email (Unique)
+* Password
+* Phone
+* Address
+* ProfilePicture
+* IsAdmin
+
+#### Products
+* Id (PK)
+* Name
+* Description
+* Price
+* QuantityStock
+* QuantitySold
+* Image
+* Image3d
 
 # 3. Comments About the Code
 
