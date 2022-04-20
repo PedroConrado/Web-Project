@@ -1,0 +1,340 @@
+:root {
+  --material-themereferrorerror0
+: rgba(0, 0, 0, 1);
+  --preto
+: rgba(27, 25, 28, 1);
+  --eerie-black
+: rgba(27, 26, 29, 1);
+  --shark
+: rgba(40, 39, 43, 1);
+  --mine-shaft
+: rgba(50, 48, 54, 1);
+  --gravel
+: rgba(70, 68, 75, 1);
+  --roxo
+: rgba(83, 58, 121, 1);
+  --verde-claro
+: rgba(93, 191, 121, 1);
+  --blue-marguerite
+: rgba(123, 97, 255, 1);
+  --monsoon
+: rgba(137, 137, 137, 0.749);
+  --vermelho
+: rgba(215, 38, 61, 1);
+  --white-lilac
+: rgba(247, 250, 252, 1);
+  --red-orange
+: rgba(255, 73, 73, 1);
+  --laranja
+: rgba(255, 160, 73, 1);
+  --white-2
+: rgba(255, 255, 255, 0.149);
+  --white
+: rgba(255, 255, 255, 0.4);
+  --material-themerefneutral-variantneutral-variant100
+: rgba(255, 255, 255, 1);
+
+  --font-size-s
+: 16px;
+  --font-size-m
+: 18px;
+  --font-size-l
+: 20px;
+  --font-size-xl
+: 29.6px;
+  --font-size-xxl
+: 30px;
+  --font-size-xxxl
+: 36px;
+  --font-size-xxxxl
+: 48px;
+  --font-size-24px
+: 24px;
+  --font-size-64px
+: 64px;
+
+  --font-family-inter
+: "Inter";
+  --font-family-monument_extended-regular
+: "Monument Extended-Regular";
+  --font-family-monument_extended-ultrabold
+: "Monument Extended-Ultrabold";
+  --font-family-poppins
+: "Poppins";
+  --font-family-roboto_condensed
+: "Roboto Condensed";
+}
+
+
+
+
+    
+
+.poppins-225rem
+ {
+  font-family: var(--font-family-poppins
+);
+  font-size: var(--font-size-xxxl
+);
+  letter-spacing: 0px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+    
+
+.poppins-semi-bold-white-17-1px
+ {
+  color: var(--material-themerefneutral-variantneutral-variant100
+);
+  font-family: var(--font-family-poppins
+);
+  font-size: 17.088436126708984px;
+  font-weight: 600;
+  font-style: normal;
+}
+
+    
+
+.poppins-semi-bold-white-20px
+ {
+  color: var(--material-themerefneutral-variantneutral-variant100
+);
+  font-family: var(--font-family-poppins
+);
+  font-size: var(--font-size-l
+);
+  font-weight: 600;
+  font-style: normal;
+}
+
+    
+
+.border-2px-blue-marguerite
+ {
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--blue-marguerite
+);
+}
+
+    
+
+.monumentextended-regular-normal-eerie-black-29-6px
+ {
+  color: var(--eerie-black
+);
+  font-family: var(--font-family-monument_extended-regular
+);
+  font-size: var(--font-size-xl
+);
+  font-weight: 400;
+  font-style: normal;
+}
+
+    
+
+.border-3px-branco
+ {
+  border-width: 3px;
+  border-style: solid;
+  border-color: var(--material-themerefneutral-variantneutral-variant100
+);
+}
+
+    
+
+.poppins-3rem
+ {
+  font-family: var(--font-family-poppins
+);
+  font-size: var(--font-size-xxxxl
+);
+  letter-spacing: 0px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+    
+
+.poppins-medium-neon-carrot-18px
+ {
+  color: var(--laranja
+);
+  font-family: var(--font-family-poppins
+);
+  font-size: var(--font-size-m
+);
+  font-weight: 500;
+  font-style: normal;
+}
+
+    
+
+.border-2px-mine-shaft
+ {
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--mine-shaft
+);
+}
+
+    
+
+.poppins-bold-white-30px
+ {
+  color: var(--material-themerefneutral-variantneutral-variant100
+);
+  font-family: var(--font-family-poppins
+);
+  font-size: var(--font-size-xxl
+);
+  font-weight: 700;
+  font-style: normal;
+}
+
+    
+
+.poppins-medium-white-21-4px
+ {
+  color: var(--material-themerefneutral-variantneutral-variant100
+);
+  font-family: var(--font-family-poppins
+);
+  font-size: 21.360544204711914px;
+  font-weight: 500;
+  font-style: normal;
+}
+
+    
+
+.poppins-18rem
+ {
+  font-family: var(--font-family-poppins
+);
+  font-size: var(--font-size-xxl
+);
+  letter-spacing: 0px;
+  font-weight: 500;
+  font-style: normal;
+}
+
+    
+
+.poppins-bold-white-20px
+ {
+  color: var(--material-themerefneutral-variantneutral-variant100
+);
+  font-family: var(--font-family-poppins
+);
+  font-size: var(--font-size-l
+);
+  font-weight: 700;
+  font-style: normal;
+}
+
+    
+
+.poppins-1rem
+ {
+  font-family: var(--font-family-poppins
+);
+  font-size: var(--font-size-s
+);
+  letter-spacing: 0px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+    
+
+.poppins-4rem
+ {
+  font-family: var(--font-family-poppins
+);
+  font-size: var(--font-size-64px
+);
+  letter-spacing: 0px;
+  font-weight: 600;
+  font-style: normal;
+}
+
+    
+
+.poppins-1125rem
+ {
+  font-family: var(--font-family-poppins
+);
+  font-size: var(--font-size-m
+);
+  letter-spacing: 0px;
+  font-weight: 500;
+  font-style: normal;
+}
+
+    
+
+.inter-bold-white-20px
+ {
+  color: var(--material-themerefneutral-variantneutral-variant100
+);
+  font-family: var(--font-family-inter
+);
+  font-size: var(--font-size-l
+);
+  font-weight: 700;
+  font-style: normal;
+}
+
+    
+
+.poppins-15rem
+ {
+  font-family: var(--font-family-poppins
+);
+  font-size: var(--font-size-24px
+);
+  letter-spacing: 0px;
+  font-weight: 600;
+  font-style: normal;
+}
+
+    
+
+.poppins-medium-neon-carrot-15-1px
+ {
+  color: var(--laranja
+);
+  font-family: var(--font-family-poppins
+);
+  font-size: 15.100424766540527px;
+  font-weight: 500;
+  font-style: normal;
+}
+
+    
+
+.poppins-normal-white-11-4px
+ {
+  color: var(--white
+);
+  font-family: var(--font-family-poppins
+);
+  font-size: 11.392290115356445px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+    
+
+.poppins-semi-bold-white-30px
+ {
+  color: var(--material-themerefneutral-variantneutral-variant100
+);
+  font-family: var(--font-family-poppins
+);
+  font-size: var(--font-size-xxl
+);
+  font-weight: 600;
+  font-style: normal;
+}
