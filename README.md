@@ -60,6 +60,7 @@ You can also see our [Figma](https://www.figma.com/file/ijJYtFiTaDnPejZwvTwijs/M
 * The client can view information about a specific product
 * The client can add a quantity of a product to his personal cart
 * The client can buy the products present in his cart with a credit card
+* The client can view a 3D model, if available, of a product
 
 ### Server
 Info saved on the server:
