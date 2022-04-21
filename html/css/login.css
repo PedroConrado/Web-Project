@@ -3,11 +3,13 @@
     --orange: #FFA049;
     --purple: #7B61FF;
 }
+html{
+    font-size: 100%;
+}
 
 body {
     color: white;
     font-family: 'Poppins', sans-serif;
-    font-size: 100%;
 
     height: 100vh;
 }
@@ -34,6 +36,9 @@ button {
     border-radius: 25px;
     padding: 8px;
     color: white;
+}
+button:hover{
+    cursor: pointer;
 }
 
 input:focus {
@@ -80,7 +85,10 @@ input:focus {
 }
 
 .login-image {
-    background-image: url("../imgs/LoginImage.png");
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.45), 
+        rgba(0, 0, 0, 0.45)
+      ), url("../imgs/LoginImage.png");
     background-position: 50% 50%;
     background-size: cover;
 
@@ -110,4 +118,28 @@ input:focus {
 
 .buttons {
     gap: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 80%;
+    }
+    
+}
+
+@media screen and (max-width: 564px) {
+    html {
+        font-size: 50%;
+    }
+    
+}
+
+@media screen and (max-width: 374px) {
+    .login-image {
+        display: none;
+    }
+    #login-container {
+        width: 100%;
+    }
+    
 }
