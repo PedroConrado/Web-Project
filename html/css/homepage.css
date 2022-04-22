@@ -1,0 +1,411 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 14px;
+}
+
+.mainDiv {
+    width: 100%;
+    height: 100%;
+    background: rgba(27, 25, 28, 1);
+    position: absolute;
+    overflow: auto;
+}
+
+.jordanJumpmanImage {
+    width: 963px;
+    height: 601px;
+    background: url("../images/v67_1172.png");
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    top: 72px;
+    left: 326px;
+}
+
+.jordanJumpmanPriceText {
+    width: 144px;
+    color: rgba(230, 0, 0, 1);
+    position: relative;
+    top: 200px;
+    left: 50px;
+    font-family: Monument Extended;
+    font-weight: Regular;
+    font-size: 41px;
+    text-align: left;
+}
+
+.exclusiveButton {
+    width: 122px;
+    height: 48px;
+    background: rgba(215, 38, 61, 1);
+    position: relative;
+    top: -55px;
+    left: 450px;
+    border-radius: 16px;
+}
+
+.exclusiveText {
+    width: 72px;
+    color: rgba(255, 255, 255, 1);
+    position: absolute;
+    top: 12px;
+    left: 25px;
+    font-family: Roboto Condensed;
+    font-weight: Regular;
+    font-size: 19px;
+    text-align: left;
+}
+
+.jordanJumpman {
+    width: 473px;
+    color: rgb(27, 26, 29);
+    position: relative;
+    top: 80px;
+    left: 100px;
+    font-family: 'monument extended';
+    font-size: 20px;
+    text-shadow: 0px 4px 4px rgb(121, 121, 121);
+    text-align: justify;
+    text-align-last: justify;
+}
+
+.searchImg {
+    width: 31px;
+    height: 31px;
+    position: relative;
+    top: 30px;
+    left: 1002px;
+    overflow: hidden;
+}
+
+.star {
+    position: relative;
+}
+
+.star1 {
+    left: -202px;
+    top: 31px;
+}
+
+.star2 {
+    left: -240px;
+    top: 31px;
+}
+
+.star3 {
+    left: 50px;
+}
+
+.star4 {
+    left: 50px;
+}
+
+.star5 {
+    left: 50px;
+}
+
+.star6 {
+    left: -120px;
+    top: 5px;
+}
+
+.star7 {
+    top: 5px;
+    left: -120px
+}
+
+.star8 {
+    top: 5px;
+    left: -120px
+}
+
+.star9 {
+    top: 5px;
+    left: -120px
+}
+
+.star10 {
+    top: 5px;
+    left: -120px
+}
+
+.starGloves {
+    left: -118px;
+    top: 10px;
+}
+
+.mainPage {
+    position: relative;
+    left: 0%;
+    width: 80%;
+}
+
+.productImage {
+    width: 278px;
+    height: 205px;
+    top: 719px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+}
+
+.glovesImage {
+    background: url("../images/v73_1635.png");
+    background-size: cover;
+    left: 338px;
+}
+
+.sneakersImage {
+    background: url("../images/v73_1431.png");
+    background-size: cover;
+    left: 1010px;
+}
+
+.ballImage {
+    background: url("../images/v73_1409.png");
+    background-size: cover;
+    left: 685px;
+}
+
+.navegationBar {
+    width: 200px;
+    height: 100%;
+    background: rgba(40, 39, 43, 1);
+    position: fixed;
+    border: 2px solid rgba(123, 97, 255, 1);
+}
+
+.navegationBarButton {
+    width: 179px;
+    height: 78px;
+    background: rgba(137, 137, 137, 0.75);
+    padding: 10px 18px;
+    margin: 10px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    border-radius: 25px;
+}
+
+.navegationBarSymbol {
+    width: 70px;
+    height: 58px;
+    background: url("../images/v154_1264.png");
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    top: 10px;
+    left: 55px;
+}
+
+.userName {
+    width: 198px;
+    color: rgba(255, 255, 255, 1);
+    position: relative;
+    top: 10px;
+    left: 50px;
+    font-family: Poppins;
+    font-weight: SemiBold;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+}
+
+.navegationButtonsTab {
+    position: relative;
+    color: rgba(255, 255, 255, 1);
+    position: relative;
+    top: 50px;
+    left: 39px;
+    font-family: Poppins;
+    font-weight: Medium;
+    font-size: 18px;
+    text-align: center;
+}
+
+.navegation {
+    width: 138px;
+    color: rgba(255, 160, 73, 1);
+    margin: 10px;
+    position: relative;
+    top: -30px;
+    left: -40px;
+    font-family: Poppins;
+    font-weight: Medium;
+    font-size: 18px;
+    opacity: 1;
+    text-align: left;
+}
+
+.navegationButtons {
+    top: -20px;
+    left: -40px;
+    width: 179px;
+    height: 63px;
+    padding: 10px 18px;
+    margin: 10px 10px 20px 10px;
+    position: relative;
+    border-radius: 25px;
+}
+
+.navegationText {
+    width: 82px;
+    color: rgba(255, 255, 255, 1);
+    position: absolute;
+    top: 18px;
+    left: 45px;
+    font-family: Poppins;
+    font-weight: Medium;
+    font-size: 18px;
+    text-align: center;
+}
+
+.unselectedButton {
+    background: rgba(137, 137, 137, 0.75);
+}
+
+.selectedButton {
+    background: rgba(255, 160, 73, 1);
+}
+
+.search {
+    width: 300px;
+    height: 40px;
+    color: rgb(59, 58, 58);
+    position: absolute;
+    top: 25px;
+    left: 990px;
+    border: solid 2px #323036;
+    border-radius: 20px;
+    font-family: Poppins;
+    font-weight: Medium;
+    font-size: 18px;
+    text-align: left;
+    padding-left: 45px;
+    padding-top: 4px;
+}
+
+.upperButtons {
+    width: 94px;
+    color: rgba(255, 255, 255, 1);
+    position: absolute;
+    top: 34px;
+    font-family: Poppins;
+    font-weight: Medium;
+    font-size: 18px;
+    opacity: 1;
+    text-align: center;
+}
+
+.selectedUpperButton {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.manButton {
+    left: 500px;
+}
+
+.womanButton {
+    left: 623px;
+}
+
+.salesButton {
+    left: 865px;
+}
+
+.homeButton {
+    left: 376px;
+}
+
+.kidsButton {
+    left: 751px;
+}
+
+.trending {
+    width: 150px;
+    color: rgba(255, 255, 255, 1);
+    position: absolute;
+    top: 694px;
+    left: 322px;
+    font-family: Poppins;
+    font-weight: Medium;
+    font-size: 18px;
+    opacity: 1;
+    text-align: left;
+}
+
+.productData {
+    width: 278px;
+    height: 100px;
+    background-color: #28272B;
+    position: absolute;
+    top: 925px;
+    border-radius: 4px;
+}
+
+.ballData {
+    left: 685px;
+}
+
+.sneakersData {
+    left: 1010px;
+}
+
+.glovesData {
+    left: 337px;
+}
+
+.productNames {
+    color: white;
+    font-family: Poppins;
+    font-weight: Medium;
+    font-size: 18px;
+    opacity: 1;
+    text-align: left;
+    position: relative;
+    top: 5px;
+    left: -40px;
+}
+
+.purchaseButton {
+    width: 130px;
+    height: 45px;
+    background-color: #FFA049;
+    position: relative;
+    top: 20px;
+    left: 140px;
+    border-radius: 20px;
+    padding: 0;
+    border: none;
+    color: white;
+    font-family: Poppins;
+    font-weight: Medium;
+    font-size: 18px;
+    opacity: 1;
+}
+
+.ballPurchase {
+    left: 38px;
+    top: 43px;
+}
+
+.price {
+    width: 65px;
+    color: rgba(255, 255, 255, 1);
+    position: relative;
+    font-family: Poppins;
+    font-weight: Medium;
+    left: 200px;
+    top: 17px;
+    font-size: 21px;
+    opacity: 1;
+    text-align: left;
+}
+
+.priceBall {
+    top: 7px;
+}
