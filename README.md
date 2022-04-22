@@ -4,7 +4,7 @@ This is the final project of the Introduction to Web Development course taught i
 This consists of a virtual sports shop, where users can buy things to practice their favorite sport and administrators can manage their products and users.
 
 ## Group
-* Pedro Henrique Conrado - 
+* Pedro Henrique Conrado - 11819091
 * Victor Paulo Cruz Lutes - 11795512
 * Gabriel Vicente Rodrigues - 11795377
 
