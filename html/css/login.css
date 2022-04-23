@@ -1,0 +1,145 @@
+:root {
+    --light-green: #5DBF79;
+    --orange: #FFA049;
+    --purple: #7B61FF;
+}
+html{
+    font-size: 100%;
+}
+
+body {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+
+    height: 100vh;
+}
+
+h1{
+    font-size: 4rem;
+}
+h2 {
+    font-size: 3rem;
+}
+
+img.small {
+    width: 60px;
+    height: 60px;
+}
+
+img.rounded {
+    border-radius: 100%;
+}
+
+
+button {
+    border: none;
+    border-radius: 25px;
+    padding: 8px;
+    color: white;
+}
+button:hover{
+    cursor: pointer;
+}
+
+input:focus {
+    outline: none;
+}
+
+.green {
+    background-color: var(--light-green);
+}
+
+.orange {
+    background-color: var(--orange);
+}
+
+.purple {
+    background-color: var(--purple);
+}
+
+
+
+.container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+
+}
+
+.container.all-height {
+    height: 100%;
+}
+.container.half-width {
+    width: 50%;
+}
+
+
+.vertical {
+    flex-direction: column;
+
+}
+
+.horizontal{
+    flex-direction: row;
+}
+
+.login-image {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.45), 
+        rgba(0, 0, 0, 0.45)
+      ), url("../imgs/LoginImage.png");
+    background-position: 50% 50%;
+    background-size: cover;
+
+}
+
+.large-font {
+    font-size: 1.5rem;
+}
+
+.login {
+    gap: 1.5rem;
+}
+.login > input {
+    background-color: transparent;
+
+    border: solid 2px white;
+    border-radius: 34px;
+
+    padding: 10px;
+
+    color: white;
+}
+
+.login > input::placeholder {
+    color: white;
+}
+
+.buttons {
+    gap: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 80%;
+    }
+    
+}
+
+@media screen and (max-width: 564px) {
+    html {
+        font-size: 50%;
+    }
+    
+}
+
+@media screen and (max-width: 374px) {
+    .login-image {
+        display: none;
+    }
+    #login-container {
+        width: 100%;
+    }
+    
+}
