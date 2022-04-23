@@ -45,7 +45,7 @@ The clients are presented to the products of the store and are allowed to add th
 The admins are allowed to change their personal data, register new admins and clients and manage the products of the store.
 
 ### Navigation Diagram
-![Navigation Diagram](mockups/navigationDiagram.jpeg)
+![Navigation Diagram](mockups/navigationDiagram.png)
 
 The images of the mockup are in the directory ```/mockups```
 
