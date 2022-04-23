@@ -49,6 +49,20 @@ The admins are allowed to change their personal data, register new admins and cl
 
 The images of the mockup are in the directory ```/mockups```
 
+* [Login](mockups/Login.png)
+    * [Sign Up](mockups/Sign%20Up.png)
+    * [Homepage](mockups/Homepage.png)
+        * [My Account](mockups/MyAccountClient.png)
+        * [Shipping](mockups/Shipping.jpg)
+            * [Payment](mockups/Shipping.jpg)
+    * [Add Admin](mockups/AddAdmin.png)
+        * [Add Client](mockups/AddClient.png)
+        * [Edit Client](mockups/EditClient.png)
+        * [Add Product](mockups/AddProduct.png)
+        * [Edit Product](mockups/EditProducts.png)
+        * [Edit Admin](mockups/EditAdmin.png)
+        * [My Account Admin](mockups/MyAccountAdmin.png)
+
 You can also see our [Figma](https://www.figma.com/file/ijJYtFiTaDnPejZwvTwijs/Mockups), where we designed these screens.
 
 ### Funcionalities
