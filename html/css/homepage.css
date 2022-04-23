@@ -17,7 +17,7 @@ body {
 .jordanJumpmanImage {
     width: 963px;
     height: 601px;
-    background: url("../images/v67_1172.png");
+    background: url("../imgs/v67_1172.png");
     background-position: center center;
     background-size: cover;
     position: absolute;
@@ -153,19 +153,19 @@ body {
 }
 
 .glovesImage {
-    background: url("../images/v73_1635.png");
+    background: url("../imgs/v73_1635.png");
     background-size: cover;
     left: 338px;
 }
 
 .sneakersImage {
-    background: url("../images/v73_1431.png");
+    background: url("../imgs/v73_1431.png");
     background-size: cover;
     left: 1010px;
 }
 
 .ballImage {
-    background: url("../images/v73_1409.png");
+    background: url("../imgs/v73_1409.png");
     background-size: cover;
     left: 685px;
 }
@@ -193,7 +193,7 @@ body {
 .navegationBarSymbol {
     width: 70px;
     height: 58px;
-    background: url("../images/v154_1264.png");
+    background: url("../imgs/v154_1264.png");
     background-position: center center;
     background-size: cover;
     position: absolute;
