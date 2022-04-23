@@ -463,10 +463,9 @@ form {
   align-items: flex-start;
   background-color: #28272b;
   border: 2px solid #7b61ff;
+  padding: 2px;
+  min-height: calc(100vh - 8px);
   min-width: 214px;
-  position:absolute;
-  top:0px;
-  bottom:0px;
 }
 
 html{
