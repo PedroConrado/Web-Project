@@ -60,12 +60,6 @@
   width: 376px;
 }
 
-.text-3 {
-  height: 42px;
-  letter-spacing: 0;
-  line-height: 24px;
-  width: 324px;
-}
 
 .valign-text-middle {
   display: flex;
@@ -73,29 +67,11 @@
   justify-content: center;
 }
 
-.dado-7 {
-  align-items: flex-start;
-  border-radius: 15px;
-  display: flex;
-  gap: 30px;
-  min-height: 53px;
-  width: 376px;
-}
-
 .text {
   height: 42px;
   letter-spacing: 0;
   line-height: 24px;
   width: 324px;
-}
-
-.dado-8 {
-  align-items: flex-start;
-  border-radius: 15px;
-  display: flex;
-  gap: 30px;
-  min-height: 54px;
-  width: 294px;
 }
 
 .mask-group {
@@ -126,35 +102,6 @@
   width: 324px;
 }
 
-.dado-2 {
-  align-items: flex-start;
-  border-radius: 15px;
-  display: flex;
-  gap: 10px;
-  min-height: 53px;
-  width: 376px;
-}
-
-.text-2 {
-  height: 42px;
-  letter-spacing: 0;
-  line-height: 24px;
-  width: 324px;
-}
-
-.text-4 {
-  height: 42px;
-  letter-spacing: 0;
-  line-height: 24px;
-  width: 324px;
-}
-
-.text-1 {
-  height: 42px;
-  letter-spacing: 0;
-  line-height: 24px;
-  width: 324px;
-}
 
 .formulario-1 {
   align-items: flex-start;
@@ -186,14 +133,6 @@
   width: 94px;
 }
 
-.dado-3 {
-  align-items: flex-start;
-  border-radius: 15px;
-  display: flex;
-  gap: 30px;
-  min-height: 53px;
-  width: 85px;
-}
 
 .image {
   height: 53px;
@@ -201,15 +140,6 @@
   line-height: 30px;
   margin-right: -19px;
   width: 104px;
-}
-
-.dado-4 {
-  align-items: flex-start;
-  border-radius: 15px;
-  display: flex;
-  gap: 10px;
-  min-height: 53px;
-  width: 101px;
 }
 
 .address {
@@ -228,29 +158,11 @@
   width: 94px;
 }
 
-.dado-6 {
-  align-items: flex-start;
-  border-radius: 15px;
-  display: flex;
-  gap: 10px;
-  min-height: 53px;
-  width: 113px;
-}
-
 .password {
   height: 53px;
   letter-spacing: 0;
   line-height: 30px;
   width: 113px;
-}
-
-.dado-5 {
-  align-items: flex-start;
-  align-self: stretch;
-  border-radius: 15px;
-  display: flex;
-  gap: 30px;
-  height: 51.2px;
 }
 
 .email {
@@ -325,14 +237,6 @@
   width: 177px;
 }
 
-.registrar {
-  color: var(--material-themerefneutral-variantneutral-variant100);
-  font-weight: 500;
-  height: 27px;
-  line-height: 27px;
-  text-align: center;
-  white-space: nowrap;
-}
 
 .plus-circle {
   height: 30px;
@@ -402,34 +306,6 @@
   padding-left: 18px;
   padding-right: 18px;
   padding-top: 10px;
-}
-
-.registrar-4 {
-  align-items: center;
-  align-self: stretch;
-  background-color: var(--monsoon);
-  border-radius: 25px;
-  cursor: pointer;
-  display: flex;
-  gap: 10px;
-  height: 63px;
-  justify-content: center;
-  margin-bottom: -64px;
-  padding-bottom: 10px;
-  padding-left: 18px;
-  padding-right: 18px;
-  padding-top: 10px;
-}
-
-.registrar-3 {
-  color: var(--material-themerefneutral-variantneutral-variant100);
-  font-weight: 500;
-  height: 27px;
-  line-height: 27px;
-  margin-left: -1.5px;
-  margin-right: -1.5px;
-  text-align: center;
-  white-space: nowrap;
 }
 
 .title {
