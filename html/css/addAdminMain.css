@@ -45,15 +45,6 @@
   width: 401px;
 }
 
-.dado-1 {
-  align-items: flex-start;
-  border-radius: 15px;
-  display: flex;
-  gap: 30px;
-  height: 51px;
-  width: 376px;
-}
-
 .info-user {
   align-items: flex-start;
   background-color: var(--mine-shaft);
@@ -455,6 +446,12 @@
   width: 212px;
 }
 
+form {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
 .add-admin {
   align-items: flex-start;
