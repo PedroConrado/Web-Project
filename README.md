@@ -54,7 +54,7 @@ The images of the mockup are in the directory ```/mockups```
     * [Homepage](mockups/Homepage.png)
         * [My Account](mockups/MyAccountClient.png)
         * [Shipping](mockups/Shipping.jpg)
-            * [Payment](mockups/Shipping.jpg)
+            * [Payment](mockups/payment.jpg)
     * [Add Admin](mockups/AddAdmin.png)
         * [Add Client](mockups/AddClient.png)
         * [Edit Client](mockups/EditClient.png)
