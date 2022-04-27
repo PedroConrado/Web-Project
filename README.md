@@ -32,7 +32,7 @@ Products are selected, their quantity chosen, and are included in a cart. Produc
 Administrators can create/update/read/delete (crud) new products and services. For example, they can change the stock quantity.
 
 ### Your functionality: 
-Our current idea is for the user to be able to see a 3d model of the product you want to buy
+Our current idea is for the user to be able to see a 3d model of the product you want to buy when the user clicks on the image of the product.
 
 ### The system must provide accessibility requirements and provide good usability. The system must be responsive.
 
