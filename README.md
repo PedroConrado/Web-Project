@@ -17,11 +17,11 @@ Administrators are responsible for registering/managing administrators, customer
 
 Customers are users who access the system to buy products/services.
 
-The admin record includes, at least: name, id, phone, email.
+The admin record includes, at least: name, id, phone, email, adress, email, photo.
 
-Each customer's record includes, at least: name, id, address, phone, email
+Each customer's record includes, at least: name, id, address, phone, email, photo.
 
-Product/services records include, at least: name, id, photo, description, price, quantity (in stock), quantity sold.
+Product/services records include, at least: name, id, photo, description, price, quantity (in stock), quantity sold, 3d model.
 Your store may sell products, services or both (you decide)
 
 ### Selling Products (or services): 
