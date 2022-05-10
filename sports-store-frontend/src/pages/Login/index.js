@@ -7,10 +7,14 @@ import React from "react";
 
 import "./styles.css";
 
+import LoginForm from "../../components/LoginForm";
+import DescriptionBanner from "../../components/DescriptionBanner";
+
 export default function Login() {
     return(
-        <div>
-            Hello World
+        <div className="login-page-container">
+            <LoginForm />
+            <DescriptionBanner />
         </div>
     )
 }
