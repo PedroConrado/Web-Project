@@ -13,6 +13,10 @@ import FormInput from '../FormInput';
 export default function AccountForm({
     title = "Default Title",
     description = "Default Description",
+    style = {},
+    isAdmin = false,
+    isRegister = false,
+    onClick = () =>{},
     ...props
 }) { 
     const [name, setName] = useState("");
@@ -20,14 +24,32 @@ export default function AccountForm({
     const [phone, setPhone] = useState("");
     const [adress, setAdress] = useState("");
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");   
+    const [password, setPassword] = useState("");
+    
+    let buttonText="Save Changes"
+    let title="Edit Your Account"
+    let subtitle="Modify your account information:"
+    let buttonHasImage=true;
+    if(isRegister){
+        buttonText="Register"
+        buttonHasImage=false
+        if(isAdmin){
+            title="Register Administrator"
+            subtitle="Enter the information to register an administrator:"
+        }
+        else{
+            title="Register Client"
+            subtitle="Enter the information to register a client:"
+        }
+    }
+
     return (
-        <div className="adminForm">
+        <div className="AccountForm">
             <div>
                 <h1 className='font-bolder AccountForm-title'>{title}</h1>
             </div>
             <div>
-                <h2 className='font-bolder AccountForm-subtitle'>{description}</h2>
+                <p className='font-bolder'>{description}</p>
             </div>
             <div>
                 <form>
@@ -75,8 +97,8 @@ export default function AccountForm({
                     />
                     
                     <Button orange >
-                        <img src={plus}/>
-                        <h5 className="font-bolder">Register</h5>
+                        <img src={plus} hidden={buttonHasImage}/>
+                        <h5 className="font-bolder">{buttonText}</h5>
                     </Button>
                 </form>
             </div>
