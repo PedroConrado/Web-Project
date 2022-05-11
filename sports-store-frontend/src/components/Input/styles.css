@@ -1,25 +1,25 @@
-.input-container {
+.input {
     border-radius: 15px;
     color: var(--white);
     padding: 15px;
     width: 100%;
 }
 
-.input-container, .input-container::placeholder {
+.input, .input::placeholder {
     color: var(--white);
     font-size: var(--font-size-l);
 }
 
-.input-container:focus {
+.input:focus {
     outline: none;
 }
 
-.input-container-filled {
+.input-filled {
     background-color: var(--black);
     border: none;
 }
 
-.input-container-unfilled {
+.input-unfilled {
     background-color: transparent;
     border: 3px solid var(--white);
 }

@@ -26,7 +26,7 @@ export default function Input({
             value={value}
             onChange = {(e) => setValue(e.target.value)}
             
-            className={`input-container ${filled ? "input-container-filled" : "input-container-unfilled"}`}
+            className={`input ${filled ? "input-filled" : "input-unfilled"}`}
         />
     );
 };

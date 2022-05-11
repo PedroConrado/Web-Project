@@ -5,6 +5,7 @@
 
 
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 import './styles.css'
 
@@ -15,15 +16,30 @@ export default function Button({
     purple = false,
     children,
     onClick = () =>{},
+    link = false,
+    to = "/",
     ...props
 }) {
     return(
-        <button 
-            onClick={onClick}
-            style={style}
+        <>
+        {
+            link ?
+            <Link 
             className={`button-container ${orange? "background-orange" : ""} ${purple? "background-purple" : ""}`}
-        >
-            {children}
-        </button>
+            style={style}
+            to={to}
+            >
+                {children}
+            </Link>
+            :
+            <button 
+                onClick={onClick}
+                style={style}
+                className={`button-container ${orange? "background-orange" : ""} ${purple? "background-purple" : ""}`}
+            >
+                {children}
+            </button>
+        }
+        </>
     );
 };

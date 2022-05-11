@@ -40,7 +40,7 @@ export default function LoginForm() {
                             Let's Go
                         </h5>
                     </Button>
-                    <Button purple >
+                    <Button purple link to="/sign-up" >
                         <h5>
                             Sign Up
                         </h5>
