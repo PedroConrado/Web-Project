@@ -5,6 +5,7 @@
 
 
 import React from 'react';
+import DescriptionBanner from '../../components/DescriptionBanner';
 import SignUpForm from '../../components/SignUpForm';
 
 import './styles.css'

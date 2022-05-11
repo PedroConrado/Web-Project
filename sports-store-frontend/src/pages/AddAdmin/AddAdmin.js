@@ -7,8 +7,8 @@ import React from "react";
 
 import "./AddAdminStyles.css";
 
-import AdminBar from "../../components/AdminBar/AdminBar";
-import AccountForm from "../../components/AccountForm/AccountForm";
+import AdminBar from "../../components/AdminBar";
+import AccountForm from "../../components/AccountForm";
 
 export default function AddAdmin() {
     return(
