@@ -12,10 +12,10 @@ export default function AccountForm() {
     return (
         <div className="adminForm">
             <div>
-                <h1>Edit Your  Account</h1>
+                <h1 className='AccountForm-title'>Edit Your  Account</h1>
             </div>
             <div>
-                <h2>Modify your account information:</h2>
+                <h2 className='AccountForm-subtitle'>Modify your account information:</h2>
             </div>
             <div>
                 <form>
@@ -44,7 +44,7 @@ export default function AccountForm() {
                         <p>Password</p>
                         <input type="password" name="senha" placeholder="currentPassword" required/>
                     </div>
-                    <button className='btn buttonOn'><img src={plus} />Register</button>
+                    <button className='Admin-Button Admin-buttonOn'><img src={plus} />Register</button>
                 </form>
             </div>
         </div>

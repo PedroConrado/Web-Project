@@ -8,8 +8,8 @@ import line from '../../assets/line.svg';
 import './AdminBarStyles.css'
 
 function getButtonClass(btnNmbr, currPage){
-    let classes="btn buttonOff";
-    if(btnNmbr==currPage) classes="btn buttonOn";
+    let classes="Admin-Button Admin-buttonOff";
+    if(btnNmbr==currPage) classes="Admin-Button Admin-buttonOn";
     return classes;
 }
 
@@ -18,8 +18,8 @@ export default function AdminBar() {
     
     return (
         <div className="adminBar">
-            <h1 className='barTitle'>Admin Name</h1>
-            <h2 className='barSubtitle'>Actions</h2>
+            <h1 className='AdminBar-title'>Admin Name</h1>
+            <h2 className='AdminBar-subtitle'>Actions</h2>
             <button onClick={()=> setPage(0)} className={getButtonClass(0, page)}>Add New Admin</button>
             <button onClick={()=> setPage(1)} className={getButtonClass(1, page)}>View Admins</button>
             <img class="line" src={line} />

@@ -2,6 +2,7 @@
   This file contains styles that are going to be used in the entire project,
   avoiding repetition of classes and styles throught other files.
 */
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,700,500,600|Inter:700,500|Roboto+Condensed:400");
 
 html, body, #root {
   height: 100%;
