@@ -13,6 +13,7 @@ import FormInput from '../FormInput';
 export default function AccountForm({
     title = "Default Title",
     description = "Default Description",
+    buttonText = "Default Text",
     style = {},
     isAdmin = false,
     isRegister = false,
@@ -26,22 +27,7 @@ export default function AccountForm({
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     
-    let buttonText="Save Changes"
-    let title="Edit Your Account"
-    let subtitle="Modify your account information:"
     let buttonHasImage=true;
-    if(isRegister){
-        buttonText="Register"
-        buttonHasImage=false
-        if(isAdmin){
-            title="Register Administrator"
-            subtitle="Enter the information to register an administrator:"
-        }
-        else{
-            title="Register Client"
-            subtitle="Enter the information to register a client:"
-        }
-    }
 
     return (
         <div className="AccountForm">
