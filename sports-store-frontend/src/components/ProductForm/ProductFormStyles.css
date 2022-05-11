@@ -1,0 +1,29 @@
+
+.ProductForm {
+    margin: auto;
+    margin-left: 40%;
+    background-color: var(--lightGreen);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    height: auto;
+    width: 582px;
+}
+
+.ProductForm-title {
+    text-align: center;
+    font-family: var(--font-family-poppins);
+    font-size: var(--font-size-l2);
+    line-height: 45px;
+    font-style: normal;
+}
+
+.ProductForm-subtitle {
+    font-family: var(--font-family-poppins);
+    font-size: var(--font-size-s2);
+    color: var(--white);
+    line-height: 45px;
+    font-style: normal;
+}

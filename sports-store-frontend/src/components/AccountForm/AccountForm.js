@@ -10,20 +10,44 @@ import ImageContainer from '../ImageContainer';
 import Row from '../AdminFormRow/AdminFormRow.js';
 import Button from '../Button';
 
-export default function AccountForm() { 
+export default function AccountForm({
+    style = {},
+    isAdmin = false,
+    isRegister = false,
+    onClick = () =>{},
+    ...props
+}) { 
     const [name, setName] = useState("");
     const [image, setImage] = useState("");
     const [phone, setPhone] = useState("");
     const [adress, setAdress] = useState("");
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");   
+    const [password, setPassword] = useState("");
+    
+    let buttonText="Save Changes"
+    let title="Edit Your Account"
+    let subtitle="Modify your account information:"
+    let buttonHasImage=true;
+    if(isRegister){
+        buttonText="Register"
+        buttonHasImage=false
+        if(isAdmin){
+            title="Register Administrator"
+            subtitle="Enter the information to register an administrator:"
+        }
+        else{
+            title="Register Client"
+            subtitle="Enter the information to register a client:"
+        }
+    }
+
     return (
-        <div className="adminForm">
+        <div className="AccountForm">
             <div>
-                <h1 className='font-bolder AccountForm-title'>Edit Your  Account</h1>
+                <h3 className='font-extraBold AccountForm-title'>{title}</h3>
             </div>
             <div>
-                <h2 className='font-bolder AccountForm-subtitle'>Modify your account information:</h2>
+                <p className='font-bolder'>{subtitle}</p>
             </div>
             <div>
                 <form>
@@ -73,8 +97,8 @@ export default function AccountForm() {
                     />
                     
                     <Button orange >
-                        <img src={plus}/>
-                        <h5 className="font-bolder">Register</h5>
+                        <img src={plus} hidden={buttonHasImage}/>
+                        <h5 className="font-bolder">{buttonText}</h5>
                     </Button>
                 </form>
             </div>

@@ -13,8 +13,8 @@ import AccountForm from "../../components/AccountForm/AccountForm";
 export default function AddAdmin() {
     return(
         <div className="AddAdmin-page-container">
-            <AdminBar />
-            <AccountForm />
+            <AdminBar currentPage={1}/>
+            <AccountForm isAdmin={true} isRegister={true}/>
         </div>
     )
 }

@@ -1,5 +1,5 @@
 
-.adminForm {
+.AccountForm {
     margin: auto;
     margin-left: 40%;
     background-color: var(--lightGreen);
@@ -14,16 +14,4 @@
 
 .AccountForm-title {
     text-align: center;
-    font-family: var(--font-family-poppins);
-    font-size: var(--font-size-l2);
-    line-height: 45px;
-    font-style: normal;
-}
-
-.AccountForm-subtitle {
-    font-family: var(--font-family-poppins);
-    font-size: var(--font-size-s2);
-    color: var(--white);
-    line-height: 45px;
-    font-style: normal;
 }

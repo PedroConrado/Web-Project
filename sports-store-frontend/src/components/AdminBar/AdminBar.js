@@ -3,7 +3,7 @@
 */
 
 
-import {React, useState} from "react";
+import {React, useState, useEffect} from "react";
 import line from '../../assets/line.svg';
 import './AdminBarStyles.css'
 import Button from '../Button';
@@ -15,6 +15,7 @@ function getButtonClass(btnNmbr, currPage){
 
 export default function AdminBar() {
     const [page,  setPage] = useState(0);
+
     return (
         <div className="adminBar">
             <h4 className='font-extraBold'>Admin Name</h4>
