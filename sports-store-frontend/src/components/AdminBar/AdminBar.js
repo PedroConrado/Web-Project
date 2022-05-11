@@ -6,32 +6,47 @@
 import {React, useState} from "react";
 import line from '../../assets/line.svg';
 import './AdminBarStyles.css'
+import Button from '../Button';
 
 function getButtonClass(btnNmbr, currPage){
-    let classes="Admin-Button Admin-buttonOff";
-    if(btnNmbr==currPage) classes="Admin-Button Admin-buttonOn";
-    return classes;
+    if(btnNmbr==currPage) return true;
+    return false;
 }
 
 export default function AdminBar() {
     const [page,  setPage] = useState(0);
-    
     return (
         <div className="adminBar">
-            <h1 className='AdminBar-title'>Admin Name</h1>
-            <h2 className='AdminBar-subtitle'>Actions</h2>
-            <button onClick={()=> setPage(0)} className={getButtonClass(0, page)}>Add New Admin</button>
-            <button onClick={()=> setPage(1)} className={getButtonClass(1, page)}>View Admins</button>
+            <h4 className='font-extraBold'>Admin Name</h4>
+            <h5 className='font-extraBold color-orange'>Actions</h5>
+            <Button onClick={()=> setPage(0)} adminBar orange={getButtonClass(0, page)} gray={!getButtonClass(0, page)}>
+                <p className="font-bolder">Add New Admin</p>
+            </Button>
+            <Button onClick={()=> setPage(1)} adminBar orange={getButtonClass(1, page)} gray={!getButtonClass(1, page)}>
+                <p className="font-bolder">View Admins</p>
+            </Button>
             <img class="line" src={line} />
-            <button onClick={()=> setPage(2)} className={getButtonClass(2, page)}>Add New Client</button>
-            <button onClick={()=> setPage(3)} className={getButtonClass(3, page)}>View Client</button>
+            <Button onClick={()=> setPage(2)} adminBar orange={getButtonClass(2, page)} gray={!getButtonClass(2, page)}>
+                <p className="font-bolder">Add New Client</p>
+            </Button>
+            <Button onClick={()=> setPage(3)} adminBar orange={getButtonClass(3, page)} gray={!getButtonClass(3, page)}>
+                <p className="font-bolder">View Clients</p>
+            </Button>
             <img class="line" src={line} />
-            <button onClick={()=> setPage(4)} className={getButtonClass(4, page)}>Add New Product</button>
-            <button onClick={()=> setPage(5)} className={getButtonClass(5, page)}>View Products</button>
+            <Button onClick={()=> setPage(4)} adminBar orange={getButtonClass(4, page)} gray={!getButtonClass(4, page)}>
+                <p className="font-bolder">Add New Product</p>
+            </Button>
+            <Button onClick={()=> setPage(5)} adminBar orange={getButtonClass(5, page)} gray={!getButtonClass(5, page)}>
+                <p className="font-bolder">View Products</p>
+            </Button>
             <img class="line" src={line} />
-            <button onClick={()=> setPage(6)} className={getButtonClass(6, page)}>My Account</button>
+            <Button onClick={()=> setPage(6)} adminBar orange={getButtonClass(6, page)} gray={!getButtonClass(6, page)}>
+                <p className="font-bolder">My Account</p>
+            </Button>
             <img class="line" src={line} />
-            <button onClick={()=> setPage(7)} className={getButtonClass(7, page)}>Logout</button>
+            <Button onClick={()=> setPage(7)} adminBar orange={getButtonClass(7, page)} gray={!getButtonClass(7, page)}>
+                <p className="font-bolder">Logout</p>
+            </Button>
         </div> 
     );
 }

@@ -13,15 +13,25 @@ export default function Button({
     style = {},
     orange = false,
     purple = false,
+    gray = false,
+    red = false,
+    adminBar = false,
     children,
     onClick = () =>{},
     ...props
 }) {
+    let classes="button-container background-orange";
+    if(purple) classes="button-container background-purple";
+    else if(gray) classes="button-container background-lightGray";
+    else if(red) classes="button-container background-red";
+
+    if(adminBar) classes+=" button-adminBar";
+
     return(
         <button 
             onClick={onClick}
             style={style}
-            className={`button-container ${orange? "background-orange" : ""} ${purple? "background-purple" : ""}`}
+            className={classes}
         >
             {children}
         </button>

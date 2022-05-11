@@ -15,6 +15,8 @@
   : rgba(93, 191, 121, 1);
     --purple
   : rgba(123, 97, 255, 1);
+  --red
+  : rgb(255, 97, 97);
     --orange
   : rgba(255, 160, 73, 1);
     --lightGray

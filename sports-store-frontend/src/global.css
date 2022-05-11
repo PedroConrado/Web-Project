@@ -55,8 +55,17 @@ p {
 
 
 
+.font-bolder{
+  font-weight: 500;
+}
 
+.font-extraBold{
+  font-weight: 700;
+}
 
+.color-orange {
+  color: var(--orange);
+}
 
 .background-green {
   background-color: var(--lightGreen);
@@ -72,6 +81,10 @@ p {
 
 .background-purple {
   background-color: var(--purple);
+}
+
+.background-red {
+  background-color: var(--red);
 }
 
 .background-orange {

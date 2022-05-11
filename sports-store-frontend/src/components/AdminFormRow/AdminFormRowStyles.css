@@ -1,0 +1,9 @@
+.AdminForm-row{
+    align-items: center;
+    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    width: 100%;
+    height: 90px;
+    justify-content: space-between;
+}
