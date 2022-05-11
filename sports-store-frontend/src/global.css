@@ -2,10 +2,12 @@
   This file contains styles that are going to be used in the entire project,
   avoiding repetition of classes and styles throught other files.
 */
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,700,500,600|Inter:700,500|Roboto+Condensed:400");
 
 html, body, #root {
   height: 100%;
   width: 100%;
+  background-color: var(--black);
 }
 
 body {
@@ -53,8 +55,17 @@ p, label {
 
 
 
+.font-bolder{
+  font-weight: 500;
+}
 
+.font-extraBold{
+  font-weight: 700;
+}
 
+.color-orange {
+  color: var(--orange);
+}
 
 .background-green {
   background-color: var(--lightGreen);
@@ -70,6 +81,10 @@ p, label {
 
 .background-purple {
   background-color: var(--purple);
+}
+
+.background-red {
+  background-color: var(--red);
 }
 
 .background-orange {

@@ -5,6 +5,7 @@
 
 
 import React from 'react';
+import SignUpForm from '../../components/SignUpForm';
 
 import './styles.css'
 
@@ -12,7 +13,7 @@ import './styles.css'
 export default function SignUp() {
     return(
         <div className="sign-up-page-container">
-            <LoginForm />
+            <SignUpForm />
             <DescriptionBanner />
         </div>
     );
