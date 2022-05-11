@@ -14,18 +14,29 @@ export default function Button({
     style = {},
     orange = false,
     purple = false,
+    gray = false,
+    red = false,
+    adminBar = false,
     children,
     onClick = () =>{},
     link = false,
     to = "/",
     ...props
 }) {
+    let classes="button-container ";
+    if(purple) classes+="background-purple";
+    else if(gray) classes+="background-lightGray";
+    else if(red) classes+="background-red";
+    else classes+="background-orange"
+
+    if(adminBar) classes+=" button-adminBar";
+
     return(
         <>
         {
             link ?
             <Link 
-            className={`button-container ${orange? "background-orange" : ""} ${purple? "background-purple" : ""}`}
+            className={classes}
             style={style}
             to={to}
             >
@@ -35,7 +46,7 @@ export default function Button({
             <button 
                 onClick={onClick}
                 style={style}
-                className={`button-container ${orange? "background-orange" : ""} ${purple? "background-purple" : ""}`}
+                className={classes}
             >
                 {children}
             </button>

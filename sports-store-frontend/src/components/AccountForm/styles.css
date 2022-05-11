@@ -1,0 +1,24 @@
+
+.adminForm {
+    margin: auto;
+    margin-left: 40%;
+    background-color: var(--lightGreen);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    height: auto;
+    width: 582px;
+}
+
+.AccountForm-title {
+    text-align: center;
+    line-height: 45px;
+    font-style: normal;
+}
+
+.AccountForm-subtitle {
+    line-height: 45px;
+    font-style: normal;
+}
