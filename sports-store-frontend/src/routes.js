@@ -10,13 +10,13 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
 
 // pages
-import Login from "./pages/Login";
+import AddAdmin from "./pages/AddAdmin/AddAdmin";
 
 export default function Router() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Login/>}/>
+                <Route path="/" element={<AddAdmin/>}/>
             </Routes>
         </BrowserRouter>
 

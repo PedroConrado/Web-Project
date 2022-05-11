@@ -4,9 +4,11 @@
 
 
 import React from "react";
-import line from '../../assets/plus-circle.svg';
+import plus from '../../assets/plus-circle.svg';
+import './AccountFormStyles.css'
+import ImageContainer from '../ImageContainer';
 
-export default function AdminForm() {    
+export default function AccountForm() {    
     return (
         <div className="adminForm">
             <div>
@@ -24,7 +26,7 @@ export default function AdminForm() {
                     <div className='row'>
                         <p>Image</p>
                         <input type="file" name="image" placeholder="currentImage" required/>
-                        <img className='formImageDisplay' src="./currentImageSrc" alt='no image'></img>  
+                        <ImageContainer src={require("../../assets/AsicsShoes.png")} />
                     </div>
                     <div className='row'>
                         <p>Phone</p>

@@ -12,7 +12,9 @@ import './styles.css'
 export default function AdminButtons({
     style = {},
     orange = false,
-    purple = false,
+    red = false,
+    gray = false,
+    hasPlus = false,
     children,
     onClick = () =>{},
     ...props
