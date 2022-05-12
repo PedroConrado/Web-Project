@@ -31,63 +31,57 @@ export default function AccountForm({
 
     return (
         <div className="AccountForm">
-            <div>
-                <h1 className='font-bolder AccountForm-title'>{title}</h1>
-            </div>
-            <div>
-                <p className='font-bolder'>{description}</p>
-            </div>
-            <div>
-                <form>
-                    <FormInput
-                        title="Name"
-                        placeholder='Current Name'
-                        value={name}
-                        setValue={setName}
-                        type={"text"}
-                    />
-                    <FormInput
-                        title={"Image"}
-                        placeholder={'Current File'}
-                        value={image}
-                        setValue={setImage}
-                        type={"file"}
-                    />
-                    <FormInput
-                        title="Phone"
-                        placeholder='Current Phone Number'
-                        value={phone}
-                        setValue={setPhone}
-                        type={"text"}
-                    />
-                    <FormInput
-                        title="Adress"
-                        placeholder='Current Adress'
-                        value={adress}
-                        setValue={setAdress}
-                        type={"text"}
-                    />
-                    <FormInput
-                        title="Email"
-                        placeholder='Current Email'
-                        value={email}
-                        setValue={setEmail}
-                        type={"email"}
-                    />
-                    <FormInput
-                        title="Password"
-                        placeholder='Current Password'
-                        value={password}
-                        setValue={setPassword}
-                        type={"password"}
-                    />
-                    
-                    <Button orange >
-                        <img src={plus} hidden={buttonHasImage}/>
-                        <h5 className="font-bolder">{buttonText}</h5>
-                    </Button>
-                </form>
-            </div>
+            <h4 className='font-bolder AccountForm-title'>{title}</h4>
+            <p className='font-bolder'>{description}</p>
+            <form className="AccountForm-form">
+                <FormInput
+                    title="Name"
+                    placeholder='Current Name'
+                    value={name}
+                    setValue={setName}
+                    type={"text"}
+                />
+                <FormInput
+                    title={"Image"}
+                    placeholder={'Current File'}
+                    value={image}
+                    setValue={setImage}
+                    type={"file"}
+                />
+                <FormInput
+                    title="Phone"
+                    placeholder='Current Phone Number'
+                    value={phone}
+                    setValue={setPhone}
+                    type={"text"}
+                />
+                <FormInput
+                    title="Adress"
+                    placeholder='Current Adress'
+                    value={adress}
+                    setValue={setAdress}
+                    type={"text"}
+                />
+                <FormInput
+                    title="Email"
+                    placeholder='Current Email'
+                    value={email}
+                    setValue={setEmail}
+                    type={"email"}
+                />
+                <FormInput
+                    title="Password"
+                    placeholder='Current Password'
+                    value={password}
+                    setValue={setPassword}
+                    type={"password"}
+                />
+                
+                <Button orange >
+                    <img src={plus} hidden={buttonHasImage}/>
+                    <p className="font-bolder">{buttonText}</p>
+                </Button>
+            </form>
         </div>
     );
 }

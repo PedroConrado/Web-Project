@@ -11,7 +11,7 @@ import './styles.css'
 
 
 export default function Button({
-    style = {},
+    style = "",
     orange = false,
     purple = false,
     gray = false,
@@ -23,7 +23,7 @@ export default function Button({
     to = "/",
     ...props
 }) {
-    let classes="button-container ";
+    let classes="button-container " + style;
     if(purple) classes+="background-purple";
     else if(gray) classes+="background-lightGray";
     else if(red) classes+="background-red";
@@ -37,7 +37,6 @@ export default function Button({
             link ?
             <Link 
             className={classes}
-            style={style}
             to={to}
             >
                 {children}
@@ -45,7 +44,6 @@ export default function Button({
             :
             <button 
                 onClick={onClick}
-                style={style}
                 className={classes}
             >
                 {children}

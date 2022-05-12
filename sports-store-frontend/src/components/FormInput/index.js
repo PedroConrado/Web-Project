@@ -21,7 +21,7 @@ export default function adminFormRow({
 }){
     return(
         <div className='form-input-container'>
-            <h5 className='font-extraBold'>{title}</h5>
+            <p className='font-extraBold'>{title}</p>
             <Input
                 placeholder={placeholder}
                 value={value}
