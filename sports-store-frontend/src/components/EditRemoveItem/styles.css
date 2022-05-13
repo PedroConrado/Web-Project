@@ -1,8 +1,9 @@
-.edit-remove-container-container{
-    align-items: center;
+.edit-remove-container{
+    background-color: var(--lightGreen);
+    border-radius: 15px;
     display: flex;
-    display: grid;
-    grid-auto-flow: column;
-    width: 100%;
-    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
 }

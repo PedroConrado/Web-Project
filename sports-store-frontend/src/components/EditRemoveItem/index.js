@@ -11,18 +11,20 @@ import './styles.css'
 import Input from '../Input';
 import ImageContainer from '../ImageContainer';
 
+import Button from '../Button';
+
 export default function FormInput({
     style = {},
-    name = "",
+    title = "",
 }){
     return(
         <div className='edit-remove-container'>
-            <p className='font-extraBold'>{name}</p>
+            <p className='font-extraBold'>{title}</p>
             <Button orange >
-                <p className="font-bolder">{buttonText}</p>
+                <p className="font-bolder">Edit Data</p>
             </Button>
-            <Button orange >
-                <p className="font-bolder">{buttonText}</p>
+            <Button red >
+                <p className="font-bolder">Remove</p>
             </Button>
         </div>
     );
