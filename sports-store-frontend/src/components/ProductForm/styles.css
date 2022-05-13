@@ -1,0 +1,19 @@
+.ProductForm {
+    background-color: var(--lightGreen);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
+}
+
+.ProductForm-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ProductForm-title {
+    text-align: center;
+}
+

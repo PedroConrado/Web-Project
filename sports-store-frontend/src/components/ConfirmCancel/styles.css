@@ -1,0 +1,13 @@
+.confirmCancel-container{
+    align-items: center;
+    border: 4px;
+}
+
+.confirmCancel-buttons-container{
+    align-items: center;
+    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    width: 100%;
+    justify-content: space-between;
+}
