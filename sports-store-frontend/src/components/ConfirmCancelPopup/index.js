@@ -13,6 +13,8 @@ import Button from '../Button';
 export default function ConfirmCancel({
     style = {},
     title = "",
+    link=false,
+    to=""
 }){
     return(
         <div className='confirmCancel-container'>
@@ -21,7 +23,7 @@ export default function ConfirmCancel({
                 <Button red >
                     <p className="font-bolder">Confirm</p>
                 </Button>
-                <Button orange onClick={() => {close();}}>
+                <Button orange link={link} to={to}>
                     <p className="font-bolder">Cancel</p>
                 </Button>   
             </div>
