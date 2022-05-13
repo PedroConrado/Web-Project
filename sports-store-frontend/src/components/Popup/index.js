@@ -1,32 +1,47 @@
 /*
-    This file contains a input component whose style is going to be used throught
-    the entire system
+    This file contains a popup component which will 
 
 */
 
+//MODIFY:
+//make accountFormPopup, productFormPopup and confirmCancelPopup as seperate components each in one file (remove cancel component...)
 
 import React from 'react';
+import reactPopup from 'reactjs-popup';
 
 import './styles.css'
-import Input from '../Input';
-import ImageContainer from '../ImageContainer';
 
-export default function FormInput({
+export default function Popup({
     style = {},
     title = "",
+    children,
+    triggerPopup = false,
     value = "",
     setValue = () => {},
 }){
-    return(
+    return (triggerPopup) ? (
         <div className='popup-container'>
-            <p className='font-extraBold'>{title}</p>
-            <Input
-                placeholder={placeholder}
-                value={value}
-                setValue={setValue}
-                filled={true}
-                type={type}
-            />
+            <Popup    trigger={triggerPopup} modal nested>
+                {close => (
+                    <div className="modal"> 
+                        <button className="close" onClick={close}>
+                            &times;
+                        </button> 
+                        <div className="content">
+
+                        </div>
+                        <div className="actions">
+                            <button
+                                className="button"
+                                onClick={() => {close();}}
+                            >
+                                close modal
+                            </button>
+                        </div>
+                    </div>
+                )}
+                {children}
+            </Popup>
         </div>
-    );
+    ) : "" ;
 };

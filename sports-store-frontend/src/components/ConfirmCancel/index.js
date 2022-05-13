@@ -21,7 +21,7 @@ export default function ConfirmCancel({
                 <Button red >
                     <p className="font-bolder">Confirm</p>
                 </Button>
-                <Button orange >
+                <Button orange onClick={() => {close();}}>
                     <p className="font-bolder">Cancel</p>
                 </Button>   
             </div>

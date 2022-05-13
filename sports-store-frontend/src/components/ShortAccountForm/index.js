@@ -1,5 +1,5 @@
 /*
-    This file defines form for account data
+    This file defines form for account data but with only the fields that an admin can see and edit
 */
 
 
@@ -10,7 +10,7 @@ import ImageContainer from '../ImageContainer';
 import Button from '../Button';
 import FormInput from '../FormInput';
 
-export default function AccountForm({
+export default function ShortAccountForm({
     title = "Default Title",
     //my-account-admin/client="Edit Your Account"
     //add-client="Register Client"
@@ -32,8 +32,8 @@ export default function AccountForm({
     isAdmin = false,
     isRegister = false,
     onClick = () =>{},
-    link = false,
-    to="",
+    link=false,
+    to = "/",
     ...props
 }) { 
     const [name, setName] = useState("");
@@ -44,10 +44,8 @@ export default function AccountForm({
     const [password, setPassword] = useState("");
 
     return (
-        <div className="AccountForm">
-            <h4 className='font-bolder AccountForm-title'>{title}</h4>
-            <p className='font-bolder'>{description}</p>
-            <form className="AccountForm-form">
+        <div className="ShortAccountForm">
+            <form className="ShortAccountForm-form">
                 <FormInput
                     title="Name"
                     placeholder='Current Name'
@@ -76,24 +74,9 @@ export default function AccountForm({
                     setValue={setAdress}
                     type={"text"}
                 />
-                <FormInput
-                    title="Email"
-                    placeholder='Current Email'
-                    value={email}
-                    setValue={setEmail}
-                    type={"email"}
-                />
-                <FormInput
-                    title="Password"
-                    placeholder='Current Password'
-                    value={password}
-                    setValue={setPassword}
-                    type={"password"}
-                />
                 
                 <Button orange link={link} to={to}>
-                    <img src={plus} hidden={!isRegister}/>
-                    <p className="font-bolder">{buttonText}</p>
+                    <p className="font-bolder">Save Changes</p>
                 </Button>
             </form>
         </div>

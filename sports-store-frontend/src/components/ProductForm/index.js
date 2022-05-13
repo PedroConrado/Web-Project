@@ -27,6 +27,8 @@ export default function AccountForm({
     isAdmin = false,
     isRegister = false,
     onClick = () =>{},
+    link = false,
+    to="",
     ...props
 }) { 
     const [name, setName] = useState("");
@@ -92,7 +94,7 @@ export default function AccountForm({
                 />
                 
                 
-                <Button orange >
+                <Button orange link={link} to={to}>
                     <img src={plus} hidden={!isRegister}/>
                     <p className="font-bolder">{buttonText}</p>
                 </Button>

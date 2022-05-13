@@ -1,0 +1,14 @@
+.ShortAccountForm {
+    background-color: var(--lightGreen);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
+}
+
+.ShortAccountForm-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
