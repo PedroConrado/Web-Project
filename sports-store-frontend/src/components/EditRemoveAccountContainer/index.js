@@ -8,22 +8,31 @@
 import React from 'react';
 
 import './styles.css'
-import Input from '../Input';
-import ImageContainer from '../ImageContainer';
 
 import Button from '../Button';
 
+function openEditAccountDataPopup(){
+
+}
+
+function openRemoveAccountPopup(){
+
+}
+
 export default function FormInput({
     style = {},
-    title = "",
+    itemName = "",
+    accountData = {},
+    isAdminAccount=false,
+    itemKey,
 }){
     return(
-        <div className='edit-remove-container'>
-            <p className='font-extraBold'>{title}</p>
-            <Button orange >
+        <div className='edit-remove-AccountContainer'>
+            <p className='font-extraBold'>{itemName}</p>
+            <Button orange onClick={()=>openEditAccountDataPopup()}>
                 <p className="font-bolder">Edit Data</p>
             </Button>
-            <Button red >
+            <Button red onClick={()=>openRemoveAccountPopup()}>
                 <p className="font-bolder">Remove</p>
             </Button>
         </div>
