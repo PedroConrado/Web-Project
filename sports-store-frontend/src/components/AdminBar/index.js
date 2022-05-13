@@ -22,21 +22,21 @@ export default function AdminBar({page=0}) {
             <Button adminBar orange={getButtonClass(0, page)} gray={!getButtonClass(0, page)} link to="/admin-addAdmin">
                 <p className="font-bolder">Add New Admin</p>
             </Button>
-            <Button adminBar orange={getButtonClass(1, page)} gray={!getButtonClass(1, page)}>
+            <Button adminBar orange={getButtonClass(1, page)} gray={!getButtonClass(1, page)} link to="/admin-viewAdmins">
                 <p className="font-bolder">View Admins</p>
             </Button>
             <img class="line" src={line} />
             <Button adminBar orange={getButtonClass(2, page)} gray={!getButtonClass(2, page)} link to="/admin-addClient">
                 <p className="font-bolder">Add New Client</p>
             </Button>
-            <Button adminBar orange={getButtonClass(3, page)} gray={!getButtonClass(3, page)} >
+            <Button adminBar orange={getButtonClass(3, page)} gray={!getButtonClass(3, page)} link to="/admin-viewClients">
                 <p className="font-bolder">View Clients</p>
             </Button>
             <img class="line" src={line} />
             <Button adminBar orange={getButtonClass(4, page)} gray={!getButtonClass(4, page)} link to="/admin-addProduct">
                 <p className="font-bolder">Add New Product</p>
             </Button>
-            <Button adminBar orange={getButtonClass(5, page)} gray={!getButtonClass(5, page)} >
+            <Button adminBar orange={getButtonClass(5, page)} gray={!getButtonClass(5, page)} link to="/admin-viewProducts">
                 <p className="font-bolder">View Products</p>
             </Button>
             <img class="line" src={line} />

@@ -15,6 +15,9 @@ import SignUp from "./pages/SignUp";
 import AddAdmin from "./pages/AddAdmin";
 import AddClient from "./pages/AddClient";
 import AddProduct from "./pages/AddProduct";
+import ViewAdmins from "./pages/ViewAdmins";
+import ViewClients from "./pages/ViewClients";
+import ViewProducts from "./pages/ViewProducts";
 import AdminMyAccount from "./pages/AdminMyAccount";
 import ClientMyAccount from "./pages/ClientMyAccount";
 
@@ -26,6 +29,9 @@ export default function Router() {
                 <Route exact path="/admin-addAdmin" element={<AddAdmin/>} />
                 <Route exact path="/admin-addClient" element={<AddClient/>} />
                 <Route exact path="/admin-addProduct" element={<AddProduct/>} />
+                <Route exact path="/admin-viewAdmins" element={<ViewAdmins/>} />
+                <Route exact path="/admin-viewClients" element={<ViewClients/>} />
+                <Route exact path="/admin-viewProducts" element={<ViewProducts/>} />
                 <Route exact path="/admin-myAccount" element={<AdminMyAccount/>} />
                 <Route exact path="/client-myAccount" element={<ClientMyAccount/>} />
                 <Route path="/" element={<Login/>}/>
