@@ -26,7 +26,8 @@ export default function SignUpForm() {
                 title='Create Account'
                 description='Insert your personal data below'
                 buttonText='Create'
-                linkTo="/client-myAccount"
+                link
+                to="/client-myAccount"
                 />
             </div>
         </div>
