@@ -1,4 +1,16 @@
+.ConfirmCancelPopup-popupBox {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #000000ca;
+}
+
 .confirmCancel-container{
+    position: relative;
+    width: 600px;
+    margin: 20% auto;
     background-color: var(--lightGreen);
     border: 8px solid var(--pureBlack);
     border-radius: 15px;

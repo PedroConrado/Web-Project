@@ -7,7 +7,7 @@ import {React, useState} from "react";
 import plus from '../../assets/plus-circle.svg';
 import './styles.css'
 
-import EditRemoveProduct from "../EditRemoveAccountContainer";
+import EditRemoveProduct from "../EditRemoveProductContainer";
 
 export default function AccountForm({
     title = "Default Title",
@@ -17,11 +17,11 @@ export default function AccountForm({
 }) {
 
     return (
-        <div className="admin-view-accountsList">
+        <div className="admin-view-productsList">
             <h4 className='font-bolder'>{title}</h4>
             
-            <EditRemoveProduct itemName="Product 1" productPreviewImageSrc="../../assets/AsicsShoes.png"/>
-            <EditRemoveProduct itemName="Product 2" productPreviewImageSrc="../../assets/NikeShoe.png"/>
+            <EditRemoveProduct itemName="Product 1" productPreviewImageSrc={require("../../assets/AsicsShoes.png")}/>
+            <EditRemoveProduct itemName="Product 2" productPreviewImageSrc={require("../../assets/NikeShoe.png")}/>
         </div>
     );
 }

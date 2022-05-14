@@ -13,19 +13,23 @@ import Button from '../Button';
 export default function ConfirmCancel({
     style = {},
     title = "",
+    itemKey,
+    handleClose=()=>{},
     link=false,
     to=""
 }){
     return(
-        <div className='confirmCancel-container'>
-            <p className='font-extraBold'>{title}</p>
-            <div className='confirmCancel-buttons-container'>
-                <Button red >
-                    <p className="font-bolder">Confirm</p>
-                </Button>
-                <Button orange link={link} to={to}>
-                    <p className="font-bolder">Cancel</p>
-                </Button>   
+        <div className="ConfirmCancelPopup-popupBox" modal nested>
+            <div className='confirmCancel-container'>
+                <p className='font-extraBold'>{title}</p>
+                <div className='confirmCancel-buttons-container'>
+                    <Button red onClick={handleClose}>
+                        <p className="font-bolder">Confirm</p>
+                    </Button>
+                    <Button orange onClick={handleClose}>
+                        <p className="font-bolder">Cancel</p>
+                    </Button>   
+                </div>
             </div>
         </div>
     );

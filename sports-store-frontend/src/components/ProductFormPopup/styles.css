@@ -1,5 +1,18 @@
-.ProductForm {
+.ProductFormPopup-popupBox{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #000000ca;
+}
+
+.ProductFormPopup {
+    position: relative;
+    width: 600px;
+    margin: 10% auto;
     background-color: var(--lightGreen);
+    border: 8px solid var(--pureBlack);
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -7,13 +20,17 @@
     padding: 30px;
 }
 
-.ProductForm-form {
+.ProductFormPopup-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.ProductForm-title {
-    text-align: center;
+.productFormPopup-buttons-container{
+    align-items: center;
+    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    width: 100%;
+    justify-content: space-around;
 }
-

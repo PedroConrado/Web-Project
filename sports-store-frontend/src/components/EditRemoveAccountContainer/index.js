@@ -5,19 +5,14 @@
 */
 
 
-import React from 'react';
+import {React, useState} from "react";
 
 import './styles.css'
 
 import Button from '../Button';
+import AccountFormPopup from '../AccountFormPopup';
+import ConfirmCancelPopup from '../ConfirmCancelPopup';
 
-function openEditAccountDataPopup(){
-
-}
-
-function openRemoveAccountPopup(){
-
-}
 
 export default function FormInput({
     style = {},
@@ -26,15 +21,29 @@ export default function FormInput({
     isAdminAccount=false,
     itemKey,
 }){
+    const [isOpenEdit, setIsOpenEdit] = useState(false);
+    const [isOpenRemove, setIsOpenRemove] = useState(false);
+ 
+    const togglePopupEdit = () => {
+        setIsOpenEdit(!isOpenEdit);
+    }
+    const togglePopupRemove = () => {
+        setIsOpenRemove(!isOpenRemove);
+    }
     return(
-        <div className='edit-remove-AccountContainer'>
-            <p className='font-extraBold'>{itemName}</p>
-            <Button orange onClick={()=>openEditAccountDataPopup()}>
-                <p className="font-bolder">Edit Data</p>
-            </Button>
-            <Button red onClick={()=>openRemoveAccountPopup()}>
-                <p className="font-bolder">Remove</p>
-            </Button>
-        </div>
+        <>
+            <div className='edit-remove-AccountContainer'>
+                <p className='font-extraBold'>{itemName}</p>
+                <Button orange onClick={togglePopupEdit}>
+                    <p className="font-bolder">Edit Data</p>
+                </Button>
+                <Button red onClick={togglePopupRemove}>
+                    <p className="font-bolder">Remove</p>
+                </Button>
+            </div>
+
+            {isOpenEdit && <AccountFormPopup handleClose={togglePopupEdit}/>}
+            {isOpenRemove && <ConfirmCancelPopup title="Are you sure you want to delete this account?" handleClose={togglePopupRemove}/>}
+        </>
     );
 };

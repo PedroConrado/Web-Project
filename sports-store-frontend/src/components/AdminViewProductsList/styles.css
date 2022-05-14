@@ -1,18 +1,7 @@
-.AccountForm {
-    background-color: var(--lightGreen);
+.admin-view-productsList {
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     gap: 30px;
     padding: 30px;
-}
-
-.AccountForm-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.AccountForm-title {
-    text-align: center;
 }

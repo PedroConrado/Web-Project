@@ -32,6 +32,7 @@ export default function AccountForm({
     isAdmin = false,
     isRegister = false,
     onClick = () =>{},
+    accountData={},
     link = false,
     to="",
     ...props

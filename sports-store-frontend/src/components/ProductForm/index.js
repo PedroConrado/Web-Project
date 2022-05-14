@@ -26,6 +26,7 @@ export default function AccountForm({
     style = {},
     isAdmin = false,
     isRegister = false,
+    productData={},
     onClick = () =>{},
     link = false,
     to="",

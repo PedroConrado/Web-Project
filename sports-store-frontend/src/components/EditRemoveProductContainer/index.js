@@ -5,21 +5,14 @@
 */
 
 
-import React from 'react';
+import {React, useState} from "react";
 
 import './styles.css'
 
 import Button from '../Button';
 import ImageContainer from '../ImageContainer';
-
-
-function openProductEditDataPopup(){
-
-}
-
-function openProductRemovePopup(){
-
-}
+import ProductFormPopup from '../ProductFormPopup';
+import ConfirmCancelPopup from '../ConfirmCancelPopup';
 
 export default function FormInput({
     style = {},
@@ -28,18 +21,33 @@ export default function FormInput({
     productPreviewImageSrc="",
     itemKey,
 }){
+    const [isOpenEdit, setIsOpenEdit] = useState(false);
+    const [isOpenRemove, setIsOpenRemove] = useState(false);
+ 
+    const togglePopupEdit = () => {
+        setIsOpenEdit(!isOpenEdit);
+    }
+    const togglePopupRemove = () => {
+        setIsOpenRemove(!isOpenRemove);
+    }
+
     return(
-        <div className='edit-remove-ProductContainer'>
-            <p className='font-extraBold'>{itemName}</p>
-            <ImageContainer
-                src={require({productPreviewImageSrc})}
-            />
-            <Button orange onClick={()=>openProductEditDataPopup()}>
-                <p className="font-bolder">Edit Data</p>
-            </Button>
-            <Button red onClick={()=>openProductRemovePopup()}>
-                <p className="font-bolder">Remove</p>
-            </Button>
-        </div>
+        <>
+            <div className='edit-remove-ProductContainer'>
+                <p className='font-extraBold'>{itemName}</p>
+                <ImageContainer
+                    src={productPreviewImageSrc}
+                />
+                <Button orange onClick={togglePopupEdit}>
+                    <p className="font-bolder">Edit Data</p>
+                </Button>
+                <Button red onClick={togglePopupRemove}>
+                    <p className="font-bolder">Remove</p>
+                </Button>
+            </div>
+
+            {isOpenEdit && <ProductFormPopup handleClose={togglePopupEdit}/>}
+            {isOpenRemove && <ConfirmCancelPopup title="Are you sure you want to delete this product?" handleClose={togglePopupRemove}/>}
+        </>
     );
 };

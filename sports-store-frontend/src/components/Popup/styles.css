@@ -1,8 +1,0 @@
-.popup-container{
-    align-items: center;
-    display: flex;
-    display: grid;
-    grid-auto-flow: column;
-    width: 100%;
-    justify-content: space-between;
-}
