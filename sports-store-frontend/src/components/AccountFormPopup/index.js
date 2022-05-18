@@ -42,7 +42,7 @@ export default function AccountFormPopup({
                         placeholder={'Current File'}
                         value={image}
                         setValue={setImage}
-                        type={"file"}
+                        type={"image"}
                     />
                     <FormInput
                         title="Phone"

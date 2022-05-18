@@ -84,7 +84,7 @@ export default function AccountForm({
                     placeholder={'Current File'}
                     value={image}
                     setValue={setImage}
-                    type={"file"}
+                    type={"image"}
                 />
                 <FormInput
                     title={"3dModel"}
