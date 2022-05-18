@@ -6,6 +6,7 @@
 import React, { useState } from 'react';
 import Button from '../Button';
 import Input from '../Input';
+import FormInput from '../FormInput';
 
 import './styles.css'
 
@@ -20,18 +21,22 @@ export default function LoginForm() {
             </h1>
             <form className='login-form-forms'>
                 <div className='login-form-inputs-container'>
-                    <Input
+                    <FormInput
                         placeholder='Email'
                         value={email}
                         setValue={setEmail}
                         type={"email"}
+                        title="Email"
+                        filled={false}
                     />
 
-                    <Input
+                    <FormInput
                         placeholder='Password'
                         value={password}
                         setValue={setPassword}
                         type="password"
+                        title="Password"
+                        filled={false}
                     />
                 </div>
                 <div className='login-form-buttons-container'>
