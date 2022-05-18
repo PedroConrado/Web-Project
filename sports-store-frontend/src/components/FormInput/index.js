@@ -17,6 +17,7 @@ export default function adminFormRow({
     type = "text",
     placeholder = "",
     value = "",
+    filled = true,
     setValue = () => {},
 }){
     return(
@@ -26,7 +27,7 @@ export default function adminFormRow({
                 placeholder={placeholder}
                 value={value}
                 setValue={setValue}
-                filled={true}
+                filled={filled}
                 type={type}
             />
         </div>
