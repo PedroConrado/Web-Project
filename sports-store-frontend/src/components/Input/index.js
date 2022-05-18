@@ -17,14 +17,30 @@ export default function Input({
     placeholder = "",
     value = "",
     setValue = () => {},
+    ...props
 }) {
+    function onChange(e) {
+        if(type === "file" && props.setImage){
+            const reader = new FileReader();
+            reader.readAsDataURL(e.target.files[0]);
+            reader.onload = function () {
+                props.setImage(reader.result);
+                console.log(reader.result);
+            };
+            reader.onerror = function (error) {
+                console.log('Error: ', error);
+            };
+            
+        }
+        setValue(e.target.value);
+    }
     return(
         <input
             style={style}
             type={type}
             placeholder={placeholder}
             value={value}
-            onChange = {(e) => setValue(e.target.value)}
+            onChange = {onChange}
             
             className={`input ${filled ? "input-filled" : "input-unfilled"}`}
         />

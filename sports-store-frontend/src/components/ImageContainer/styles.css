@@ -5,3 +5,7 @@
 .image-container-rounded {
     border-radius: 100%;
 }
+
+.image-container-padding {
+    padding: 15px;
+}
