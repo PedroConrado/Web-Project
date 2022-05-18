@@ -5,13 +5,13 @@
 */
 
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './styles.css'
 import Input from '../Input';
 import ImageContainer from '../ImageContainer';
 
-export default function adminFormRow({
+export default function FormInput({
     style = {},
     title = "",
     type = "text",
@@ -20,16 +20,34 @@ export default function adminFormRow({
     filled = true,
     setValue = () => {},
 }){
+    const [image, setImage] = useState("");
     return(
         <div className='form-input-container'>
             <p className='font-extraBold'>{title}</p>
-            <Input
-                placeholder={placeholder}
-                value={value}
-                setValue={setValue}
-                filled={filled}
-                type={type}
-            />
+            {
+                type === "image" ?
+                <div className='form-input-container-image'>
+                    <Input
+                        placeholder={placeholder}
+                        value={value}
+                        setValue={setValue}
+                        setImage={setImage}
+                        filled={filled}
+                        type={"file"}
+                    />
+                    <ImageContainer
+                        src={image}
+                    />
+                </div>
+                :
+                <Input
+                    placeholder={placeholder}
+                    value={value}
+                    setValue={setValue}
+                    filled={filled}
+                    type={type}
+                />
+            }
         </div>
     );
 };
