@@ -12,12 +12,29 @@ import FormInput from '../FormInput';
 
 export default function AccountForm({
     title = "Default Title",
+    //my-account-admin/client="Edit Your Account"
+    //add-client="Register Client"
+    //add-admin="Register Administrator"
+    //popup=""
     description = "Default Description",
+    //my-account-admin/client="Modify your account information:"
+    //add-client="Enter the information to register a client:"
+    //add-admin="Enter the information to register an administrator:"
+    //popup=""
+
     buttonText = "Default Text",
+    //my-account-admin/client="Save Changes:"
+    //add-client="Register"
+    //add-admin="Register"
+    //popup="Save Changes"
+
     style = {},
     isAdmin = false,
     isRegister = false,
     onClick = () =>{},
+    accountData={},
+    link = false,
+    to="",
     ...props
 }) { 
     const [name, setName] = useState("");
@@ -26,8 +43,6 @@ export default function AccountForm({
     const [adress, setAdress] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    
-    let buttonHasImage=true;
 
     return (
         <div className="AccountForm">
@@ -77,8 +92,8 @@ export default function AccountForm({
                     type={"password"}
                 />
                 
-                <Button orange >
-                    <img src={plus} hidden={buttonHasImage}/>
+                <Button orange link={link} to={to}>
+                    <img src={plus} hidden={!isRegister}/>
                     <p className="font-bolder">{buttonText}</p>
                 </Button>
             </form>

@@ -11,7 +11,7 @@ import './styles.css'
 import Input from '../Input';
 import ImageContainer from '../ImageContainer';
 
-export default function adminFormRow({
+export default function FormInput({
     style = {},
     title = "",
     type = "text",

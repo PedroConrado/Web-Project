@@ -1,0 +1,20 @@
+.clientBar{
+    position:absolute;
+    top:0;
+    left:0;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #28272b;
+    border: 2px solid #7361c9;
+    gap: 20px;
+    padding-top: 20px;
+    height: 100vh;
+    min-height: 850px;
+    width: 100px;
+}
+
+.clientBar-icon{
+    width: 60px;
+    height: 60px;
+}

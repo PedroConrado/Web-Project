@@ -1,0 +1,7 @@
+.admin-view-accountsList {
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
+}

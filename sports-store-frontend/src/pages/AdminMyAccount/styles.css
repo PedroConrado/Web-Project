@@ -1,6 +1,8 @@
-.AddAdmin-page-container {
+.admin-myAccount-page-container {
     align-items: center;
     display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(--black);
     margin:0px;
     height: 100%;

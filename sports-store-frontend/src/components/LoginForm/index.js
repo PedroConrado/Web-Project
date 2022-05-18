@@ -40,7 +40,7 @@ export default function LoginForm() {
                     />
                 </div>
                 <div className='login-form-buttons-container'>
-                    <Button orange>
+                    <Button orange link to="/admin-addAdmin">
                         <h5>
                             Let's Go
                         </h5>

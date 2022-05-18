@@ -15,8 +15,10 @@ export default function Button({
     orange = false,
     purple = false,
     gray = false,
+    green = false,
     red = false,
     adminBar = false,
+    clientBar = false,
     children,
     onClick = () =>{},
     link = false,
@@ -27,9 +29,11 @@ export default function Button({
     if(purple) classes+="background-purple";
     else if(gray) classes+="background-lightGray";
     else if(red) classes+="background-red";
+    else if(green) classes+="background-green";
     else classes+="background-orange"
 
     if(adminBar) classes+=" button-adminBar";
+    if(clientBar) classes="button-container button-clientBar";
 
     return(
         <>
