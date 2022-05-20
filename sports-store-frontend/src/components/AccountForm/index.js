@@ -92,7 +92,7 @@ export default function AccountForm({
                     type={"password"}
                 />
                 
-                <Button orange link={link} to={to}>
+                <Button orange link={link} to={to} type="submit">
                     <img src={plus} hidden={!isRegister}/>
                     <p className="font-bolder">{buttonText}</p>
                 </Button>

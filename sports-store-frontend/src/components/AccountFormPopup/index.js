@@ -59,7 +59,7 @@ export default function AccountFormPopup({
                         type={"text"}
                     />
                     <div className='accountFormPopup-buttons-container'>
-                        <Button red onClick={handleClose}>
+                        <Button red onClick={handleClose} type="submit">
                             <p className="font-bolder">Save Changes</p>
                         </Button>
                         <Button orange onClick={handleClose}>

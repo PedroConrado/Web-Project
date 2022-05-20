@@ -78,11 +78,11 @@ export default function ProductFormPopup({
                         type={"file"}
                     />
                     
-                    <div className='productFormPopup-buttons-container'>
+                    <div className='productFormPopup-buttons-container' type="submit">
                         <Button red onClick={handleClose}>
                             <p className="font-bolder">Save Changes</p>
                         </Button>
-                        <Button orange onClick={handleClose}>
+                        <Button orange onClick={handleClose} >
                             <p className="font-bolder">Close</p>
                         </Button>
                     </div>
