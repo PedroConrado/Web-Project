@@ -39,7 +39,8 @@ export default function AccountForm({
     const [qtSold, setQtSold] = useState("");   
     const [image, setImage] = useState("");
     const [threeDModel, setThreeDModel] = useState("");
-    return (
+    return (//recieve an account object and set values of form to that account
+    //onsubmit should call a function passed to this form that updates account if there is one or creates a new account if its null
         <div className="ProductForm">
             <h4 className='font-bolder ProductForm-title'>{title}</h4>
             <p className='font-bolder'>{formDescription}</p>
