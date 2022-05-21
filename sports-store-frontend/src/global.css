@@ -1,0 +1,104 @@
+/*
+  This file contains styles that are going to be used in the entire project,
+  avoiding repetition of classes and styles throught other files.
+*/
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,700,500,600|Inter:700,500|Roboto+Condensed:400");
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  background-color: var(--black);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family-poppins), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+* {
+  color: var(--white);
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: var(--font-size-xl2);
+}
+
+h2 {
+  font-size: var(--font-size-l2);
+}
+
+h3 {
+  font-size: var(--font-size-m2);
+}
+
+h4 {
+  font-size: var(--font-size-s2);
+}
+h5 {
+  font-size: var(--font-size-xs);
+}
+
+p, label {
+  font-size: var(--font-size-l);
+}
+
+
+
+.font-bolder{
+  font-weight: 500;
+}
+
+.font-extraBold{
+  font-weight: 700;
+}
+
+.color-orange {
+  color: var(--orange);
+}
+
+.background-green {
+  background-color: var(--lightGreen);
+}
+
+.background-black {
+  background-color: var(--black);
+}
+
+.background-pureBlack {
+  background-color: var(--pureBlack);
+}
+
+.background-purple {
+  background-color: var(--purple);
+}
+
+.background-red {
+  background-color: var(--red);
+}
+
+.background-orange {
+  background-color: var(--orange);
+}
+
+.background-darkGray {
+  background-color: var(--darkGray);
+}
+
+.background-lightGray {
+  background-color: var(--lightGray);
+}
+
+.background-white {
+  background-color: var(--white);
+}

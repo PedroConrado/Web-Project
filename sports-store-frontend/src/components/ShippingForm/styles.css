@@ -1,0 +1,37 @@
+.ShippingForm {
+    position:absolute;
+    background-color: transparent;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 30px 70px 30px 70px;
+    height: 55%;
+    top: 10%;
+    left: 5%;
+    width: 50%;
+}
+
+.ShippingForm-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.shippingForm-cross-line{
+    border: 1px dashed;
+    width: 100%;
+    margin-top: -15px;
+    margin-bottom: -15px;
+}
+
+
+.shippingForm-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.shippingFormInput-margin-right{
+    margin-left: 10px;
+}

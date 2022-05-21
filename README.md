@@ -17,11 +17,11 @@ Administrators are responsible for registering/managing administrators, customer
 
 Customers are users who access the system to buy products/services.
 
-The admin record includes, at least: name, id, phone, email, adress, email, photo.
+The admin record includes, at least: name, id, phone, email.
 
-Each customer's record includes, at least: name, id, address, phone, email, photo.
+Each customer's record includes, at least: name, id, address, phone, email
 
-Product/services records include, at least: name, id, photo, description, price, quantity (in stock), quantity sold, 3d model.
+Product/services records include, at least: name, id, photo, description, price, quantity (in stock), quantity sold.
 Your store may sell products, services or both (you decide)
 
 ### Selling Products (or services): 
@@ -32,7 +32,7 @@ Products are selected, their quantity chosen, and are included in a cart. Produc
 Administrators can create/update/read/delete (crud) new products and services. For example, they can change the stock quantity.
 
 ### Your functionality: 
-Our current idea is for the user to be able to see a 3d model of the product you want to buy when the user clicks on the image of the product.
+Our current idea is for the user to be able to see a 3d model of the product you want to buy
 
 ### The system must provide accessibility requirements and provide good usability. The system must be responsive.
 
@@ -54,7 +54,7 @@ The images of the mockup are in the directory ```/mockups```
     * [Homepage](mockups/Homepage.png)
         * [My Account](mockups/MyAccountClient.png)
         * [Shipping](mockups/Shipping.jpg)
-            * [Payment](mockups/payment.jpg)
+            * [Payment](mockups/Shipping.jpg)
     * [Add Admin](mockups/AddAdmin.png)
         * [Add Client](mockups/AddClient.png)
         * [Edit Client](mockups/EditClient.png)
