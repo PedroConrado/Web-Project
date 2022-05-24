@@ -45,7 +45,7 @@ export default function LoginForm() {
                             Let's Go
                         </h5>
                     </Button>
-                    <Button purple link to="/sign-up" >
+                    <Button purple link to="/sign-up" type="submit">
                         <h5>
                             Sign Up
                         </h5>

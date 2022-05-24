@@ -6,4 +6,5 @@
     align-items: center;
     gap: 30px;
     padding: 30px;
+    width: fit-content;
 }

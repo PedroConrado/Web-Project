@@ -15,7 +15,20 @@ export default function AccountForm({
     productList = [],
     ...props
 }) {
+    /*
+    Preciso modificar: busca a lista de todas as contas admin ou cliente e apresenta todas elas
+    return (
+        <div className="admin-view-productsList">
+            <h4 className='font-bolder'>{title}</h4>
+            {
+                this.state.products.map(product => {
+                    return <EditRemoveProduct key={product.id} productPreviewImageSrc={require({product.media.source})} itemName={product.name}/>
+                })
+            }
+        </div>
+    );
 
+    */
     return (
         <div className="admin-view-productsList">
             <h4 className='font-bolder'>{title}</h4>

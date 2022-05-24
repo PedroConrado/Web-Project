@@ -16,11 +16,32 @@ export default function AccountForm({
     accountList = [],
     ...props
 }) {
-
+    /*
+    Preciso modificar: busca a lista de todas as contas admin ou cliente e apresenta todas elas
     return (
         <div className="admin-view-accountsList">
             <h4 className='font-bolder'>{title}</h4>
             
+            {
+                this.state.accounts.map(account => {
+                    return <EditRemoveAccount key={account.id} itemName={account.name} isAdmin={isAdmin}/>
+                })
+            }
+        </div>
+    );
+    */
+    return (
+        <div className="admin-view-accountsList">
+            <h4 className='font-bolder'>{title}</h4>
+            
+            <EditRemoveAccount itemName="Admin 1" isAdmin={isAdmin}/>
+            <EditRemoveAccount itemName="Admin 2" isAdmin={isAdmin}/>
+            <EditRemoveAccount itemName="Admin 1" isAdmin={isAdmin}/>
+            <EditRemoveAccount itemName="Admin 2" isAdmin={isAdmin}/>
+            <EditRemoveAccount itemName="Admin 1" isAdmin={isAdmin}/>
+            <EditRemoveAccount itemName="Admin 2" isAdmin={isAdmin}/>
+            <EditRemoveAccount itemName="Admin 1" isAdmin={isAdmin}/>
+            <EditRemoveAccount itemName="Admin 2" isAdmin={isAdmin}/>
             <EditRemoveAccount itemName="Admin 1" isAdmin={isAdmin}/>
             <EditRemoveAccount itemName="Admin 2" isAdmin={isAdmin}/>
         </div>

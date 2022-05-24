@@ -16,7 +16,8 @@ export default function ProductFormPopup({
     link = false,
     to="",
     ...props
-}) { 
+}) { //recieve an account object and set values of form to that account
+    //onsubmit should call a function passed to this form that updates account
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState("");
@@ -68,7 +69,7 @@ export default function ProductFormPopup({
                         placeholder={'Current File'}
                         value={image}
                         setValue={setImage}
-                        type={"file"}
+                        type={"image"}
                     />
                     <FormInput
                         title={"3dModel"}
@@ -78,11 +79,11 @@ export default function ProductFormPopup({
                         type={"file"}
                     />
                     
-                    <div className='productFormPopup-buttons-container'>
+                    <div className='productFormPopup-buttons-container' type="submit">
                         <Button red onClick={handleClose}>
                             <p className="font-bolder">Save Changes</p>
                         </Button>
-                        <Button orange onClick={handleClose}>
+                        <Button orange onClick={handleClose} >
                             <p className="font-bolder">Close</p>
                         </Button>
                     </div>
