@@ -14,12 +14,12 @@ export default function ClientBar() {
 
     return (
         <div className="clientBar">
-            <Button clientBar>
+            <Button clientBar link to="/client-homePage">
                 <img className="clientBar-icon"
                     src={require("../../assets/Home.png")}
                 />
             </Button>
-            <Button clientBar>
+            <Button clientBar link to="/client-shipping">
                 <img className="clientBar-icon"
                     src={require("../../assets/Cart.png")}
                 />

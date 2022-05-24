@@ -1,0 +1,16 @@
+.shipping-payment-form-background{
+    position:absolute;
+    width: 50%;
+    height: 80%;
+    border-radius: 15px;
+    right:45%;
+    bottom:13%;
+    background-color: var(--lightGreen);
+}
+
+.shipping-payment-form-button{
+    position:sticky;
+    top:100%;
+    left:100%;
+    display: inline-block;
+}
