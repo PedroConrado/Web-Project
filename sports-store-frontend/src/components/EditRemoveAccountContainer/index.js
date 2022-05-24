@@ -14,12 +14,11 @@ import AccountFormPopup from '../AccountFormPopup';
 import ConfirmCancelPopup from '../ConfirmCancelPopup';
 
 
-export default function FormInput({
+export default function EditRemoveAccountContainer({
     style = {},
     itemName = "",
-    accountData = {},
-    isAdminAccount=false,
-    itemKey,
+    isAdmin=false,
+    item,
 }){
     const [isOpenEdit, setIsOpenEdit] = useState(false);
     const [isOpenRemove, setIsOpenRemove] = useState(false);

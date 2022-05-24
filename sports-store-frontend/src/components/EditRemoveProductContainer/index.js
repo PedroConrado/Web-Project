@@ -14,12 +14,12 @@ import ImageContainer from '../ImageContainer';
 import ProductFormPopup from '../ProductFormPopup';
 import ConfirmCancelPopup from '../ConfirmCancelPopup';
 
-export default function FormInput({
+export default function EditRemoveProductContainer({
     style = {},
     itemName = "",
     productData = {},
     productPreviewImageSrc="",
-    itemKey,
+    item,
 }){
     const [isOpenEdit, setIsOpenEdit] = useState(false);
     const [isOpenRemove, setIsOpenRemove] = useState(false);
