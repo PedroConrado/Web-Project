@@ -128,107 +128,128 @@ let itemsListFemale = [
         name: "Asics Shoes",
         price: 500,
         description: "O tênis de tênis GEL-RESOLUTION ™ 8 promove um passo ágil com uma sensação de proximidade ao solo da quadra. A parte superior do FLEXION FIT ™ fornece suporte de ajuste de forma com a integração da tecnologia DYNAWALL ™, que oferece maior estabilidade no mediopé durante movimentos laterais e cobertura costa a costa.",
-        image: "AsicsShoes.png"
+        image: "AsicsShoes.png",
+        model: "Shoe2.stl"
     },{
         name: "Asics Shoes",
         price: 500,
         description: "O tênis de tênis GEL-RESOLUTION ™ 8 promove um passo ágil com uma sensação de proximidade ao solo da quadra. A parte superior do FLEXION FIT ™ fornece suporte de ajuste de forma com a integração da tecnologia DYNAWALL ™, que oferece maior estabilidade no mediopé durante movimentos laterais e cobertura costa a costa.",
-        image: "AsicsShoes.png"
+        image: "AsicsShoes.png",
+        model: "Shoe2.stl"
     },{
         name: "Asics Shoes",
         price: 500,
         description: "O tênis de tênis GEL-RESOLUTION ™ 8 promove um passo ágil com uma sensação de proximidade ao solo da quadra. A parte superior do FLEXION FIT ™ fornece suporte de ajuste de forma com a integração da tecnologia DYNAWALL ™, que oferece maior estabilidade no mediopé durante movimentos laterais e cobertura costa a costa.",
-        image: "AsicsShoes.png"
+        image: "AsicsShoes.png",
+        model: "Shoe2.stl"
     },{
         name: "Asics Shoes",
         price: 500,
         description: "O tênis de tênis GEL-RESOLUTION ™ 8 promove um passo ágil com uma sensação de proximidade ao solo da quadra. A parte superior do FLEXION FIT ™ fornece suporte de ajuste de forma com a integração da tecnologia DYNAWALL ™, que oferece maior estabilidade no mediopé durante movimentos laterais e cobertura costa a costa.",
-        image: "AsicsShoes.png"
+        image: "AsicsShoes.png",
+        model: "Shoe2.stl"
     },{
         name: "Asics Shoes",
         price: 500,
         description: "O tênis de tênis GEL-RESOLUTION ™ 8 promove um passo ágil com uma sensação de proximidade ao solo da quadra. A parte superior do FLEXION FIT ™ fornece suporte de ajuste de forma com a integração da tecnologia DYNAWALL ™, que oferece maior estabilidade no mediopé durante movimentos laterais e cobertura costa a costa.",
-        image: "AsicsShoes.png"
+        image: "AsicsShoes.png",
+        model: "Shoe2.stl"
     },{
         name: "Asics Shoes",
         price: 500,
         description: "O tênis de tênis GEL-RESOLUTION ™ 8 promove um passo ágil com uma sensação de proximidade ao solo da quadra. A parte superior do FLEXION FIT ™ fornece suporte de ajuste de forma com a integração da tecnologia DYNAWALL ™, que oferece maior estabilidade no mediopé durante movimentos laterais e cobertura costa a costa.",
-        image: "AsicsShoes.png"
+        image: "AsicsShoes.png",
+        model: "Shoe2.stl"
     },{
         name: "Asics Shoes",
         price: 500,
         description: "O tênis de tênis GEL-RESOLUTION ™ 8 promove um passo ágil com uma sensação de proximidade ao solo da quadra. A parte superior do FLEXION FIT ™ fornece suporte de ajuste de forma com a integração da tecnologia DYNAWALL ™, que oferece maior estabilidade no mediopé durante movimentos laterais e cobertura costa a costa.",
-        image: "AsicsShoes.png"
+        image: "AsicsShoes.png",
+        model: "Shoe2.stl"
     },{
         name: "Asics Shoes",
         price: 500,
         description: "O tênis de tênis GEL-RESOLUTION ™ 8 promove um passo ágil com uma sensação de proximidade ao solo da quadra. A parte superior do FLEXION FIT ™ fornece suporte de ajuste de forma com a integração da tecnologia DYNAWALL ™, que oferece maior estabilidade no mediopé durante movimentos laterais e cobertura costa a costa.",
-        image: "AsicsShoes.png"
+        image: "AsicsShoes.png",
+        model: "Shoe2.stl"
     },{
         name: "Asics Shoes",
         price: 500,
         description: "O tênis de tênis GEL-RESOLUTION ™ 8 promove um passo ágil com uma sensação de proximidade ao solo da quadra. A parte superior do FLEXION FIT ™ fornece suporte de ajuste de forma com a integração da tecnologia DYNAWALL ™, que oferece maior estabilidade no mediopé durante movimentos laterais e cobertura costa a costa.",
-        image: "AsicsShoes.png"
+        image: "AsicsShoes.png",
+        model: "Shoe2.stl"
     },{
         name: "Asics Shoes",
         price: 500,
         description: "O tênis de tênis GEL-RESOLUTION ™ 8 promove um passo ágil com uma sensação de proximidade ao solo da quadra. A parte superior do FLEXION FIT ™ fornece suporte de ajuste de forma com a integração da tecnologia DYNAWALL ™, que oferece maior estabilidade no mediopé durante movimentos laterais e cobertura costa a costa.",
-        image: "AsicsShoes.png"
+        image: "AsicsShoes.png",
+        model: "Shoe2.stl"
     },{
         name: "Asics Shoes",
         price: 500,
         description: "O tênis de tênis GEL-RESOLUTION ™ 8 promove um passo ágil com uma sensação de proximidade ao solo da quadra. A parte superior do FLEXION FIT ™ fornece suporte de ajuste de forma com a integração da tecnologia DYNAWALL ™, que oferece maior estabilidade no mediopé durante movimentos laterais e cobertura costa a costa.",
-        image: "AsicsShoes.png"
+        image: "AsicsShoes.png",
+        model: "Shoe2.stl"
     },{
         name: "Asics Shoes",
         price: 500,
         description: "O tênis de tênis GEL-RESOLUTION ™ 8 promove um passo ágil com uma sensação de proximidade ao solo da quadra. A parte superior do FLEXION FIT ™ fornece suporte de ajuste de forma com a integração da tecnologia DYNAWALL ™, que oferece maior estabilidade no mediopé durante movimentos laterais e cobertura costa a costa.",
-        image: "AsicsShoes.png"
+        image: "AsicsShoes.png",
+        model: "Shoe2.stl"
     },{
         name: "Asics Shoes",
         price: 500,
         description: "O tênis de tênis GEL-RESOLUTION ™ 8 promove um passo ágil com uma sensação de proximidade ao solo da quadra. A parte superior do FLEXION FIT ™ fornece suporte de ajuste de forma com a integração da tecnologia DYNAWALL ™, que oferece maior estabilidade no mediopé durante movimentos laterais e cobertura costa a costa.",
-        image: "AsicsShoes.png"
+        image: "AsicsShoes.png",
+        model: "Shoe2.stl"
     },{
         name: "Asics Shoes",
         price: 500,
         description: "O tênis de tênis GEL-RESOLUTION ™ 8 promove um passo ágil com uma sensação de proximidade ao solo da quadra. A parte superior do FLEXION FIT ™ fornece suporte de ajuste de forma com a integração da tecnologia DYNAWALL ™, que oferece maior estabilidade no mediopé durante movimentos laterais e cobertura costa a costa.",
-        image: "AsicsShoes.png"
+        image: "AsicsShoes.png",
+        model: "Shoe2.stl"
     },{
         name: "Asics Shoes",
         price: 500,
         description: "O tênis de tênis GEL-RESOLUTION ™ 8 promove um passo ágil com uma sensação de proximidade ao solo da quadra. A parte superior do FLEXION FIT ™ fornece suporte de ajuste de forma com a integração da tecnologia DYNAWALL ™, que oferece maior estabilidade no mediopé durante movimentos laterais e cobertura costa a costa.",
-        image: "AsicsShoes.png"
+        image: "AsicsShoes.png",
+        model: "Shoe2.stl"
     },{
         name: "Asics Shoes",
         price: 500,
         description: "O tênis de tênis GEL-RESOLUTION ™ 8 promove um passo ágil com uma sensação de proximidade ao solo da quadra. A parte superior do FLEXION FIT ™ fornece suporte de ajuste de forma com a integração da tecnologia DYNAWALL ™, que oferece maior estabilidade no mediopé durante movimentos laterais e cobertura costa a costa.",
-        image: "AsicsShoes.png"
+        image: "AsicsShoes.png",
+        model: "Shoe2.stl"
     },{
         name: "Asics Shoes",
         price: 500,
         description: "O tênis de tênis GEL-RESOLUTION ™ 8 promove um passo ágil com uma sensação de proximidade ao solo da quadra. A parte superior do FLEXION FIT ™ fornece suporte de ajuste de forma com a integração da tecnologia DYNAWALL ™, que oferece maior estabilidade no mediopé durante movimentos laterais e cobertura costa a costa.",
-        image: "AsicsShoes.png"
+        image: "AsicsShoes.png",
+        model: "Shoe2.stl"
     },{
         name: "Asics Shoes",
         price: 500,
         description: "O tênis de tênis GEL-RESOLUTION ™ 8 promove um passo ágil com uma sensação de proximidade ao solo da quadra. A parte superior do FLEXION FIT ™ fornece suporte de ajuste de forma com a integração da tecnologia DYNAWALL ™, que oferece maior estabilidade no mediopé durante movimentos laterais e cobertura costa a costa.",
-        image: "AsicsShoes.png"
+        image: "AsicsShoes.png",
+        model: "Shoe2.stl"
     },{
         name: "Asics Shoes",
         price: 500,
         description: "O tênis de tênis GEL-RESOLUTION ™ 8 promove um passo ágil com uma sensação de proximidade ao solo da quadra. A parte superior do FLEXION FIT ™ fornece suporte de ajuste de forma com a integração da tecnologia DYNAWALL ™, que oferece maior estabilidade no mediopé durante movimentos laterais e cobertura costa a costa.",
-        image: "AsicsShoes.png"
+        image: "AsicsShoes.png",
+        model: "Shoe2.stl"
     },{
         name: "Asics Shoes",
         price: 500,
         description: "O tênis de tênis GEL-RESOLUTION ™ 8 promove um passo ágil com uma sensação de proximidade ao solo da quadra. A parte superior do FLEXION FIT ™ fornece suporte de ajuste de forma com a integração da tecnologia DYNAWALL ™, que oferece maior estabilidade no mediopé durante movimentos laterais e cobertura costa a costa.",
-        image: "AsicsShoes.png"
+        image: "AsicsShoes.png",
+        model: "Shoe2.stl"
     },{
         name: "Asics Shoes",
         price: 500,
         description: "O tênis de tênis GEL-RESOLUTION ™ 8 promove um passo ágil com uma sensação de proximidade ao solo da quadra. A parte superior do FLEXION FIT ™ fornece suporte de ajuste de forma com a integração da tecnologia DYNAWALL ™, que oferece maior estabilidade no mediopé durante movimentos laterais e cobertura costa a costa.",
-        image: "AsicsShoes.png"
+        image: "AsicsShoes.png",
+        model: "Shoe2.stl"
     },
 ]
 
@@ -238,132 +259,158 @@ let itemsListKids = [
         name: "Puma Ball",
         price: 100,
         description: "Gotham City, estamos chegando! A coleção PUMA x BATMAN captura toda a essência do último filme, Batman, com cores escuras, elementos dramáticos de design e gráficos inspirados no Cavaleiro das Trevas. A bola de futebol Batman Graphic fará você ter um desempenho de super-herói em campo.",
-        image: "PumaBall.png"
+        image: "PumaBall.png",
+        model: "Shoe3.stl"
     },{
         name: "Puma Ball",
         price: 100,
         description: "Gotham City, estamos chegando! A coleção PUMA x BATMAN captura toda a essência do último filme, Batman, com cores escuras, elementos dramáticos de design e gráficos inspirados no Cavaleiro das Trevas. A bola de futebol Batman Graphic fará você ter um desempenho de super-herói em campo.",
-        image: "PumaBall.png"
+        image: "PumaBall.png",
+        model: "Shoe3.stl"
     },{
         name: "Puma Ball",
         price: 100,
         description: "Gotham City, estamos chegando! A coleção PUMA x BATMAN captura toda a essência do último filme, Batman, com cores escuras, elementos dramáticos de design e gráficos inspirados no Cavaleiro das Trevas. A bola de futebol Batman Graphic fará você ter um desempenho de super-herói em campo.",
-        image: "PumaBall.png"
+        image: "PumaBall.png",
+        model: "Shoe3.stl"
     },{
         name: "Puma Ball",
         price: 100,
         description: "Gotham City, estamos chegando! A coleção PUMA x BATMAN captura toda a essência do último filme, Batman, com cores escuras, elementos dramáticos de design e gráficos inspirados no Cavaleiro das Trevas. A bola de futebol Batman Graphic fará você ter um desempenho de super-herói em campo.",
-        image: "PumaBall.png"
+        image: "PumaBall.png",
+        model: "Shoe3.stl"
     },{
         name: "Puma Ball",
         price: 100,
         description: "Gotham City, estamos chegando! A coleção PUMA x BATMAN captura toda a essência do último filme, Batman, com cores escuras, elementos dramáticos de design e gráficos inspirados no Cavaleiro das Trevas. A bola de futebol Batman Graphic fará você ter um desempenho de super-herói em campo.",
-        image: "PumaBall.png"
+        image: "PumaBall.png",
+        model: "Shoe3.stl"
     },{
         name: "Puma Ball",
         price: 100,
         description: "Gotham City, estamos chegando! A coleção PUMA x BATMAN captura toda a essência do último filme, Batman, com cores escuras, elementos dramáticos de design e gráficos inspirados no Cavaleiro das Trevas. A bola de futebol Batman Graphic fará você ter um desempenho de super-herói em campo.",
-        image: "PumaBall.png"
+        image: "PumaBall.png",
+        model: "Shoe3.stl"
     },{
         name: "Puma Ball",
         price: 100,
         description: "Gotham City, estamos chegando! A coleção PUMA x BATMAN captura toda a essência do último filme, Batman, com cores escuras, elementos dramáticos de design e gráficos inspirados no Cavaleiro das Trevas. A bola de futebol Batman Graphic fará você ter um desempenho de super-herói em campo.",
-        image: "PumaBall.png"
+        image: "PumaBall.png",
+        model: "Shoe3.stl"
     },{
         name: "Puma Ball",
         price: 100,
         description: "Gotham City, estamos chegando! A coleção PUMA x BATMAN captura toda a essência do último filme, Batman, com cores escuras, elementos dramáticos de design e gráficos inspirados no Cavaleiro das Trevas. A bola de futebol Batman Graphic fará você ter um desempenho de super-herói em campo.",
-        image: "PumaBall.png"
+        image: "PumaBall.png",
+        model: "Shoe3.stl"
     },{
         name: "Puma Ball",
         price: 100,
         description: "Gotham City, estamos chegando! A coleção PUMA x BATMAN captura toda a essência do último filme, Batman, com cores escuras, elementos dramáticos de design e gráficos inspirados no Cavaleiro das Trevas. A bola de futebol Batman Graphic fará você ter um desempenho de super-herói em campo.",
-        image: "PumaBall.png"
+        image: "PumaBall.png",
+        model: "Shoe3.stl"
     },{
         name: "Puma Ball",
         price: 100,
         description: "Gotham City, estamos chegando! A coleção PUMA x BATMAN captura toda a essência do último filme, Batman, com cores escuras, elementos dramáticos de design e gráficos inspirados no Cavaleiro das Trevas. A bola de futebol Batman Graphic fará você ter um desempenho de super-herói em campo.",
-        image: "PumaBall.png"
+        image: "PumaBall.png",
+        model: "Shoe3.stl"
     },{
         name: "Puma Ball",
         price: 100,
         description: "Gotham City, estamos chegando! A coleção PUMA x BATMAN captura toda a essência do último filme, Batman, com cores escuras, elementos dramáticos de design e gráficos inspirados no Cavaleiro das Trevas. A bola de futebol Batman Graphic fará você ter um desempenho de super-herói em campo.",
-        image: "PumaBall.png"
+        image: "PumaBall.png",
+        model: "Shoe3.stl"
     },{
         name: "Puma Ball",
         price: 100,
         description: "Gotham City, estamos chegando! A coleção PUMA x BATMAN captura toda a essência do último filme, Batman, com cores escuras, elementos dramáticos de design e gráficos inspirados no Cavaleiro das Trevas. A bola de futebol Batman Graphic fará você ter um desempenho de super-herói em campo.",
-        image: "PumaBall.png"
+        image: "PumaBall.png",
+        model: "Shoe3.stl"
     },{
         name: "Puma Ball",
         price: 100,
         description: "Gotham City, estamos chegando! A coleção PUMA x BATMAN captura toda a essência do último filme, Batman, com cores escuras, elementos dramáticos de design e gráficos inspirados no Cavaleiro das Trevas. A bola de futebol Batman Graphic fará você ter um desempenho de super-herói em campo.",
-        image: "PumaBall.png"
+        image: "PumaBall.png",
+        model: "Shoe3.stl"
     },{
         name: "Puma Ball",
         price: 100,
         description: "Gotham City, estamos chegando! A coleção PUMA x BATMAN captura toda a essência do último filme, Batman, com cores escuras, elementos dramáticos de design e gráficos inspirados no Cavaleiro das Trevas. A bola de futebol Batman Graphic fará você ter um desempenho de super-herói em campo.",
-        image: "PumaBall.png"
+        image: "PumaBall.png",
+        model: "Shoe3.stl"
     },{
         name: "Puma Ball",
         price: 100,
         description: "Gotham City, estamos chegando! A coleção PUMA x BATMAN captura toda a essência do último filme, Batman, com cores escuras, elementos dramáticos de design e gráficos inspirados no Cavaleiro das Trevas. A bola de futebol Batman Graphic fará você ter um desempenho de super-herói em campo.",
-        image: "PumaBall.png"
+        image: "PumaBall.png",
+        model: "Shoe3.stl"
     },{
         name: "Puma Ball",
         price: 100,
         description: "Gotham City, estamos chegando! A coleção PUMA x BATMAN captura toda a essência do último filme, Batman, com cores escuras, elementos dramáticos de design e gráficos inspirados no Cavaleiro das Trevas. A bola de futebol Batman Graphic fará você ter um desempenho de super-herói em campo.",
-        image: "PumaBall.png"
+        image: "PumaBall.png",
+        model: "Shoe3.stl"
     },{
         name: "Puma Ball",
         price: 100,
         description: "Gotham City, estamos chegando! A coleção PUMA x BATMAN captura toda a essência do último filme, Batman, com cores escuras, elementos dramáticos de design e gráficos inspirados no Cavaleiro das Trevas. A bola de futebol Batman Graphic fará você ter um desempenho de super-herói em campo.",
-        image: "PumaBall.png"
+        image: "PumaBall.png",
+        model: "Shoe3.stl"
     },{
         name: "Puma Ball",
         price: 100,
         description: "Gotham City, estamos chegando! A coleção PUMA x BATMAN captura toda a essência do último filme, Batman, com cores escuras, elementos dramáticos de design e gráficos inspirados no Cavaleiro das Trevas. A bola de futebol Batman Graphic fará você ter um desempenho de super-herói em campo.",
-        image: "PumaBall.png"
+        image: "PumaBall.png",
+        model: "Shoe3.stl"
     },{
         name: "Puma Ball",
         price: 100,
         description: "Gotham City, estamos chegando! A coleção PUMA x BATMAN captura toda a essência do último filme, Batman, com cores escuras, elementos dramáticos de design e gráficos inspirados no Cavaleiro das Trevas. A bola de futebol Batman Graphic fará você ter um desempenho de super-herói em campo.",
-        image: "PumaBall.png"
+        image: "PumaBall.png",
+        model: "Shoe3.stl"
     },{
         name: "Puma Ball",
         price: 100,
         description: "Gotham City, estamos chegando! A coleção PUMA x BATMAN captura toda a essência do último filme, Batman, com cores escuras, elementos dramáticos de design e gráficos inspirados no Cavaleiro das Trevas. A bola de futebol Batman Graphic fará você ter um desempenho de super-herói em campo.",
-        image: "PumaBall.png"
+        image: "PumaBall.png",
+        model: "Shoe3.stl"
     },{
         name: "Puma Ball",
         price: 100,
         description: "Gotham City, estamos chegando! A coleção PUMA x BATMAN captura toda a essência do último filme, Batman, com cores escuras, elementos dramáticos de design e gráficos inspirados no Cavaleiro das Trevas. A bola de futebol Batman Graphic fará você ter um desempenho de super-herói em campo.",
-        image: "PumaBall.png"
+        image: "PumaBall.png",
+        model: "Shoe3.stl"
     },{
         name: "Puma Ball",
         price: 100,
         description: "Gotham City, estamos chegando! A coleção PUMA x BATMAN captura toda a essência do último filme, Batman, com cores escuras, elementos dramáticos de design e gráficos inspirados no Cavaleiro das Trevas. A bola de futebol Batman Graphic fará você ter um desempenho de super-herói em campo.",
-        image: "PumaBall.png"
+        image: "PumaBall.png",
+        model: "Shoe3.stl"
     },{
         name: "Puma Ball",
         price: 100,
         description: "Gotham City, estamos chegando! A coleção PUMA x BATMAN captura toda a essência do último filme, Batman, com cores escuras, elementos dramáticos de design e gráficos inspirados no Cavaleiro das Trevas. A bola de futebol Batman Graphic fará você ter um desempenho de super-herói em campo.",
-        image: "PumaBall.png"
+        image: "PumaBall.png",
+        model: "Shoe3.stl"
     },{
         name: "Puma Ball",
         price: 100,
         description: "Gotham City, estamos chegando! A coleção PUMA x BATMAN captura toda a essência do último filme, Batman, com cores escuras, elementos dramáticos de design e gráficos inspirados no Cavaleiro das Trevas. A bola de futebol Batman Graphic fará você ter um desempenho de super-herói em campo.",
-        image: "PumaBall.png"
+        image: "PumaBall.png",
+        model: "Shoe3.stl"
     },{
         name: "Puma Ball",
         price: 100,
         description: "Gotham City, estamos chegando! A coleção PUMA x BATMAN captura toda a essência do último filme, Batman, com cores escuras, elementos dramáticos de design e gráficos inspirados no Cavaleiro das Trevas. A bola de futebol Batman Graphic fará você ter um desempenho de super-herói em campo.",
-        image: "PumaBall.png"
+        image: "PumaBall.png",
+        model: "Shoe3.stl"
     },{
         name: "Puma Ball",
         price: 100,
         description: "Gotham City, estamos chegando! A coleção PUMA x BATMAN captura toda a essência do último filme, Batman, com cores escuras, elementos dramáticos de design e gráficos inspirados no Cavaleiro das Trevas. A bola de futebol Batman Graphic fará você ter um desempenho de super-herói em campo.",
-        image: "PumaBall.png"
+        image: "PumaBall.png",
+        model: "Shoe3.stl"
     },
 ]
 
