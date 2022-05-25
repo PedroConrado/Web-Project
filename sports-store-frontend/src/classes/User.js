@@ -55,10 +55,10 @@ export default class User {
         //faz deleção do objeto no database
     }
 
-    async login() {
-        let user = false;
+    static async login(email, password) {
+        let exists = false;
         usersList.forEach(obj => {
-            if(obj.email === this.email && obj.password === this.password) {
+            if(obj.email === email && obj.password === password) {
                 localStorage.setItem("user", JSON.stringify(obj));
                 exists = true;
                 return;
