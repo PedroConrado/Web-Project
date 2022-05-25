@@ -56,15 +56,18 @@ export default class User {
     }
 
     static async login(email, password) {
-        let exists = false;
+        let user = undefined;
         usersList.forEach(obj => {
             if(obj.email === email && obj.password === password) {
                 localStorage.setItem("user", JSON.stringify(obj));
-                exists = true;
+                user = new User(...obj);
                 return;
             }
         })
-        return exists;
+        if(user !== undefined)
+            return user;
+        else
+            throw new Error("Usuário não encontrado!");
     }
 
     static async getUsers() {
