@@ -40,12 +40,12 @@ export default function LoginForm() {
                     />
                 </div>
                 <div className='login-form-buttons-container'>
-                    <Button orange link to="/admin-addAdmin">
+                    <Button orange link to="/admin-addAdmin" type="submit">
                         <h5>
                             Let's Go
                         </h5>
                     </Button>
-                    <Button purple link to="/sign-up" type="submit">
+                    <Button purple link to="/sign-up">
                         <h5>
                             Sign Up
                         </h5>

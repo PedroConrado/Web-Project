@@ -22,8 +22,8 @@ export default function AccountFormPopup({
     //onsubmit should call a function passed to this form that updates account
     const [name, setName] = useState(accountData.name);
     const [image, setImage] = useState("");
-    const [phone, setPhone] = useState("");
-    const [adress, setAdress] = useState("");
+    const [phone, setPhone] = useState(accountData.phone);
+    const [adress, setAdress] = useState(accountData.adress);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
