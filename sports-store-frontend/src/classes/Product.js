@@ -1,15 +1,4 @@
 export default class Product {
-
-    constructor() {
-        this.id = "";
-        this.name = "";
-        this.description = "";
-        this.price = "";
-        this.quantityStock = "";
-        this.quantitySold = "";
-        this.image = "";
-        this.image3d = false;
-    }
     constructor(id, name, description, price, quantityStock, quantitySold, image, image3d) {
         this.id = id;
         this.name = name;
