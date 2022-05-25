@@ -4,102 +4,122 @@ let itemsListMale = [
         name: "Nike Air Shoe",
         price: 970,
         description: "um ícone das ruas dos anos 90 que transcendeu à fama mundial - para um couro preto agressivo de dois tons e color way Light Bone.",
-        image: "NikeShoe.png"
+        image: "NikeShoe.png",
+        model: "NikeShoe.stl"
     },{
         name: "Nike Air Shoe",
         price: 970,
         description: "um ícone das ruas dos anos 90 que transcendeu à fama mundial - para um couro preto agressivo de dois tons e color way Light Bone.",
-        image: "NikeShoe.png"
+        image: "NikeShoe.png",
+        model: "NikeShoe.stl"
     },{
         name: "Nike Air Shoe",
         price: 970,
         description: "um ícone das ruas dos anos 90 que transcendeu à fama mundial - para um couro preto agressivo de dois tons e color way Light Bone.",
-        image: "NikeShoe.png"
+        image: "NikeShoe.png",
+        model: "NikeShoe.stl"
     },{
         name: "Nike Air Shoe",
         price: 970,
         description: "um ícone das ruas dos anos 90 que transcendeu à fama mundial - para um couro preto agressivo de dois tons e color way Light Bone.",
-        image: "NikeShoe.png"
+        image: "NikeShoe.png",
+        model: "NikeShoe.stl"
     },{
         name: "Nike Air Shoe",
         price: 970,
         description: "um ícone das ruas dos anos 90 que transcendeu à fama mundial - para um couro preto agressivo de dois tons e color way Light Bone.",
-        image: "NikeShoe.png"
+        image: "NikeShoe.png",
+        model: "NikeShoe.stl"
     },{
         name: "Nike Air Shoe",
         price: 970,
         description: "um ícone das ruas dos anos 90 que transcendeu à fama mundial - para um couro preto agressivo de dois tons e color way Light Bone.",
-        image: "NikeShoe.png"
+        image: "NikeShoe.png",
+        model: "NikeShoe.stl"
     },{
         name: "Nike Air Shoe",
         price: 970,
         description: "um ícone das ruas dos anos 90 que transcendeu à fama mundial - para um couro preto agressivo de dois tons e color way Light Bone.",
-        image: "NikeShoe.png"
+        image: "NikeShoe.png",
+        model: "NikeShoe.stl"
     },{
         name: "Nike Air Shoe",
         price: 970,
         description: "um ícone das ruas dos anos 90 que transcendeu à fama mundial - para um couro preto agressivo de dois tons e color way Light Bone.",
-        image: "NikeShoe.png"
+        image: "NikeShoe.png",
+        model: "NikeShoe.stl"
     },{
         name: "Nike Air Shoe",
         price: 970,
         description: "um ícone das ruas dos anos 90 que transcendeu à fama mundial - para um couro preto agressivo de dois tons e color way Light Bone.",
-        image: "NikeShoe.png"
+        image: "NikeShoe.png",
+        model: "NikeShoe.stl"
     },{
         name: "Nike Air Shoe",
         price: 970,
         description: "um ícone das ruas dos anos 90 que transcendeu à fama mundial - para um couro preto agressivo de dois tons e color way Light Bone.",
-        image: "NikeShoe.png"
+        image: "NikeShoe.png",
+        model: "NikeShoe.stl"
     },{
         name: "Nike Air Shoe",
         price: 970,
         description: "um ícone das ruas dos anos 90 que transcendeu à fama mundial - para um couro preto agressivo de dois tons e color way Light Bone.",
-        image: "NikeShoe.png"
+        image: "NikeShoe.png",
+        model: "NikeShoe.stl"
     },{
         name: "Nike Air Shoe",
         price: 970,
         description: "um ícone das ruas dos anos 90 que transcendeu à fama mundial - para um couro preto agressivo de dois tons e color way Light Bone.",
-        image: "NikeShoe.png"
+        image: "NikeShoe.png",
+        model: "NikeShoe.stl"
     },{
         name: "Nike Air Shoe",
         price: 970,
         description: "um ícone das ruas dos anos 90 que transcendeu à fama mundial - para um couro preto agressivo de dois tons e color way Light Bone.",
-        image: "NikeShoe.png"
+        image: "NikeShoe.png",
+        model: "NikeShoe.stl"
     },{
         name: "Nike Air Shoe",
         price: 970,
         description: "um ícone das ruas dos anos 90 que transcendeu à fama mundial - para um couro preto agressivo de dois tons e color way Light Bone.",
-        image: "NikeShoe.png"
+        image: "NikeShoe.png",
+        model: "NikeShoe.stl"
     },{
         name: "Nike Air Shoe",
         price: 970,
         description: "um ícone das ruas dos anos 90 que transcendeu à fama mundial - para um couro preto agressivo de dois tons e color way Light Bone.",
-        image: "NikeShoe.png"
+        image: "NikeShoe.png",
+        model: "NikeShoe.stl"
     },{
         name: "Nike Air Shoe",
         price: 970,
         description: "um ícone das ruas dos anos 90 que transcendeu à fama mundial - para um couro preto agressivo de dois tons e color way Light Bone.",
-        image: "NikeShoe.png"
+        image: "NikeShoe.png",
+        model: "NikeShoe.stl"
     },{
         name: "Nike Air Shoe",
         price: 970,
         description: "um ícone das ruas dos anos 90 que transcendeu à fama mundial - para um couro preto agressivo de dois tons e color way Light Bone.",
-        image: "NikeShoe.png"
+        image: "NikeShoe.png",
+        model: "NikeShoe.stl"
     },{
         name: "Nike Air Shoe",
         price: 970,
         description: "um ícone das ruas dos anos 90 que transcendeu à fama mundial - para um couro preto agressivo de dois tons e color way Light Bone.",
-        image: "NikeShoe.png"
+        image: "NikeShoe.png",
+        model: "NikeShoe.stl"
     },{
         name: "Nike Air Shoe",
         price: 970,
         description: "um ícone das ruas dos anos 90 que transcendeu à fama mundial - para um couro preto agressivo de dois tons e color way Light Bone.",
-        image: "NikeShoe.png"
+        image: "NikeShoe.png",
+        model: "NikeShoe.stl"
     },{
         name: "Nike Air Shoe",
         price: 970,
         description: "um ícone das ruas dos anos 90 que transcendeu à fama mundial - para um couro preto agressivo de dois tons e color way Light Bone.",
-        image: "NikeShoe.png"
+        image: "NikeShoe.png",
+        model: "NikeShoe.stl"
     },
 ]
 
