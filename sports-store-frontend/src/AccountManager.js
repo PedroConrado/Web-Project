@@ -6,6 +6,8 @@ let accountListAdmin = [
         adress: "rua Jacinto 884",
         email: "joao@gmail.com",
         senha: "1234",
+        isAdmin: true,
+        id: 1,
     },
     {
         name: "Jose",
@@ -13,6 +15,8 @@ let accountListAdmin = [
         adress: "rua Salomao 333",
         email: "jose@gmail.com",
         senha: "1234",
+        isAdmin: true,
+        id: 2,
     },
     {
         name: "Jorge",
@@ -20,6 +24,8 @@ let accountListAdmin = [
         adress: "rua Trabalhador 123",
         email: "jorge@gmail.com",
         senha: "1234",
+        isAdmin: true,
+        id: 3,
     },
 ]
 
@@ -30,6 +36,8 @@ let accountListClient = [
         adress: "rua Jacinto 450",
         email: "pedro@gmail.com",
         senha: "1234",
+        isAdmin: false,
+        id: 4,
     },
     {
         name: "Paulo",
@@ -37,6 +45,8 @@ let accountListClient = [
         adress: "rua Salomao 555",
         email: "paulo@gmail.com",
         senha: "1234",
+        isAdmin: false,
+        id: 5,
     },
     {
         name: "Pepe",
@@ -44,6 +54,8 @@ let accountListClient = [
         adress: "rua Trabalhador 999",
         email: "pepe@gmail.com",
         senha: "1234",
+        isAdmin: false,
+        id: 6,
     },
 ]
 
@@ -76,4 +88,8 @@ export const getClientList = async () =>{
             items: accountListClient
         },
     ]
+}
+
+export function getAccountById(id){
+    
 }
