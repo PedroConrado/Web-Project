@@ -14,12 +14,11 @@ import AccountFormPopup from '../AccountFormPopup';
 import ConfirmCancelPopup from '../ConfirmCancelPopup';
 
 
-export default function FormInput({
+export default function EditRemoveAccountContainer({
     style = {},
     itemName = "",
-    accountData = {},
-    isAdminAccount=false,
-    itemKey,
+    isAdmin=false,
+    item,
 }){
     const [isOpenEdit, setIsOpenEdit] = useState(false);
     const [isOpenRemove, setIsOpenRemove] = useState(false);
@@ -42,8 +41,8 @@ export default function FormInput({
                 </Button>
             </div>
 
-            {isOpenEdit && <AccountFormPopup handleClose={togglePopupEdit}/>}
-            {isOpenRemove && <ConfirmCancelPopup title="Are you sure you want to delete this account?" handleClose={togglePopupRemove}/>}
+            {isOpenEdit && <AccountFormPopup handleClose={togglePopupEdit} accountData={item}/>}
+            {isOpenRemove && <ConfirmCancelPopup title="Are you sure you want to delete this account?" handleClose={togglePopupRemove} item={item}/>}
         </>
     );
 };

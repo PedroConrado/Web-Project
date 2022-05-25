@@ -32,11 +32,13 @@ export default function AccountForm({
     isAdmin = false,
     isRegister = false,
     onClick = () =>{},
+    onSubmit = () =>{},
     accountData={},
     link = false,
     to="",
     ...props
-}) { 
+}) { //recieve an account object and set values of form to that account
+    //onsubmit should call a function passed to this form that updates account if there is one or creates a new account if its null
     const [name, setName] = useState("");
     const [image, setImage] = useState("");
     const [phone, setPhone] = useState("");
@@ -92,7 +94,7 @@ export default function AccountForm({
                     type={"password"}
                 />
                 
-                <Button orange link={link} to={to}>
+                <Button orange link={link} to={to} type="submit">
                     <img src={plus} hidden={!isRegister}/>
                     <p className="font-bolder">{buttonText}</p>
                 </Button>

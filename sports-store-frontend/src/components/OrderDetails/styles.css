@@ -1,0 +1,48 @@
+.OrderDetails {
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px 70px 30px 70px;
+    position: absolute;
+    right: 3%;
+    height: 90%;
+    width: 40%;
+    margin-right: 10px;
+}
+
+.order-details-value{
+    margin-top:15px;
+}
+
+
+.row-div{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.clipped{
+    object-fit: cover;
+    width: 100%;
+    height: 30%;
+}
+
+.order-details-form-card{
+    margin-top: -410px;
+    margin-bottom: auto;
+}
+
+h6.order-details-title{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+button{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    border-radius: 50%;
+}

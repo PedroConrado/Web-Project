@@ -13,22 +13,28 @@ import Button from '../Button';
 import ImageContainer from '../ImageContainer';
 import ProductFormPopup from '../ProductFormPopup';
 import ConfirmCancelPopup from '../ConfirmCancelPopup';
+import ThreeDPopup from '../3DModelPopup';
 
-export default function FormInput({
+
+export default function EditRemoveProductContainer({
     style = {},
     itemName = "",
     productData = {},
     productPreviewImageSrc="",
-    itemKey,
+    item,
 }){
     const [isOpenEdit, setIsOpenEdit] = useState(false);
     const [isOpenRemove, setIsOpenRemove] = useState(false);
+    const [isOpen3dModel, setIsOpen3dModel] = useState(false);
  
     const togglePopupEdit = () => {
         setIsOpenEdit(!isOpenEdit);
     }
     const togglePopupRemove = () => {
         setIsOpenRemove(!isOpenRemove);
+    }
+    const togglePopup3d = () => {
+        setIsOpen3dModel(!isOpen3dModel);
     }
 
     return(
@@ -44,10 +50,14 @@ export default function FormInput({
                 <Button red onClick={togglePopupRemove}>
                     <p className="font-bolder">Remove</p>
                 </Button>
+                <Button gray onClick={setIsOpen3dModel}>
+                    <p className="font-bolder">3D Model</p>
+                </Button>
             </div>
 
-            {isOpenEdit && <ProductFormPopup handleClose={togglePopupEdit}/>}
-            {isOpenRemove && <ConfirmCancelPopup title="Are you sure you want to delete this product?" handleClose={togglePopupRemove}/>}
+            {isOpenEdit && <ProductFormPopup handleClose={togglePopupEdit} productData={item}/>}
+            {isOpenRemove && <ConfirmCancelPopup title="Are you sure you want to delete this product?" handleClose={togglePopupRemove} item={item}/>}
+            {isOpen3dModel && <ThreeDPopup handleClose={togglePopup3d} productData={item}/>}
         </>
     );
 };

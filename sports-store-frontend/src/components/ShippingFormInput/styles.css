@@ -1,0 +1,28 @@
+.shippingFormInput{
+    margin-bottom: 10px;
+    
+}
+
+.shippingFormInput-margin-left{
+    width: 100%;
+    margin-left: 50px;
+    margin-right: 0;
+}
+
+.shippingFormInput-margin-right{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 50px;
+}
+
+.ShippingFormInput-date{
+    width: 30%;
+}
+
+.shippingFormInput-row{
+    align-items: center;
+    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    width: 100%;
+}

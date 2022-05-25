@@ -18,11 +18,12 @@ export default function AccountFormPopup({
     link=false,
     to = "/",
     ...props
-}) { 
-    const [name, setName] = useState("");
+}) { //recieve an account object and set values of form to that account
+    //onsubmit should call a function passed to this form that updates account
+    const [name, setName] = useState(accountData.name);
     const [image, setImage] = useState("");
-    const [phone, setPhone] = useState("");
-    const [adress, setAdress] = useState("");
+    const [phone, setPhone] = useState(accountData.phone);
+    const [adress, setAdress] = useState(accountData.adress);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -42,7 +43,7 @@ export default function AccountFormPopup({
                         placeholder={'Current File'}
                         value={image}
                         setValue={setImage}
-                        type={"file"}
+                        type={"image"}
                     />
                     <FormInput
                         title="Phone"
@@ -59,7 +60,7 @@ export default function AccountFormPopup({
                         type={"text"}
                     />
                     <div className='accountFormPopup-buttons-container'>
-                        <Button red onClick={handleClose}>
+                        <Button red onClick={handleClose} type="submit">
                             <p className="font-bolder">Save Changes</p>
                         </Button>
                         <Button orange onClick={handleClose}>
