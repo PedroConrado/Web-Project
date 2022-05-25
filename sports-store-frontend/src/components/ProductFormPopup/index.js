@@ -18,9 +18,9 @@ export default function ProductFormPopup({
     ...props
 }) { //recieve an account object and set values of form to that account
     //onsubmit should call a function passed to this form that updates account
-    const [name, setName] = useState("");
-    const [description, setDescription] = useState("");
-    const [price, setPrice] = useState("");
+    const [name, setName] = useState(productData.name);
+    const [description, setDescription] = useState(productData.description);
+    const [price, setPrice] = useState(productData.price);
     const [qtInStock, setQtInStock] = useState("");
     const [qtSold, setQtSold] = useState("");   
     const [image, setImage] = useState("");

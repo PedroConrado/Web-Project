@@ -41,8 +41,8 @@ export default function EditRemoveAccountContainer({
                 </Button>
             </div>
 
-            {isOpenEdit && <AccountFormPopup handleClose={togglePopupEdit}/>}
-            {isOpenRemove && <ConfirmCancelPopup title="Are you sure you want to delete this account?" handleClose={togglePopupRemove}/>}
+            {isOpenEdit && <AccountFormPopup handleClose={togglePopupEdit} accountData={item}/>}
+            {isOpenRemove && <ConfirmCancelPopup title="Are you sure you want to delete this account?" handleClose={togglePopupRemove} item={item}/>}
         </>
     );
 };
