@@ -13,7 +13,7 @@ export default function ShippingPayment() {
             <div className="shipping-payment-form-background">
                 <div className = 'shipping-payment-form-button'>
                     <Link to = "/client-homePage">
-                        <button className="button-container">
+                        <button className="button-container background-lightGray">
                             <p className="font-bolder">cancel order</p>
                         </button>
                     </Link>

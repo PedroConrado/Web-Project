@@ -3,10 +3,11 @@
 */
 
 
-import {React, useState, useEffect} from "react";
-//import line from '/assets/line.svg';
+import {React, useState, useEffect, useParams} from "react";
 import './styles.css'
 import Button from '../Button';
+
+
 
 function getButtonClass(btnNmbr, currPage){
     if(btnNmbr==currPage) return true;
@@ -14,7 +15,6 @@ function getButtonClass(btnNmbr, currPage){
 }
 //test using parameter instead of state
 export default function AdminBar({page=0}) {
-
     return (
         <div className="adminBar">
             <h4 className='font-extraBold'>Admin Name</h4>

@@ -12,5 +12,8 @@
     position:sticky;
     top:100%;
     left:100%;
-    display: inline-block;
+    display: flex;
+    padding-bottom: 20px;
+    padding-left: 35%;
+    gap: 20px;
 }

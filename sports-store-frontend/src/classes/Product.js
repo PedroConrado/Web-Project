@@ -121,7 +121,7 @@ let productsList = [
         quantityStock: 100,
         quantitySold: 20,
         image: "/assets/PumaBall.png",
-        image3d: "",
+        image3d: "/assets/Shoe3.stl",
         category: kids
     },
     {
@@ -133,7 +133,7 @@ let productsList = [
         quantityStock: 500,
         quantitySold: 100,
         image: "/assets/AsicsShoes.png",
-        image3d: "",
+        image3d: "/assets/Shoe2.stl",
         category: female,
     }
 
