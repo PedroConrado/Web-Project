@@ -23,10 +23,10 @@ export default function LoginForm() {
         try {
             let user = await User.login(email, password);
             if (user.isAdmin) {
-                navigate("/admin-addAdmin");
+                navigate("/admin-addAdmin/"+user.id);
             }
             else{
-                navigate("/client-homePage");
+                navigate("/client-homePage/"+user.id);
             }
 
         } catch(err) {

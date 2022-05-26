@@ -29,17 +29,17 @@ export default function Router() {
         <BrowserRouter>
             <Routes>
                 <Route exact path="/sign-up" element={<SignUp/>} />
-                <Route exact path="/admin-addAdmin" element={<AddAdmin/>} />
-                <Route exact path="/admin-addClient" element={<AddClient/>} />
-                <Route exact path="/admin-addProduct" element={<AddProduct/>} />
-                <Route exact path="/admin-viewAdmins" element={<ViewAdmins/>} />
-                <Route exact path="/admin-viewClients" element={<ViewClients/>} />
-                <Route exact path="/admin-viewProducts" element={<ViewProducts/>} />
-                <Route exact path="/admin-myAccount" element={<AdminMyAccount/>} />
-                <Route exact path="/client-myAccount" element={<ClientMyAccount/>} />
-                <Route exact path="/client-shipping" element={<Shipping/>} />
-                <Route exact path="/client-homePage" element={<HomePage/>} />
-                <Route exact path="/client-productPage/:productID" element={<ProductPage/>} />
+                <Route exact path="/admin-addAdmin/:userID" element={<AddAdmin/>} />
+                <Route exact path="/admin-addClient/:userID" element={<AddClient/>} />
+                <Route exact path="/admin-addProduct/:userID" element={<AddProduct/>} />
+                <Route exact path="/admin-viewAdmins/:userID" element={<ViewAdmins/>} />
+                <Route exact path="/admin-viewClients/:userID" element={<ViewClients/>} />
+                <Route exact path="/admin-viewProducts/:userID" element={<ViewProducts/>} />
+                <Route exact path="/admin-myAccount/:userID" element={<AdminMyAccount/>} />
+                <Route exact path="/client-myAccount/:userID" element={<ClientMyAccount/>} />
+                <Route exact path="/client-shipping/:userID" element={<Shipping/>} />
+                <Route exact path="/client-homePage/:userID" element={<HomePage/>} />
+                <Route exact path="/client-productPage/:userID/:productID" element={<ProductPage/>} />
                 <Route path="/" element={<Login/>}/>
             </Routes>
         </BrowserRouter>

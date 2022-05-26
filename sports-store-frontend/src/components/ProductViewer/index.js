@@ -4,6 +4,7 @@ import Button from "../Button"
 import { useParams } from "react-router-dom";
 import Product from "../../classes/Product";
 import ThreeDPopup from '../3DModelPopup';
+import User from "../../classes/User";
 
 
 export default function ProductViewer({
@@ -29,6 +30,16 @@ export default function ProductViewer({
       loadAll();
     }, [])
 
+    const [user, setUser] = useState({})
+    useEffect(() => {
+        const loadAll = async () => {
+            const user = await User.getUserById(parseInt(params.userID));
+            setUser(user);
+        }
+    
+      loadAll();
+    }, [])
+
     return (
         <>
             <div className="client-productViewer">
@@ -48,7 +59,7 @@ export default function ProductViewer({
                     <Button gray onClick={setIsOpen3dModel}>
                         <p className="font-bolder">View 3D Model</p>
                     </Button>
-                    <Button orange link to="/client-shipping">
+                    <Button orange link to={"/client-shipping/"+user.id}>
                         <p>ADD TO CART</p>
                     </Button>
                 </div>
