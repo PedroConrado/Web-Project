@@ -62,6 +62,9 @@ export default function ProductViewer({
                     <Button orange link to={"/client-shipping/"+user.id}>
                         <p>ADD TO CART</p>
                     </Button>
+                    <Button purple link to={"/client-homePage/"+user.id}>
+                        <p>Back</p>
+                    </Button>
                 </div>
             </div>
             {isOpen3dModel && <ThreeDPopup handleClose={togglePopup3d} productData={product}/>}
