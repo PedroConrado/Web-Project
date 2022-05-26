@@ -15,6 +15,11 @@ export default function ItemContainer({
                 <Button orange link to="/client-shipping">
                     ADD TO CART
                 </Button>
+                <Button purple link to={"/client-productPage/"+item.id}>
+                    <h5>
+                        View
+                    </h5>
+                </Button>
             </div>
         </div>
     );

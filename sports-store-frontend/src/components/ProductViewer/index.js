@@ -3,40 +3,58 @@ import './styles.css'
 import Button from "../Button"
 import { useParams } from "react-router-dom";
 import Product from "../../classes/Product";
+import ThreeDPopup from '../3DModelPopup';
+
 
 export default function ProductViewer({
 
     
 }) {
     const [product, setProduct] = useState({})
+    const [isOpen3dModel, setIsOpen3dModel] = useState(false);
+
+    const togglePopup3d = () => {
+        setIsOpen3dModel(!isOpen3dModel);
+    }
+
     const params = useParams();
     useEffect(() => {
         const loadAll = async () => {
+            console.log(params.productID)
             const product = await Product.getproductById(parseInt(params.productID));
             setProduct(product);
+            console.log(product)
         }
     
       loadAll();
     }, [])
 
     return (
-        <div className="client-productViewer">
-            <div className="client-productViewer-background">
-                <div className="client-productViewer-nameDescription">
-                    <h3>{product.name}</h3>
-                    <p>{product.description}</p>
-                </div>
-                <div className="client-productViewer-imageContainer">
-                    <div className="client-productViewer-imageContainer-wrapper">
-                        <img src = {product.image}></img>
+        <>
+            <div className="client-productViewer">
+                <div className="client-productViewer-background">
+                    <div className="client-productViewer-nameDescription">
+                        <h3>{product.name}</h3>
+                        <p>{product.description}</p>
+                        <p>In Stock: {product.quantityStock}</p>
                     </div>
-                    <p>R$ {product.price}</p>
-                    <Button orange>
+                    <div className="client-productViewer-imageContainer">
+                        <div className="client-productViewer-imageContainer-wrapper">
+                            <img src = {product.image}></img>
+                        </div>
+                        <p>R$ {product.price}</p>
+                        
+                    </div>
+                    <Button gray onClick={setIsOpen3dModel}>
+                        <p className="font-bolder">View 3D Model</p>
+                    </Button>
+                    <Button orange link to="/client-shipping">
                         <p>ADD TO CART</p>
                     </Button>
                 </div>
             </div>
-        </div>
+            {isOpen3dModel && <ThreeDPopup handleClose={togglePopup3d} productData={product}/>}
+        </>
         
     );
 }

@@ -22,6 +22,7 @@ import AdminMyAccount from "./pages/AdminMyAccount";
 import ClientMyAccount from "./pages/ClientMyAccount";
 import Shipping from "./pages/ShippingPayment";
 import HomePage from "./pages/HomePage"
+import ProductPage from "./pages/ProductPage"
 
 export default function Router() {
     return (
@@ -38,6 +39,7 @@ export default function Router() {
                 <Route exact path="/client-myAccount" element={<ClientMyAccount/>} />
                 <Route exact path="/client-shipping" element={<Shipping/>} />
                 <Route exact path="/client-homePage" element={<HomePage/>} />
+                <Route exact path="/client-productPage/:productID" element={<ProductPage/>} />
                 <Route path="/" element={<Login/>}/>
             </Routes>
         </BrowserRouter>
