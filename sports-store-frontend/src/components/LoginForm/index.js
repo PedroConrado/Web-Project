@@ -4,7 +4,7 @@
 
 
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Button from '../Button';
 import Input from '../Input';
 import FormInput from '../FormInput';
@@ -15,7 +15,7 @@ import './styles.css'
 
 
 export default function LoginForm() {
-    const history = useHistory();
+    const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -23,10 +23,10 @@ export default function LoginForm() {
         try {
             let user = await User.login(email, password);
             if (user.isAdmin) {
-                history.push("/admin-addAdmin");
+                navigate("/admin-addAdmin");
             }
             else{
-                history.push("/client-homePage");
+                navigate("/client-homePage");
             }
 
         } catch(err) {
