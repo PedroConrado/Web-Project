@@ -8,7 +8,6 @@ import {React, useState, useEffect} from "react";
 import './styles.css'
 
 import EditRemoveProduct from "../EditRemoveProductContainer";
-import User from "../../classes/User";
 import Product from "../../classes/Product";
 //import {getFemaleList, getMaleList, getKidsList} from "../../ItemManager";
 

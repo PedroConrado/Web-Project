@@ -19,7 +19,6 @@ import ThreeDPopup from '../3DModelPopup';
 export default function EditRemoveProductContainer({
     style = {},
     itemName = "",
-    productData = {},
     productPreviewImageSrc="",
     item,
 }){

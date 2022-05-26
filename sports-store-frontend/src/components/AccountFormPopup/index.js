@@ -23,7 +23,7 @@ export default function AccountFormPopup({
     const [name, setName] = useState(accountData.name);
     const [image, setImage] = useState("");
     const [phone, setPhone] = useState(accountData.phone);
-    const [adress, setAdress] = useState(accountData.adress);
+    const [adress, setAdress] = useState(accountData.address);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
