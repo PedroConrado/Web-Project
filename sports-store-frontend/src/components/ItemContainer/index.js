@@ -9,7 +9,7 @@ export default function ItemContainer({
         return (
         <div>
             <div className="itemContainer">
-                <img src={require(`../../assets/${item.image}`)} alt="item"></img>
+                <img src={item.image} alt="item"></img>
                 <p>{item.name}</p>
                 <p>R${item.price}</p>
                 <Button orange link to="/client-shipping">

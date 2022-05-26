@@ -3,7 +3,7 @@
 */
 
 import {React, useState} from "react";
-import plus from '../../assets/plus-circle.svg';
+//import plus from '/assets/plus-circle.svg';
 import './styles.css'
 import ImageContainer from '../ImageContainer';
 import FormInput from '../FormInput/';
@@ -97,7 +97,7 @@ export default function AccountForm({
                 
                 
                 <Button orange link={link} to={to} type="submit">
-                    <img src={plus} hidden={!isRegister}/>
+                    <img src={"/assets/plus-circle.svg"} hidden={!isRegister}/>
                     <p className="font-bolder">{buttonText}</p>
                 </Button>
             </form>

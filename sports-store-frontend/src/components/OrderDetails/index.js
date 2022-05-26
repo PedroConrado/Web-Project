@@ -1,5 +1,5 @@
 import {React, useState} from "react";
-import Plus from '../../assets/plus-circle.svg'
+//import Plus from '/assets/plus-circle.svg'
 import PriceDisplayer from '../PriceDisplayer'
 import './styles.css'
 import ShippingFormInput from '../ShippingFormInput';
@@ -31,11 +31,11 @@ export default function OrderDetails({
                     </div>
                     <div className="row-div right-align">
                         <button onClick={() => setNoItems(noItems === 0? noItems : noItems - 1)}>
-                            <img src={Plus}></img>
+                            <img src={"/assets/plus-circle.svg"}></img>
                         </button>
                         <h6 className='font-bolder order-details-value'>{noItems}</h6>
                         <button onClick={() => setNoItems(noItems + 1)}>
-                            <img src={Plus}></img>
+                            <img src={"/assets/plus-circle.svg"}></img>
                         </button>
                     </div>
                 </div>

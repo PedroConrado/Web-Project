@@ -4,11 +4,13 @@
 
 
 import {React, useState, useEffect} from "react";
-import plus from '../../assets/plus-circle.svg';
+//import plus from '/assets/plus-circle.svg';
 import './styles.css'
 
 import EditRemoveProduct from "../EditRemoveProductContainer";
-import {getFemaleList, getMaleList, getKidsList} from "../../ItemManager";
+import User from "../../classes/User";
+import Product from "../../classes/Product";
+//import {getFemaleList, getMaleList, getKidsList} from "../../ItemManager";
 
 export default function AdminViewProductsList({
     title = "Default Title",
@@ -20,12 +22,12 @@ export default function AdminViewProductsList({
     useEffect(() => {
         const loadAll = async () => {
             let items = []
-            let maleList = await getMaleList();
-            items = items.concat(maleList[0].items)
-            let femaleList = await getFemaleList();
-            items = items.concat(femaleList[0].items)
-            let kidsList = await getKidsList();
-            items = items.concat(kidsList[0].items)
+            let maleList = await Product.getMaleProducts();
+            items = items.concat(maleList)
+            let femaleList = await Product.getFemaleProducts();
+            items = items.concat(femaleList)
+            let kidsList = await Product.getKidsProducts();
+            items = items.concat(kidsList)
             setItems(items)
         }
     
@@ -39,7 +41,7 @@ export default function AdminViewProductsList({
                 <div key={key}>
                     <EditRemoveProduct
                         item={item}
-                        itemName={item.name} productPreviewImageSrc={require("../../assets/"+item.image)}
+                        itemName={item.name} productPreviewImageSrc={item.image}
                     />
                 </div>
             ))}

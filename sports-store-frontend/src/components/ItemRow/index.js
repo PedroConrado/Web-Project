@@ -2,8 +2,8 @@ import React, {useState} from "react";
 import './styles.css'
 
 import ItemContainer from "../ItemContainer";
-import LeftArrow from "../../assets/arrow-left.png"
-import RightArrow from "../../assets/arrow-right.png"
+//import LeftArrow from "/assets/arrow-left.png"
+//import RightArrow from "/assets/arrow-right.png"
 
 
 export default function ItemRow({
@@ -52,10 +52,10 @@ export default function ItemRow({
                     <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
                         <h2 className="itemRow-title">{title.toUpperCase()}</h2>
                         <div className="itemRow-left" onClick={handleLeftArrow} style={hoverStyle}>
-                            <img className="itemRow-arrow" src={LeftArrow}></img>
+                            <img className="itemRow-arrow" src={"/assets/arrow-left.png"}></img>
                         </div>
                         <div className="itemRow-right" onClick={handleRightArrow} style={hoverStyle}>
-                            <img className="itemRow-arrow" src={RightArrow}></img>
+                            <img className="itemRow-arrow" src={"/assets/arrow-right.png"}></img>
                         </div>
                         <div className="itemRow-listarea">
                             <div className="itemRow-list" style={{

@@ -16,22 +16,22 @@ export default function ClientBar() {
         <div className="clientBar">
             <Button clientBar link to="/client-homePage">
                 <img className="clientBar-icon"
-                    src={require("../../assets/Home.png")}
+                    src={"/assets/Home.png"}
                 />
             </Button>
             <Button clientBar link to="/client-shipping">
                 <img className="clientBar-icon"
-                    src={require("../../assets/Cart.png")}
+                    src={"/assets/Cart.png"}
                 />
             </Button>
             <Button clientBar link to="/client-myAccount">
                 <img className="clientBar-icon"
-                    src={require("../../assets/MyAccount.png")}
+                    src={"/assets/MyAccount.png"}
                 />
             </Button>
             <Button clientBar link to="/">
                 <img className="clientBar-icon"
-                    src={require("../../assets/Logout.png")}
+                    src={"/assets/Logout.png"}
                 />
             </Button>
         </div> 

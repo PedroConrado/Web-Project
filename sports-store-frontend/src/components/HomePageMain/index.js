@@ -3,7 +3,9 @@ import './styles.css'
 
 import ItemRow from "../ItemRow";
 import FeatureItem from "../FeaturedItem";
-import {getList, getFemaleList, getMaleList, getKidsList} from "../../ItemManager";
+import Product from "../../classes/Product";
+import User from "../../classes/User";
+//import {getList, getFemaleList, getMaleList, getKidsList} from "../../ItemManager";
 
 export default function HomePageMain({
 
@@ -20,23 +22,24 @@ export default function HomePageMain({
     useEffect(() => {
         const loadAll = async () => {
             let items = []
-            let list = await getList();
+            let list = await Product.getProducts();
+            console.log(list);
             setItemList(list);
-            let maleList = await getMaleList();
-            setMaleList(maleList[0]);
-            items = items.concat(maleList[0].items)
-            let femaleList = await getFemaleList();
-            setFemaleList(femaleList[0]);
-            items = items.concat(femaleList[0].items)
-            let kidsList = await getKidsList();
-            setKidsList(kidsList[0]);
-            items = items.concat(kidsList[0].items)
+            let maleList = await Product.getMaleProducts();
+            setMaleList(maleList);
+            items = items.concat(maleList)
+            let femaleList = await Product.getFemaleProducts();
+            setFemaleList(femaleList);
+            items = items.concat(femaleList)
+            let kidsList = await Product.getKidsProducts();
+            setKidsList(kidsList);
+            items = items.concat(kidsList)
             setItems(items)
 
-            let randomSectionIndex = Math.floor(Math.random() * (list.length));
-            let randomSection = list.filter(i=>i.slug === list[randomSectionIndex].slug);
-            let featuredIndex = Math.floor(Math.random() * (randomSection[0].items.length - 1));
-            let featured = randomSection[0].items[featuredIndex];
+            let randomSectionIndex = Math.floor(Math.random() * (Object.keys(list).length));
+            let randomSection = list[Object.keys(list)[randomSectionIndex]];
+            let featuredIndex = Math.floor(Math.random() * (randomSection.length - 1));
+            let featured = randomSection[featuredIndex];
             setFeaturedData(featured);
         }
     
@@ -94,31 +97,31 @@ export default function HomePageMain({
                 {
                     {
                      'home':
-                        itemsList.map((item,key)=>(
+                        Object.keys(itemsList).map((item,key)=>(
                             <ItemRow
                                 key = {key}
                                 section = {section}
-                                title = {item.slug}
-                                items = {item.items}
+                                title = {item}
+                                items = {itemsList[item]}
                             />
                         )),
                     'man':
                         <ItemRow 
                             section = {section}
-                            title = {maleList.slug}
-                            items = {maleList.items}
+                            title = {"male"}
+                            items = {maleList}
                         />,
                     'woman':
                         <ItemRow 
                             section = {section}
-                            title = {femaleList.slug}
-                            items = {femaleList.items}
+                            title = {"female"}
+                            items = {femaleList}
                         />,
                     'kids':
                         <ItemRow 
                             section = {section}
-                            title = {kidsList.slug}
-                            items = {kidsList.items}
+                            title = {"kids"}
+                            items = {kidsList}
                         />
                     }[section] || 
                     <ItemRow
