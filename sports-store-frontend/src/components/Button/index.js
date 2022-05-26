@@ -17,6 +17,7 @@ export default function Button({
     gray = false,
     green = false,
     red = false,
+    type="",
     adminBar = false,
     clientBar = false,
     children,
@@ -49,6 +50,7 @@ export default function Button({
             <button 
                 onClick={onClick}
                 className={classes}
+                type={type}
             >
                 {children}
             </button>

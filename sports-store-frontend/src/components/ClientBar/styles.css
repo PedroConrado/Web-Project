@@ -1,17 +1,18 @@
 .clientBar{
-    position:absolute;
+    position:fixed;
     top:0;
     left:0;
     align-items: center;
     display: flex;
     flex-direction: column;
-    background-color: #28272b;
-    border: 2px solid #7361c9;
+    background-color: var(--black);
+    border: 2px solid var(--purple);
     gap: 20px;
     padding-top: 20px;
-    height: 100vh;
-    min-height: 850px;
+    height: 100%;
     width: 100px;
+    overflow-y: auto;
+    overflow-x:hidden;
 }
 
 .clientBar-icon{

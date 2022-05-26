@@ -1,0 +1,70 @@
+.itemRow{
+    margin-bottom: 30px;
+
+}
+
+.itemRow h2{
+    margin: 0px 0px 0px 30px;
+}
+
+.itemRow-listarea{
+    overflow-x: hidden;
+    padding-left: 30px;
+}
+
+.itemRow-item{
+    display: inline-block;
+    width: 200px;
+    cursor: pointer;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.itemRow-item img{
+    width: 180px;
+    height: 225px;
+    transform: scale(0.9);
+}
+
+.itemRow-item img:hover{
+    transform: scale(1);
+    transition: all ease 0.2s;
+}
+
+.itemRow-list{
+    transition: all ease 0.5s;
+}
+
+.itemRow-listarea-central{
+    margin-left: 10vh;
+    margin-top: 250px;
+}
+
+.itemRow-left,.itemRow-right{
+    position: absolute;
+    width: 30px;
+    height: 310px;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow:hidden;
+    background-color: aliceblue;
+    cursor: pointer;
+}
+.itemRow-left{
+    left:100;
+}
+.itemRow-right{
+    right:0;
+}
+
+.itemRow-title{
+    padding-left: 30px;
+}
+
+.itemRow-arrow{
+    margin-left: 0px;
+    height:80px;
+    background-color: aliceblue;
+}

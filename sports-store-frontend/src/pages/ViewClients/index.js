@@ -10,7 +10,6 @@ import AdminBar from "../../components/AdminBar";
 import AdminViewAccountsList from "../../components/AdminViewAccountsList";
 
 export default function viewClients() {
-    //add div around account form to with a class to center it in the div
     return(
         <div className="ViewClients-page-container">
             <AdminBar page={3}/>

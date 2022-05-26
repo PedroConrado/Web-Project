@@ -16,7 +16,7 @@
 }
 
 .input-filled {
-    background-color: var(--black);
+    background-color: var(--darkGray);
     border: none;
 }
 
