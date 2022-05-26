@@ -3,7 +3,7 @@
 */
 
 import {React, useState} from "react";
-import plus from '../../assets/plus-circle.svg';
+//import plus from '/assets/plus-circle.svg';
 import './styles.css'
 import FormInput from '../FormInput/';
 import Button from '../Button';

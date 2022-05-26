@@ -9,7 +9,7 @@ export default function FeaturedItem({
         <section className="featuredItem" style={{
             backgroundSize:'cover',
             backgroundPosition:"center",
-            backgroundImage:`url(${require(`../../assets/${item.image}`)})`}}>
+            backgroundImage:`url(${item.image})`}}>
             <div className="featuredItem-vertical">
                 <div className="featuredItem-horizontal">
                     <div className="featuredItem-name font-extraBold">

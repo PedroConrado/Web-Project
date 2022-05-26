@@ -1,5 +1,5 @@
 import {React, useState} from "react";
-import Plus from '../../assets/plus-circle.svg';
+import Plus from '/assets/plus-circle.svg';
 import './styles.css'
 
 

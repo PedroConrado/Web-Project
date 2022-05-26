@@ -29,7 +29,7 @@ export default function ThreeDModelPopup({
                 <StlViewer
                     width={500}
                     height={500}
-                    url="../../assets/NikeShoe.stl"
+                    url="/assets/NikeShoe.stl"
                     groundColor='rgb(255, 255, 255)'
                     objectColor='rgb(0, 0, 0)'
                     skyboxColor='rgb(255, 255, 255)'
@@ -66,9 +66,9 @@ export default function ThreeDModelPopup({
     to=""
 }){
     model= undefined
-    const { files } = "../../assets/NikeShoe.stl";
+    const { files } = "/assets/NikeShoe.stl";
     const reader = new FileReader();
-    reader.readAsArrayBuffer("../../assets/NikeShoe.stl");
+    reader.readAsArrayBuffer("/assets/NikeShoe.stl");
     reader.onload = (model) => {
       model=reader.result;
     };

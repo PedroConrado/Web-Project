@@ -4,11 +4,12 @@
 
 
 import {React, useState, useEffect} from "react";
-import plus from '../../assets/plus-circle.svg';
+//import plus from '/assets/plus-circle.svg';
 import './styles.css'
 
 import EditRemoveAccount from "../EditRemoveAccountContainer";
-import {getList, getAdminList, getClientList} from "../../AccountManager";
+import User from "../../classes/User";
+//import {getList, getAdminList, getClientList} from "../../AccountManager";
 
 
 export default function AdminViewAccountsList({
@@ -22,12 +23,12 @@ export default function AdminViewAccountsList({
         const loadAll = async () => {
             let accounts=[]
             if(isAdmin){
-                let adminList = await getAdminList();
-                accounts = accounts.concat(adminList[0].items)               
+                let adminList = await User.getAdmins();
+                accounts = accounts.concat(adminList)               
             }
             else{
-                let clientList = await getClientList();
-                accounts = accounts.concat(clientList[0].items) 
+                let clientList = await User.getClients();
+                accounts = accounts.concat(clientList) 
             }
             setAccounts(accounts)
         }

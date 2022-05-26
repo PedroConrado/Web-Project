@@ -12,7 +12,15 @@ import './styles.css'
 
 export default function DescriptionBanner() {
     return (
-        <div className='description-banner-container'>
+        <div className='description-banner-container' 
+        style={
+            {
+                backgroundImage: `linear-gradient(
+                    rgba(0, 0, 0, 0.45), 
+                    rgba(0, 0, 0, 0.45)
+                ), url("/assets/LoginImage.png")`
+            }
+        }>
             <div className='description-banner-text-container'>
                 <h2>
                     We are a sports website
@@ -29,13 +37,13 @@ export default function DescriptionBanner() {
             </div>
             <div className='description-banner-images-container'>
                 <ImageContainer
-                    src={require("../../assets/AsicsShoes.png")}
+                    src={"/assets/AsicsShoes.png"}
                 />
                 <ImageContainer
-                    src={require("../../assets/NikeShoe.png")}
+                    src={"/assets/NikeShoe.png"}
                 />
                 <ImageContainer
-                    src={require("../../assets/PumaBall.png")}
+                    src={"/assets/PumaBall.png"}
                 />
             </div>
         </div>

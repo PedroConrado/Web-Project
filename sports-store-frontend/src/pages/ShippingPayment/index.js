@@ -4,7 +4,7 @@ import "./styles.css";
 
 import ShippingPayment from "../../components/ShippingPaymentForm";
 import OrderDetails from "../../components/OrderDetails";
-import Shoe from "../../assets/NikeShoe.png"
+//import Shoe from "/assets/NikeShoe.png"
 
 export default function Shipping({
     itemName = "",
@@ -22,7 +22,7 @@ export default function Shipping({
                 tax="20"
                 shipping="10"
                 itemName="Nike Air Plus Mens's"
-                image={Shoe}
+                image={"/assets/NikeShoe.png"}
             />
         </div>
     )
