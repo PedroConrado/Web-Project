@@ -9,6 +9,7 @@ import './styles.css'
 import ImageContainer from '../ImageContainer';
 import Button from '../Button';
 import FormInput from '../FormInput';
+import User from "../../classes/User";
 
 export default function AccountForm({
     title = "Default Title",
@@ -42,15 +43,29 @@ export default function AccountForm({
     const [name, setName] = useState("");
     const [image, setImage] = useState("");
     const [phone, setPhone] = useState("");
-    const [adress, setAdress] = useState("");
+    const [address, setAddress] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const handleSubmit = (e) => {
+        if(name=="" || email=="" || password=="") return null;
+        let newUserData={
+            name: name,
+            email: email,
+            password: password,
+            phone: phone,
+            address: address,
+            profilePicture: image,
+            isAdmin: isAdmin,
+        }
+        User.addUser(newUserData);
+    }
 
     return (
         <div className="AccountForm">
             <h4 className='font-bolder AccountForm-title'>{title}</h4>
             <p className='font-bolder'>{description}</p>
-            <form className="AccountForm-form">
+            <form className="AccountForm-form" onSubmit={handleSubmit}>
                 <FormInput
                     title="Name"
                     placeholder='Current Name'
@@ -74,9 +89,9 @@ export default function AccountForm({
                 />
                 <FormInput
                     title="Adress"
-                    placeholder='Current Adress'
-                    value={adress}
-                    setValue={setAdress}
+                    placeholder='Current Address'
+                    value={address}
+                    setValue={setAddress}
                     type={"text"}
                 />
                 <FormInput

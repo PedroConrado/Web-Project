@@ -19,7 +19,7 @@ export default function ConfirmCancel({
     to=""
 }){
     return(
-        <div className="ConfirmCancelPopup-popupBox" modal nested>
+        <div className="ConfirmCancelPopup-popupBox">
             <div className='confirmCancel-container'>
                 <p className='font-extraBold'>{title}</p>
                 <div className='confirmCancel-buttons-container'>

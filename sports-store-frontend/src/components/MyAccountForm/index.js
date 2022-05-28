@@ -29,55 +29,91 @@ export default function AccountForm({
 }) { //recieve an account object and set values of form to that account
     //onsubmit should call a function passed to this form that updates account if there is one or creates a new account if its null
     const [user, setUser] = useState({})
+    const [name, setName] = useState("");
+    const [image, setImage] = useState("");
+    const [phone, setPhone] = useState("");
+    const [address, setAddress] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
     const params = useParams();
     useEffect(() => {
         const loadAll = async () => {
             const user = await User.getUserById(parseInt(params.userID));
             setUser(user);
+            setName(user.name)
+            setImage(user.image)
+            setPhone(user.phone)
+            setAddress(user.address)
+            setEmail(user.email)
+            setPassword(user.password)
         }
     
       loadAll();
     }, [])
+    
+    const handleSubmit = (e) => {
+        if(name=="" || email=="" || password=="") return null;
+        console.log("here")
+        let newUserData={
+            id: user.id,
+            name: name,
+            email: email,
+            password: password,
+            phone: phone,
+            address: address,
+            profilePicture: image,
+            isAdmin: user.isAdmin,
+        }
+        console.log(newUserData)
+        User.updateUser(newUserData);
+    }
 
     return (
         <div className="AccountForm">
             <h4 className='font-bolder AccountForm-title'>{title}</h4>
             <p className='font-bolder'>{description}</p>
-            <form className="AccountForm-form">
+            <form className="AccountForm-form" onSubmit={handleSubmit}>
                 <FormInput
                     title="Name"
                     placeholder='Current Name'
-                    value={user.name}
+                    value={name}
+                    setValue={setName}
                     type={"text"}
                 />
                 <FormInput
                     title={"Image"}
                     placeholder={'Current File'}
-                    value={user.profilePicture}
+                    value={image}
+                    setValue={setImage}
                     type={"image"}
                 />
                 <FormInput
                     title="Phone"
                     placeholder='Current Phone Number'
-                    value={user.phone}
+                    value={phone}
+                    setValue={setPhone}
                     type={"text"}
                 />
                 <FormInput
                     title="Adress"
                     placeholder='Current Adress'
-                    value={user.address}
+                    value={address}
+                    setValue={setAddress}
                     type={"text"}
                 />
                 <FormInput
                     title="Email"
                     placeholder='Current Email'
-                    value={user.email}
+                    value={email}
+                    setValue={setEmail}
                     type={"email"}
                 />
                 <FormInput
                     title="Password"
                     placeholder='Current Password'
-                    value={user.password}
+                    value={password}
+                    setValue={setPassword}
                     type={"password"}
                 />
                 

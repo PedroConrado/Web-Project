@@ -91,10 +91,36 @@ export default class User {
     }
 
     static async getUserById(id) {
-        const users = usersList.filter(obj => obj.id === id);
+        const users = usersList.filter(obj => obj.id == id);
         if (users.length === 0)
             return null;
         return new User(users[0]);
+    }
+
+    static async updateUser(updatedUser) {
+        if(updatedUser.id===undefined) return null;
+        const userIndex = usersList.findIndex(obj => obj.id == updatedUser.id);
+        if(updatedUser.name !==undefined) usersList[userIndex].name=updatedUser.name;
+        if(updatedUser.profilePicture !==undefined) usersList[userIndex].profilePicture=updatedUser.profilePicture;
+        if(updatedUser.phone !==undefined) usersList[userIndex].phone=updatedUser.phone;
+        if(updatedUser.address !==undefined) usersList[userIndex].address=updatedUser.address;
+        if(updatedUser.email !==undefined) usersList[userIndex].email=updatedUser.email;
+        if(updatedUser.password !==undefined) usersList[userIndex].password=updatedUser.password;
+    }
+
+    static async addUser(newUser) {
+        let newID=usersList[usersList.length-1].id+1
+        let newUserData={
+            id: newID,
+            name: newUser.name,
+            email: newUser.email,
+            password: newUser.password,
+            phone: newUser.phone,
+            address: newUser.address,
+            profilePicture: newUser.profilePicture,
+            isAdmin: newUser.isAdmin,
+        }
+        if(newUser!==undefined) usersList.push(newUserData);
     }
 }
 

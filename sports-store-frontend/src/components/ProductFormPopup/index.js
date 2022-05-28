@@ -7,6 +7,7 @@ import {React, useState} from "react";
 import './styles.css'
 import FormInput from '../FormInput/';
 import Button from '../Button';
+import Product from "../../classes/Product";
 
 export default function ProductFormPopup({
     style = {},
@@ -20,15 +21,34 @@ export default function ProductFormPopup({
     //onsubmit should call a function passed to this form that updates account
     const [name, setName] = useState(productData.name);
     const [description, setDescription] = useState(productData.description);
+    const [category, setCategory] = useState(productData.category);
     const [price, setPrice] = useState(productData.price);
     const [qtInStock, setQtInStock] = useState(productData.quantityStock);
     const [qtSold, setQtSold] = useState(productData.quantitySold);   
     const [image, setImage] = useState("");
     const [threeDModel, setThreeDModel] = useState("");
+
+    const handleSubmit = (e) => {
+        if(name=="" || category=="" || price=="") return null;
+        console.log("updating product")
+        let newProductData={
+            name: name,
+            description: description,
+            category: category,
+            price: price,
+            quantityStock: qtInStock,
+            quantitySold: qtSold,
+            image: image,
+            image3d: threeDModel,
+
+        }
+        Product.addProduct(newProductData);
+    }
+
     return(
-        <div className="ProductFormPopup-popupBox" modal nested>
+        <div className="ProductFormPopup-popupBox">
             <div className="ProductFormPopup" >
-                <form className="ProductFormPopup-form">
+                <form className="ProductFormPopup-form" onSubmit={handleSubmit}>
                     <FormInput
                         title="Name"
                         placeholder='Current Name'
@@ -41,6 +61,13 @@ export default function ProductFormPopup({
                         placeholder='Current Description'
                         value={description}
                         setValue={setDescription}
+                        type={"text"}
+                    />
+                    <FormInput
+                        title="Category"
+                        placeholder='Current Category'
+                        value={category}
+                        setValue={setCategory}
                         type={"text"}
                     />
                     <FormInput

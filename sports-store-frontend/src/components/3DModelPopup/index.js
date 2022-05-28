@@ -24,7 +24,7 @@ export default function ThreeDModelPopup({
 }){
 
     return(
-        <div className="ThreeDModelPopup-popupBox" modal nested>
+        <div className="ThreeDModelPopup-popupBox">
             <div className='ThreeDModel-container'>
                 <p className='font-extraBold'>{productData.name}</p>
 

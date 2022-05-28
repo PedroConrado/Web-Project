@@ -98,6 +98,36 @@ export default class Product {
             return null;
         return new Product(products[0]);
     }
+
+    static async updateProduct(updatedProduct) {
+        if(updatedProduct.id===undefined) return null;
+        const productIndex = productsList.findIndex(obj => obj.id == updatedProduct.id);
+        if(updatedProduct.name !==undefined) productsList[productIndex]=updatedProduct.name;
+        if(updatedProduct.description !==undefined) productsList[productIndex].description=updatedProduct.description;
+        if(updatedProduct.price !==undefined) productsList[productIndex].price=updatedProduct.price;
+        if(updatedProduct.quantityStock !==undefined) productsList[productIndex].quantityStock=updatedProduct.quantityStock;
+        if(updatedProduct.quantitySold !==undefined) productsList[productIndex].quantitySold=updatedProduct.quantitySold;
+        if(updatedProduct.image !==undefined) productsList[productIndex].image=updatedProduct.image;
+        if(updatedProduct.image3d !==undefined) productsList[productIndex].image3d=updatedProduct.image3d;
+        if(updatedProduct.category !==undefined) productsList[productIndex].category=updatedProduct.category;
+    }
+
+    static async addProduct(newProduct) {
+        let newID=productsList[productsList.length-1].id+1
+        let newProductData={
+            id: newID,
+            name: newProduct.name,
+            description: newProduct.description,
+            price: newProduct.price,
+            quantityStock: newProduct.quantityStock,
+            quantitySold: newProduct.quantitySold,
+            image: newProduct.image,
+            image3d: newProduct.image3d,
+            category: newProduct.category,
+        }
+        console.log(newProductData.id)
+        if(newProduct!==undefined) productsList.push(newProductData);
+    }
 }
 
 
