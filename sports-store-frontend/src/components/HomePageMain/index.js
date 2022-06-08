@@ -1,4 +1,4 @@
-import {React, useState, useEffect} from "react";
+import {React, useState, useEffect, useLayoutEffect} from "react";
 import './styles.css'
 
 import ItemRow from "../ItemRow";
@@ -18,6 +18,23 @@ export default function HomePageMain({
     const [featuredData, setFeaturedData] = useState(null);
     const [section, setSection] = useState("home");
     const [blackHeader, setBlackHeader] = useState(false);
+    const [marginLeft, setMarginLeft] = useState(0);
+
+    useLayoutEffect(() => {
+        function updateSize() {
+            const clientBar = document.getElementsByClassName("clientBar");
+            if(clientBar.length > 0) {
+                setMarginLeft(clientBar[0].clientWidth + 10);
+            }
+        }
+        window.addEventListener('resize', updateSize);
+        updateSize();
+        return () => window.removeEventListener('resize', updateSize);
+      }, []);
+
+    useEffect(() => {
+        console.log(marginLeft);
+    }, [marginLeft])
 
     useEffect(() => {
         const loadAll = async () => {
@@ -62,9 +79,9 @@ export default function HomePageMain({
 
 
     return (
-        <div className="HomePageMain">
+        <div className="HomePageMain" style={{marginLeft}}>
             
-            <header className={`HomePageMain-header ${blackHeader ? "black" : ""}`}>
+            <header className={`HomePageMain-header ${blackHeader ? "black" : ""}`} style={{marginLeft}}>
                 <button onClick={() => setSection("home")} className={`${section == 'home' ? "HomePageMain-header-button" : ""}`}>
                     <p>HOME</p>
                 </button >

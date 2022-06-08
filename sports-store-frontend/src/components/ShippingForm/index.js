@@ -2,10 +2,12 @@ import {React, useState} from "react";
 import Header from '../ShippingPaymentHeader'
 import './styles.css'
 import ShippingFormInput from '../ShippingFormInput';
+import Button from '../Button';
 
 export default function ShippingForm({
     title = "",
-
+    user = {},
+    setIsShipping = () => {},
 }) {
 
     const [address, setAddress] = useState("");
@@ -66,6 +68,18 @@ export default function ShippingForm({
                     />
                 </div>
             </form>
+
+            <div className = 'shipping-form-button'>
+                <Button gray link to = {"/client-homePage/"+user.id}>
+                    <p className="font-bolder">cancel order</p>
+                </Button >
+                <Button 
+                    orange 
+                    onClick={() => setIsShipping(false)}
+                >
+                    <p className="font-bolder">Go to Payment</p>
+                </Button>
+            </div>
 
         </div>
     );

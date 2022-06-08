@@ -1,9 +1,9 @@
 .client-productViewer-background{
-    width: 40%;
+    width: fit-content;
     height: 30%;
     border-radius: 15px;
     background-color: var(--lightGreen);
-    padding: 20px;
+    padding: 1em;
     gap: 10px;
     margin: auto;
     display: flex;
@@ -19,15 +19,14 @@
 .client-productViewer-nameDescription{
     padding: 10px;
     word-wrap: break-word;
-    max-width: 350px;
 }
 .client-productViewer-nameDescription p{
     margin-top: 30px;
 }
 
 .client-productViewer-imageContainer-wrapper{
-    height: 300px;
-    width: 300px;
+    width: 80%;
+    max-width: 300px;
     margin: auto;
 }
 

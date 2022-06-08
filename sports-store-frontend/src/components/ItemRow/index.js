@@ -50,7 +50,7 @@ export default function ItemRow({
                 {
                 'home':
                     <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-                        <h2 className="itemRow-title">{title.toUpperCase()}</h2>
+                        <h3 className="itemRow-title">{title.toUpperCase()}</h3>
                         <div className="itemRow-left" onClick={handleLeftArrow} style={hoverStyle}>
                             <img className="itemRow-arrow" src={"/assets/arrow-left.png"}></img>
                         </div>
@@ -74,7 +74,7 @@ export default function ItemRow({
                     </div>,
                 }[section] ||
                 <div className="itemRow-listarea itemRow-listarea-central">
-                    <h2 className="itemRow-title">{title}</h2>
+                    <h3 className="itemRow-title">{title}</h3>
                     {items.length > 0 && items.map((item,key)=>(
                         <div key={key} className="itemRow-item">
                             <ItemContainer

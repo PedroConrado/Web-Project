@@ -25,23 +25,23 @@
   : rgba(255, 255, 255, 1);
   
     --font-size-xxxs
-  : 16px;
+  : 1em;
     --font-size-xxs
-  : 18px;
+  : 1.125em;
     --font-size-xs
-  : 24px;
+  : 1.5em;
     --font-size-l
-  : 20px;
+  : 1.25em;
     --font-size-xl
-  : 21.4px;
+  : 1.3375em;
     --font-size-s2
-  : 30px;
+  : 1.875em;
     --font-size-m2
-  : 36px;
+  : 2.25em;
     --font-size-l2
-  : 48px;
+  : 3em;
     --font-size-xl2
-  : 64px;
+  : 4em;
   
     --font-family-inter
   : "Inter";

@@ -12,7 +12,7 @@ import {FaCamera} from 'react-icons/fa';
 
 export default function ImageContainer({
     rounded = true,
-    size = "60px",
+    size = "3.75em",
     src = "",
     alt = "",
     ...props

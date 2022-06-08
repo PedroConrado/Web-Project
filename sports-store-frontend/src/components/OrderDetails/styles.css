@@ -1,13 +1,11 @@
 .OrderDetails {
+    flex: 1;
+    display: flex;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     gap: 30px;
-    padding: 30px 70px 30px 70px;
-    position: absolute;
-    right: 3%;
-    height: 90%;
-    width: 40%;
+    padding: 1.875em 4.375em 1.875em 4.375em;
     margin-right: 10px;
 }
 
@@ -24,12 +22,11 @@
 
 .clipped{
     object-fit: cover;
-    width: 100%;
-    height: 30%;
+    width: 25%;
+    height: 25%;
 }
 
 .order-details-form-card{
-    margin-top: -410px;
     margin-bottom: auto;
 }
 

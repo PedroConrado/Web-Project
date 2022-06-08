@@ -2,7 +2,7 @@
     font-family: var(--font-family-poppins);
     border-radius: 15px;
     color: var(--white);
-    padding: 10px;
+    padding: .625em;
     width: 100%;
 }
 
