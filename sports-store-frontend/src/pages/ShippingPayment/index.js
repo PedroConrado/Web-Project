@@ -15,7 +15,7 @@ export default function Shipping({
 
 }) {
     return(
-        <div className="admin-myAccount-page-container">
+        <div className="shipping-page-container">
             <ShippingPayment/>
             <OrderDetails
                 subTotal="980"

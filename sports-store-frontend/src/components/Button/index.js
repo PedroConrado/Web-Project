@@ -5,7 +5,7 @@
 
 
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 import './styles.css'
 
@@ -26,6 +26,7 @@ export default function Button({
     to = "/",
     ...props
 }) {
+    const navigate = useNavigate();
     let classes="button-container " + style;
     if(purple) classes+="background-purple";
     else if(gray) classes+="background-lightGray";
@@ -40,12 +41,14 @@ export default function Button({
         <>
         {
             link ?
-            <Link 
+            <button 
             className={classes}
-            to={to}
+            onClick={() =>{
+                navigate(to);
+            }}
             >
                 {children}
-            </Link>
+            </button>
             :
             <button 
                 onClick={onClick}

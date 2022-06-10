@@ -1,6 +1,5 @@
 .HomePageMain{
     box-sizing: border-box;
-    margin-left: 100px;
     font-family: var(--font-family-poppins);
 
 }
@@ -25,7 +24,6 @@
     align-items: center;
     justify-content: center;
     padding: 0px 30px;
-    margin-left: 100px;
     background: transparent;
     transition: all ease 0.5s;
 }

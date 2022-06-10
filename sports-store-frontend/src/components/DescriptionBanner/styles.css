@@ -1,4 +1,5 @@
 .description-banner-container {
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -6,7 +7,6 @@
     background-position: 50% 50%;
     background-size: cover;
     
-    width: 50%;
     height: 100%;
 
     padding: 0 4rem;

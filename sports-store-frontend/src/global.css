@@ -102,3 +102,39 @@ p, label {
 .background-white {
   background-color: var(--white);
 }
+
+
+@media screen and (max-width: 2560px){
+  body {
+    font-size: 150%;
+  }
+  
+}
+
+@media screen and (max-width: 1645px){
+  body {
+    font-size: 100%;
+  }
+  
+}
+
+@media screen and (max-width: 1024px){
+  body {
+    font-size: 60%;
+  }
+  
+}
+
+@media screen and (max-width: 640px){
+  body {
+    font-size: 40%;
+  }
+  
+}
+
+@media screen and (max-width: 425px){
+  body {
+    font-size: 20%;
+  }
+  
+}

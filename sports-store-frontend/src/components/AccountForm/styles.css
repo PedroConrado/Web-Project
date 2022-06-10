@@ -10,13 +10,7 @@
 .AccountForm-form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-}
-
-.AccountForm-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    gap: 1.25em;
 }
 
 .AccountForm-title {
