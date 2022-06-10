@@ -2,14 +2,11 @@
     This file defines a list of accounts for the admin to view and choose to edit or remove
 */
 
-
 import {React, useState, useEffect} from "react";
-//import plus from '/assets/plus-circle.svg';
 import './styles.css'
 
 import EditRemoveAccount from "../EditRemoveAccountContainer";
 import User from "../../classes/User";
-//import {getList, getAdminList, getClientList} from "../../AccountManager";
 
 
 export default function AdminViewAccountsList({

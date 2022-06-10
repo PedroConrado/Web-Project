@@ -4,12 +4,10 @@
 
 
 import {React, useState, useEffect} from "react";
-//import plus from '/assets/plus-circle.svg';
 import './styles.css'
 
 import EditRemoveProduct from "../EditRemoveProductContainer";
 import Product from "../../classes/Product";
-//import {getFemaleList, getMaleList, getKidsList} from "../../ItemManager";
 
 export default function AdminViewProductsList({
     title = "Default Title",
