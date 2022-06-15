@@ -129,3 +129,10 @@ This will install all dependencies and start a web server on port 3000, if avail
 At this point of the project, all the funcionalities will not make any change because there is no database. After reload the app will go to default.
 
 # 8. Comments
+To log in as admin, use the following credentials:
+* email: admin@admin.com
+* password: admin
+
+To log in as user, use the following credentials:
+* gabriel_vr@usp.br
+* 123456
