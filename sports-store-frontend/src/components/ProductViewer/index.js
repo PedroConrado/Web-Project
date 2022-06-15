@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom";
 import Product from "../../classes/Product";
 import ThreeDPopup from '../3DModelPopup';
 import User from "../../classes/User";
+import Cart from "../../classes/Cart";
+import {useNavigate} from "react-router-dom";
 
 
 export default function ProductViewer({
@@ -13,6 +15,7 @@ export default function ProductViewer({
 }) {
     const [product, setProduct] = useState({})
     const [isOpen3dModel, setIsOpen3dModel] = useState(false);
+    const navigate = useNavigate();
 
     const togglePopup3d = () => {
         setIsOpen3dModel(!isOpen3dModel);
@@ -38,7 +41,12 @@ export default function ProductViewer({
         }
     
       loadAll();
-    }, [])
+    }, []);
+
+    const addItemCart = () => {
+        Cart.insertItem(product.id);
+        navigate(`/client-shipping/${parseInt(params.userID)}`);
+    }
 
     return (
         <>
@@ -63,7 +71,7 @@ export default function ProductViewer({
                         <Button purple link to={"/client-homePage/"+user.id}>
                             <p>Back</p>
                         </Button>
-                        <Button orange link to={"/client-shipping/"+user.id}>
+                        <Button orange onClick={addItemCart}>
                             <p>Add To Cart</p>
                         </Button>
                     </div>
