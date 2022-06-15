@@ -7,14 +7,14 @@ import React from "react";
 import "./styles.css";
 
 import AdminBar from "../../components/AdminBar";
-import AccountForm from "../../components/AccountForm";
+import MyAccountForm from "../../components/MyAccountForm";
 
 export default function AdminMyAccount() {
     //add div around account form to with a class to center it in the div
     return(
         <div className="admin-myAccount-page-container">
             <AdminBar page={6}/>
-            <AccountForm 
+            <MyAccountForm 
                 isAdmin={true}
                 isRegister={false}
                 title="Edit Your Account"
