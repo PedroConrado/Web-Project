@@ -13,7 +13,7 @@ class Cart {
 
     getCart() {
         let cartTxt = localStorage.getItem("cart");
-        return cartTxt === null ? cartTxt : JSON.parse(cartTxt);
+        return cartTxt === null ? {} : JSON.parse(cartTxt);
     }
 
     async getItemsCart() {
@@ -58,6 +58,10 @@ class Cart {
         let cartMap = cartTxt === null ? [] : JSON.parse(cartTxt);
         delete cartMap[itemId]
         localStorage.setItem('cart', JSON.stringify(cartMap));
+    }
+
+    async buyProducts() {
+        this.emptyCart();
     }
 
     emptyCart() {
