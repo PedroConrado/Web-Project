@@ -9,9 +9,6 @@
     margin-right: 10px;
 }
 
-.order-details-value{
-    margin-top:15px;
-}
 
 
 .row-div{
@@ -20,20 +17,12 @@
     flex-direction: row;
 }
 
-.clipped{
-    object-fit: cover;
-    width: 25%;
-    height: 25%;
-}
+
 
 .order-details-form-card{
     margin-bottom: auto;
 }
 
-h6.order-details-title{
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
 
 button{
     background-color: Transparent;
