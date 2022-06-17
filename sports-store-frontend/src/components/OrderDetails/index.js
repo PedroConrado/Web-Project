@@ -1,68 +1,47 @@
-import {React, useEffect, useState} from "react";
+import {React, useState} from "react";
 //import Plus from '/assets/plus-circle.svg'
 import PriceDisplayer from '../PriceDisplayer'
 import './styles.css'
 import ShippingFormInput from '../ShippingFormInput';
-import Cart from "../../classes/Cart";
-import ItemOrder from "./ItemOrder";
 
 export default function OrderDetails({
-    cartItems = [],
-    setCartItems
+    subTotal = "",
+    tax = "",
+    shipping = "",
+    image = {},
+    itemName = "",
 
 }) {
-    const [subTotal, setSubtotal] = useState(0);
 
-    useEffect(() => {
-        let temp = 0;
-        cartItems.forEach(obj => {
-            temp+= obj.price * obj.quantity;
-        })
-        setSubtotal(temp);
-        console.log(cartItems);
-    }, [cartItems]);
-
-
-    const increaseItemQuantity = (itemIdx) => {
-        Cart.increaseQuantity(cartItems[itemIdx].id);
-        setCartItems(oldItems => {
-            const temp = [...oldItems]
-            temp[itemIdx].quantity++;
-            return temp;
-        })
-    }
-
-    const decreaseItemQuantity = (itemIdx) => {
-        Cart.decreaseQuantity(cartItems[itemIdx].id);
-        setCartItems(oldItems => {
-            const temp = [...oldItems]
-            temp[itemIdx].quantity--;
-            if(temp[itemIdx].quantity == 0)
-            temp.splice(itemIdx, 1);
-            return temp;
-        })
-    }
-
+    const [giftCode, setGiftCode] = useState("")
+    const [noItems, setNoItems] = useState(1.0)
+    const [discount, setDiscount] = useState(false)
+    const discountValue = 10;
+    const validCodes = ["1234", "7890"]
 
     return (
         <div className="OrderDetails">
             <h6 className='font-bolder'>Order Details</h6>
-            {
-                cartItems.map((obj, idx) => (
-                    <ItemOrder
-                        image={obj.image}
-                        itemName={obj.name}
-                        noItems={obj.quantity}
-                        subTotal={obj.price}
-                        increaseItemQuantity = {() => increaseItemQuantity(idx)}
-                        decreaseItemQuantity = {() => decreaseItemQuantity(idx)}
-                        key={idx}
-                    />
-                ))
-            }
-            
+            <div className='margin-bottom-minus'>
+                <img className="clipped" src={image}></img>
+                <div className="row-div">
+                    <div>
+                        <h6 className='font-bolder order-details-title'>{itemName}</h6>
+                        <h6 className='font-bolder'>{subTotal}</h6>
+                    </div>
+                    <div className="row-div right-align">
+                        <button onClick={() => setNoItems(noItems === 0? noItems : noItems - 1)}>
+                            <img src={"/assets/plus-circle.svg"}></img>
+                        </button>
+                        <h6 className='font-bolder order-details-value'>{noItems}</h6>
+                        <button onClick={() => setNoItems(noItems + 1)}>
+                            <img src={"/assets/plus-circle.svg"}></img>
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-            {/* <form className="order-details-form-card">
+            <form className="order-details-form-card">
                 <h6>Gift Card</h6>
                 <div className="row-div">
                     <ShippingFormInput
@@ -76,12 +55,13 @@ export default function OrderDetails({
                         <p className="font-bolder">Apply</p>
                     </button>
                 </div>
-            </form> */}
+            </form>
 
             <PriceDisplayer
-                subTotal={subTotal}
-                tax={10}
-                shipping={10}
+                subTotal={subTotal*noItems - (discountValue * discount)}
+                discount = {discount ? discountValue : "0"}
+                tax={tax}
+                shipping={shipping}
             />
         </div>
     );
