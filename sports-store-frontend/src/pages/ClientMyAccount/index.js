@@ -7,7 +7,7 @@ import React, { useLayoutEffect, useState } from "react";
 import "./styles.css";
 
 import ClientBar from "../../components/ClientBar";
-import AccountForm from "../../components/AccountForm";
+import MyAccountForm from "../../components/MyAccountForm";
 
 export default function ClientMyAccount() {
     //add div around account form to with a class to center it in the div
@@ -28,7 +28,7 @@ export default function ClientMyAccount() {
         <div className="client-myAccount-page-container">
             <ClientBar />
             <div style={{marginLeft}}>
-                <AccountForm 
+                <MyAccountForm 
                     isAdmin={false}
                     isRegister={false}
                     title="Edit Your Account"

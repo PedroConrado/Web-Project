@@ -8,18 +8,32 @@ import Header from '../ShippingPaymentHeader'
 import './styles.css'
 import ShippingFormInput from '../ShippingFormInput';
 import Button from "../Button";
+import Cart from "../../classes/Cart";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function PaymentForm({
     title = "",
     user = {},
     setIsShipping = () => {},
 }) {
+    const navigate = useNavigate();
+    const params = useParams();
 
     const [name, setName] = useState("");
     const [card, setCard] = useState("");
     const [year, setYear] = useState("");
     const [month, setMonth] = useState("");
     const [cvc, setCvc] = useState("");
+
+    const onOrder =async () =>{
+        try {
+            await Cart.buyProducts();
+            navigate(`/client-homePage/${params.userID}`);
+            
+        } catch(e) {
+            alert("Unable to order products");
+        }
+    }
 
     return (
         <div className="PaymentForm">
@@ -86,7 +100,7 @@ export default function PaymentForm({
                 </Button >
                 <Button
                     orange 
-                    onClick={() => setIsShipping(true)}
+                    onClick={onOrder}
                 >
                     <p className="font-bolder">Order</p>
                 </Button>
