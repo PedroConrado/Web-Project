@@ -1,0 +1,9 @@
+.admin-view-productsList {
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+    margin-left: 80px;
+}

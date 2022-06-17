@@ -1,0 +1,14 @@
+.PaymentForm {
+    background-color: transparent;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 1.875em 4.375em 1.875em 4.375em;
+    width: 100%;
+}
+
+.payment-form-button {
+    display: flex;
+    justify-content: space-between;
+}

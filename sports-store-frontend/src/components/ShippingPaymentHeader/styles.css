@@ -1,0 +1,18 @@
+
+.shipping-payment-header-line{
+    width: 3%;
+    margin: 10px;
+    background-color: var(--purple)
+}
+.shipping-payment-header{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    margin-top: -5px;
+    margin-bottom: -10px;
+}
+
+.shipping-payment-font-transparent{
+    color: rgba(255, 255, 255, 0.4);
+}

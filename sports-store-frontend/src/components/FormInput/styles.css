@@ -1,0 +1,17 @@
+.form-input-container{
+    align-items: center;
+    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 2em;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.form-input-container-image {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.875em;
+}

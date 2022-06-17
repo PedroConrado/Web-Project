@@ -1,0 +1,44 @@
+.featuredItem{
+    height: 80vh;
+}
+
+.featuredItem-vertical{
+    width: inherit;
+    height: inherit;
+    background: linear-gradient(to top, var(--black) 10%, transparent 90%);
+}
+
+.featuredItem-horizontal{
+    width: inherit;
+    height: inherit;
+    background: linear-gradient(to right, var(--black) 30%, transparent 70%);
+    justify-content: center;
+    padding-left: 4%;
+    padding-top: 10vh;
+}
+
+.featuredItem-name{
+    font-size: 60px;
+    font-weight: bold;
+    color: var(--)
+}
+
+.featuredItem-infos{
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.featuredItem-info-name,
+.featuredItem-info-price{
+    margin-right: 15px;
+}
+
+.featuredItem-info-price{
+    color: red;
+}
+
+.featuredItem-descripton{
+    margin-top:15px;
+    color: rgb(255, 255, 255);
+    max-width: 30%;
+}

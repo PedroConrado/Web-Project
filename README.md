@@ -17,11 +17,11 @@ Administrators are responsible for registering/managing administrators, customer
 
 Customers are users who access the system to buy products/services.
 
-The admin record includes, at least: name, id, phone, email, adress, email, photo.
+The admin record includes, at least: name, id, phone, email.
 
-Each customer's record includes, at least: name, id, address, phone, email, photo.
+Each customer's record includes, at least: name, id, address, phone, email
 
-Product/services records include, at least: name, id, photo, description, price, quantity (in stock), quantity sold, 3d model.
+Product/services records include, at least: name, id, photo, description, price, quantity (in stock), quantity sold.
 Your store may sell products, services or both (you decide)
 
 ### Selling Products (or services): 
@@ -32,7 +32,7 @@ Products are selected, their quantity chosen, and are included in a cart. Produc
 Administrators can create/update/read/delete (crud) new products and services. For example, they can change the stock quantity.
 
 ### Your functionality: 
-Our current idea is for the user to be able to see a 3d model of the product you want to buy when the user clicks on the image of the product.
+Our current idea is for the user to be able to see a 3d model of the product you want to buy
 
 ### The system must provide accessibility requirements and provide good usability. The system must be responsive.
 
@@ -54,7 +54,7 @@ The images of the mockup are in the directory ```/mockups```
     * [Homepage](mockups/Homepage.png)
         * [My Account](mockups/MyAccountClient.png)
         * [Shipping](mockups/Shipping.jpg)
-            * [Payment](mockups/payment.jpg)
+            * [Payment](mockups/Shipping.jpg)
     * [Add Admin](mockups/AddAdmin.png)
         * [Add Client](mockups/AddClient.png)
         * [Edit Client](mockups/EditClient.png)
@@ -98,15 +98,41 @@ Info saved on the server:
 * QuantitySold
 * Image
 * Image3d
+* Category
 
 # 3. Comments About the Code
+## Frontend:
+The code follows the structure below:
+* src
+    * classes (Manipulate users, products and the cart)
+    * components (UI components used within one or more pages)
+    * pages (The component that structure the final page displayed to the user)
+    * global.css (Styles that are kept unchanged throught the entire system)
+    * index.js (Loads the application)
+    * reset.css (Reset default css)
+    * routes.js (Declares the pages and respective routes)
+    * variables.css (Common styles that can be used in the components)
 
 # 4. Test Plan
 
 # 5. Test Results
 
 # 6. Build Procedures
+## Frontend
+To start the web application on localhost, run the following commands inside the folder ```sports-store-frontend```:
+* ```npm install```
+* ```npm start```
+
+This will install all dependencies and start a web server on port 3000, if available.
 
 # 7. Problems
+At this point of the project, all the funcionalities will not make any change because there is no database. After reload the app will go to default.
 
 # 8. Comments
+To log in as admin, use the following credentials:
+* email: admin@admin.com
+* password: admin
+
+To log in as user, use the following credentials:
+* gabriel_vr@usp.br
+* 123456

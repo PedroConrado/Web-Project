@@ -1,0 +1,9 @@
+.ViewAdmins-page-container {
+    display: flex;
+    justify-content: center;
+    background-color: var(--black);
+    
+    min-width: 500px;
+    min-height: 600px;
+    margin-left: 230px;
+}

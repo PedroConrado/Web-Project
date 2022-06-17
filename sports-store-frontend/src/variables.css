@@ -1,0 +1,62 @@
+/*
+  This file contains variables that are going to be use in the entire project,
+  allowing centralization of styles and fast adjustments.
+*/
+
+
+:root {
+    --pureBlack
+  : rgba(0, 0, 0, 1);
+    --black
+  : rgba(27, 25, 28, 1);
+    --darkGray
+  : rgba(50, 48, 54, 1);
+    --lightGreen
+  : rgba(93, 191, 121, 1);
+    --purple
+  : rgba(123, 97, 255, 1);
+  --red
+  : rgb(255, 97, 97);
+    --orange
+  : rgba(255, 160, 73, 1);
+    --lightGray
+  : rgba(137, 137, 137, 0.749);
+    --white
+  : rgba(255, 255, 255, 1);
+  
+    --font-size-xxxs
+  : 1em;
+    --font-size-xxs
+  : 1.125em;
+    --font-size-xs
+  : 1.5em;
+    --font-size-l
+  : 1.25em;
+    --font-size-xl
+  : 1.3375em;
+    --font-size-s2
+  : 1.875em;
+    --font-size-m2
+  : 2.25em;
+    --font-size-l2
+  : 3em;
+    --font-size-xl2
+  : 4em;
+  
+    --font-family-inter
+  : "Inter";
+    --font-family-inter-bold
+  : "Inter-Bold";
+    --font-family-inter-medium
+  : "Inter-Medium";
+    --font-family-monument_extended-regular
+  : "Monument Extended-Regular";
+    --font-family-monument_extended-ultrabold
+  : "Monument Extended-Ultrabold";
+    --font-family-poppins
+  : "Poppins";
+    --font-family-roboto_condensed
+  : "Roboto Condensed";
+    --font-family-roboto_condensed-regular
+  : "Roboto Condensed-Regular";
+  }

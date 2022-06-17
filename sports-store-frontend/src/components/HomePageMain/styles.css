@@ -1,0 +1,49 @@
+.HomePageMain{
+    box-sizing: border-box;
+    font-family: var(--font-family-poppins);
+}
+
+.HomePageMain-lists{
+    margin-top: -150px;
+    padding-left: 4%
+}
+
+.HomePageMain-header-button{
+    text-decoration: underline;
+    text-underline-offset:3px;
+}
+
+.HomePageMain-header{
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 3%;
+    right: 0;
+    height: 70px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 30px;
+    background: transparent;
+    transition: all ease 0.5s;
+    margin-left: 8%
+}
+
+.HomePageMain-header.black{
+    background-color:var(--black);
+}
+
+.HomePageMain-input{
+    border-radius: 15px;
+    color: var(--white);
+    background-color: var(--darkGray);
+    border: none;
+    border: 3px solid var(--white);
+    padding: 5px;
+    align-items: center;
+    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    width: 100%;
+    top: 10;
+}

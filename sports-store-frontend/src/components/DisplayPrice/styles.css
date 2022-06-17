@@ -1,0 +1,10 @@
+.display-price-right-align{
+    margin-left: auto; 
+    margin-right: 0;
+}
+
+.display-price-div{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}

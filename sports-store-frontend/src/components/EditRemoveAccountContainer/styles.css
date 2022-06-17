@@ -1,0 +1,10 @@
+.edit-remove-AccountContainer{
+    background-color: var(--lightGreen);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+    width: fit-content;
+}

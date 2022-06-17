@@ -1,0 +1,11 @@
+/* .image-container {
+
+} */
+
+.image-container-rounded {
+    border-radius: 100%;
+}
+
+.image-container-padding {
+    padding: 1em;
+}
