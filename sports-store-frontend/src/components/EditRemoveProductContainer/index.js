@@ -14,6 +14,7 @@ import ImageContainer from '../ImageContainer';
 import ProductFormPopup from '../ProductFormPopup';
 import ConfirmCancelPopup from '../ConfirmCancelPopup';
 import ThreeDPopup from '../3DModelPopup';
+import Product from "../../classes/Product";
 
 
 export default function EditRemoveProductContainer({
@@ -31,6 +32,10 @@ export default function EditRemoveProductContainer({
     }
     const togglePopupRemove = () => {
         setIsOpenRemove(!isOpenRemove);
+    }
+    const togglePopupDelete = () => {
+        setIsOpenRemove(!isOpenRemove);
+        Product.removeProduct(item.id);
     }
     const togglePopup3d = () => {
         setIsOpen3dModel(!isOpen3dModel);
@@ -55,7 +60,7 @@ export default function EditRemoveProductContainer({
             </div>
 
             {isOpenEdit && <ProductFormPopup handleClose={togglePopupEdit} productData={item}/>}
-            {isOpenRemove && <ConfirmCancelPopup title="Are you sure you want to delete this product?" handleClose={togglePopupRemove} item={item}/>}
+            {isOpenRemove && <ConfirmCancelPopup title="Are you sure you want to delete this product?" handleDelete={togglePopupDelete} handleClose={togglePopupRemove} item={item}/>}
             {isOpen3dModel && <ThreeDPopup handleClose={togglePopup3d} productData={item}/>}
         </>
     );

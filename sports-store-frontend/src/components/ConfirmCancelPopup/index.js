@@ -9,11 +9,13 @@ import React from 'react';
 
 import './styles.css'
 import Button from '../Button';
+import User from "../../classes/User";
 
 export default function ConfirmCancel({
     style = {},
     title = "",
     itemKey,
+    handleDelete=()=>{},
     handleClose=()=>{},
     link=false,
     to=""

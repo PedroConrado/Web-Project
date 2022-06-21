@@ -119,6 +119,7 @@ export default class Product {
 
     static async updateProduct(updatedProduct) {
         let updatedProductData={
+            id: updatedProduct.id,
             name: updatedProduct.name,
             description: updatedProduct.description,
             price: updatedProduct.price,
@@ -147,11 +148,13 @@ export default class Product {
             headers: { 'Content-Type': 'application/json' }
         });   
         resp = await resp.json();
-        let newId=resp.reduce(
-            (max, resp) => (resp.id > max ? resp.id : max),
-            resp[0].id
-        );
+        let newId=0;
+        let i={}
+        for(i in resp){
+            if(i.id>newId) newId=i.newId;
+        }
         newId+=1;
+        console.log(newId);
         let newProductData={
             id: newId, 
             name: newProduct.name,
@@ -163,8 +166,17 @@ export default class Product {
             image3d: newProduct.image3d,
             category: newProduct.category,
         }
-        console.log(newProductData.id)
-        if(newProduct!==undefined) productsList.push(newProductData);
+        await fetch("http://localhost:3001/products/", {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newProductData),
+        })
+        .catch(error => {
+            window.alert(error);
+            return;
+        });
     }
 
     static async removeProduct(id) {

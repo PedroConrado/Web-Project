@@ -49,7 +49,7 @@ const controller={};
 controller.getProducts=async(req, res) => {
     try{
         console.log("getting");
-        const data=await ProductObj.find().toArray();
+        const data=await ProductObj.find();
         res.status(200).send(data);
         console.log(data);
         return data;
@@ -74,6 +74,7 @@ controller.getById=async(req, res) => {
 
 controller.post=async (req, res) => {
     console.log(req.body)
+    console.log("recieved post request")
     const product=new ProductObj(req.body);
     try{
         console.log("creating");

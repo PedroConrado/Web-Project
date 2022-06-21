@@ -7,6 +7,7 @@
 import React from 'react';
 import AccountForm from '../AccountForm';
 import Button from '../Button';
+import User from '../../classes/User';
 
 import './styles.css'
 
@@ -27,7 +28,7 @@ export default function SignUpForm() {
                 description='Insert your personal data below'
                 buttonText='Create'
                 link
-                to={"/client-myAccount/"}
+                to={"/client-myAccount/"+User.nextID}
                 />
             </div>
         </div>

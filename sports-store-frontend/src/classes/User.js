@@ -105,6 +105,7 @@ export default class User {
         });   
         resp = await resp.json();
         let users = []
+        
         for (const user of resp.filter(obj => obj.isAdmin)) {
             const userObj = new User(user);
             users.push(userObj);
@@ -123,6 +124,7 @@ export default class User {
 
     static async updateUser(updatedUser) {
         let updatedUserData={
+            id: updatedUser.id,
             name: updatedUser.name,
             phone: updatedUser.phone,
             address: updatedUser.address,
@@ -140,18 +142,25 @@ export default class User {
             return;
         });
     }
-
-    static async addUser(newUser) {
+    
+    static async nextID() {
         let resp = await fetch("http://localhost:3001/users/", {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         });   
         resp = await resp.json();
-        let newId=resp.reduce(
-            (max, resp) => (resp.id > max ? resp.id : max),
-            resp[0].id
-        );
+        let newId=0;
+        let i={}
+        for(i in resp){
+            if(i.id>newId) newId=i.newId;
+        }
         newId+=1;
+        console.log(newId)
+        return newId;
+    }
+
+    static async addUser(newUser) {
+        let newId=await User.nextID();
         
         let newUserData={
             id: newId,
@@ -163,8 +172,9 @@ export default class User {
             profilePicture: newUser.profilePicture,
             isAdmin: newUser.isAdmin,
         }
+        console.log("creating user")
         await fetch("http://localhost:3001/users/", {
-            method: "POST",
+            method: "post",
             headers: {
             "Content-Type": "application/json",
             },
@@ -177,6 +187,7 @@ export default class User {
     }
 
     static async removeUser(id) {
+        console.log("deleting")
         await fetch("http://localhost:3001/users/"+id, {
             method: "delete",
             headers: {

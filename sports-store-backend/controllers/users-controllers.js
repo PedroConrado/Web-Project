@@ -44,8 +44,8 @@ const controller={};
 
 controller.getUsers=async(req, res) => {
     try{
-        console.log("getting");
-        const data=await UserObj.find().toArray();
+        console.log("getting all users");
+        const data=await UserObj.find();
         res.status(200).send(data);
         console.log(data);
         return data;
@@ -86,8 +86,18 @@ controller.update=async (req, res) => {
 };
 
 controller.post=async (req, res) => {
+    console.log("creating a new product")
     console.log(req.body)
-    const user=new UserObj(req.body);
+    
+    const user=new UserObj();
+    user.id=req.body.id;
+    user.name=req.body.name;
+    user.phone=req.body.phone;
+    user.address=req.body.address;
+    user.profilePicture=req.body.profilePicture;
+    user.email=req.body.email;
+    user.password=req.body.password;
+    user.isAdmin=req.body.isAdmin;
     try{
         console.log("creating");
         await user.save();
