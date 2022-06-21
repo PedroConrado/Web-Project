@@ -1,3 +1,5 @@
+import { FaNetworkWired } from "react-icons/fa";
+
 export default class User {
     constructor(data) {
         this.id = data.id;
@@ -46,7 +48,12 @@ export default class User {
 
     static async login(email, password) {
         let user = undefined;
-        usersList.forEach(obj => {
+        let resp = await fetch("http://localhost:3001/users/", {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
+        });   
+        resp = await resp.json();
+        resp.forEach(obj => {
             if(obj.email === email && obj.password === password) {
                 localStorage.setItem("user", JSON.stringify(obj));
                 user = new User(obj);
@@ -64,8 +71,13 @@ export default class User {
     }
 
     static async getUsers() {
+        let resp = await fetch("http://localhost:3001/users/", {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
+        });   
+        resp = await resp.json();
         let users = []
-        for (const user of usersList) {
+        for (const user of resp) {
             const userObj = new User(user);
             users.push(userObj);
         }
@@ -73,8 +85,13 @@ export default class User {
     }
 
     static async getClients() {
+        let resp = await fetch("http://localhost:3001/users/", {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
+        });   
+        resp = await resp.json();
         let users = []
-        for (const user of usersList.filter(obj => !obj.isAdmin)) {
+        for (const user of resp.filter(obj => !obj.isAdmin)) {
             const userObj = new User(user);
             users.push(userObj);
         }
@@ -82,8 +99,13 @@ export default class User {
     }
 
     static async getAdmins() {
+        let resp = await fetch("http://localhost:3001/users/", {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
+        });   
+        resp = await resp.json();
         let users = []
-        for (const user of usersList.filter(obj => obj.isAdmin)) {
+        for (const user of resp.filter(obj => obj.isAdmin)) {
             const userObj = new User(user);
             users.push(userObj);
         }
@@ -91,27 +113,48 @@ export default class User {
     }
 
     static async getUserById(id) {
-        const users = usersList.filter(obj => obj.id == id);
-        if (users.length === 0)
-            return null;
-        return new User(users[0]);
+        let resp = await fetch("http://localhost:3001/users/"+id, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
+        });   
+        resp = await resp.json();
+        return new User(resp[0]);
     }
 
     static async updateUser(updatedUser) {
-        if(updatedUser.id===undefined) return null;
-        const userIndex = usersList.findIndex(obj => obj.id == updatedUser.id);
-        if(updatedUser.name !==undefined) usersList[userIndex].name=updatedUser.name;
-        if(updatedUser.profilePicture !==undefined) usersList[userIndex].profilePicture=updatedUser.profilePicture;
-        if(updatedUser.phone !==undefined) usersList[userIndex].phone=updatedUser.phone;
-        if(updatedUser.address !==undefined) usersList[userIndex].address=updatedUser.address;
-        if(updatedUser.email !==undefined) usersList[userIndex].email=updatedUser.email;
-        if(updatedUser.password !==undefined) usersList[userIndex].password=updatedUser.password;
+        let updatedUserData={
+            name: updatedUser.name,
+            phone: updatedUser.phone,
+            address: updatedUser.address,
+            profilePicture: updatedUser.profilePicture,
+        }
+        await fetch("http://localhost:3001/users/", {
+            method: "PUT",
+            headers: {
+            "Content-Type": "application/json",
+            },
+            body: JSON.stringify(updatedUserData),
+        })
+        .catch(error => {
+            window.alert(error);
+            return;
+        });
     }
 
     static async addUser(newUser) {
-        let newID=usersList[usersList.length-1].id+1
+        let resp = await fetch("http://localhost:3001/users/", {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
+        });   
+        resp = await resp.json();
+        let newId=resp.reduce(
+            (max, resp) => (resp.id > max ? resp.id : max),
+            resp[0].id
+        );
+        newId+=1;
+        
         let newUserData={
-            id: newID,
+            id: newId,
             name: newUser.name,
             email: newUser.email,
             password: newUser.password,
@@ -120,7 +163,30 @@ export default class User {
             profilePicture: newUser.profilePicture,
             isAdmin: newUser.isAdmin,
         }
-        if(newUser!==undefined) usersList.push(newUserData);
+        await fetch("http://localhost:3001/users/", {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newUserData),
+        })
+        .catch(error => {
+            window.alert(error);
+            return;
+        });
+    }
+
+    static async removeUser(id) {
+        await fetch("http://localhost:3001/users/"+id, {
+            method: "delete",
+            headers: {
+            "Content-Type": "application/json",
+            }
+        })
+        .catch(error => {
+            window.alert(error);
+            return;
+        });
     }
 }
 

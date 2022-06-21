@@ -14,7 +14,7 @@ export default function ItemContainer({
     const params = useParams();
     useEffect(() => {
         const loadAll = async () => {
-            const user = await User.getUserById(parseInt(params.userID));
+            const user = await User.getUserById(params.userID);
             setUser(user);
         }
     
