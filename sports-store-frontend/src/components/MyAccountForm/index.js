@@ -62,7 +62,7 @@ export default function AccountForm({
             password: password,
             phone: phone,
             address: address,
-            profilePicture: image,
+            profilePicture: "",
             isAdmin: user.isAdmin,
         }
         console.log(newUserData)

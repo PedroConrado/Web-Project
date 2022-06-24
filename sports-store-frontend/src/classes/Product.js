@@ -143,20 +143,8 @@ export default class Product {
     }
 
     static async addProduct(newProduct) {
-        let resp = await fetch("http://localhost:3001/products/", {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' }
-        });   
-        resp = await resp.json();
-        let newId=0;
-        let i={}
-        for(i in resp){
-            if(i.id>newId) newId=i.newId;
-        }
-        newId+=1;
-        console.log(newId);
         let newProductData={
-            id: newId, 
+            id: 0, 
             name: newProduct.name,
             description: newProduct.description,
             price: newProduct.price,

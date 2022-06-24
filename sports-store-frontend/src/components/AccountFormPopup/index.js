@@ -35,7 +35,7 @@ export default function AccountFormPopup({
             password: accountData.password,
             phone: phone,
             address: address,
-            profilePicture: image,
+            profilePicture: "",
             isAdmin: accountData.isAdmin,
         }
         console.log(newUserData)

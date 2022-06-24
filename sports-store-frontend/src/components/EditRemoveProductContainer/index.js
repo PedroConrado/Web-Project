@@ -26,6 +26,7 @@ export default function EditRemoveProductContainer({
     const [isOpenEdit, setIsOpenEdit] = useState(false);
     const [isOpenRemove, setIsOpenRemove] = useState(false);
     const [isOpen3dModel, setIsOpen3dModel] = useState(false);
+    const [isNotDeleted, setIsNotDeleted] = useState(true);
  
     const togglePopupEdit = () => {
         setIsOpenEdit(!isOpenEdit);
@@ -34,6 +35,7 @@ export default function EditRemoveProductContainer({
         setIsOpenRemove(!isOpenRemove);
     }
     const togglePopupDelete = () => {
+        setIsNotDeleted(false);
         setIsOpenRemove(!isOpenRemove);
         Product.removeProduct(item.id);
     }
@@ -43,6 +45,7 @@ export default function EditRemoveProductContainer({
 
     return(
         <>
+            {isNotDeleted &&
             <div className='edit-remove-ProductContainer'>
                 <p className='font-extraBold'>{itemName}</p>
                 <ImageContainer
@@ -58,6 +61,7 @@ export default function EditRemoveProductContainer({
                     <p className="font-bolder">3D Model</p>
                 </Button>
             </div>
+            }
 
             {isOpenEdit && <ProductFormPopup handleClose={togglePopupEdit} productData={item}/>}
             {isOpenRemove && <ConfirmCancelPopup title="Are you sure you want to delete this product?" handleDelete={togglePopupDelete} handleClose={togglePopupRemove} item={item}/>}

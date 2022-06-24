@@ -55,9 +55,10 @@ export default function AccountForm({
             password: password,
             phone: phone,
             address: address,
-            profilePicture: image,
+            profilePicture: "",
             isAdmin: isAdmin,
         }
+        console.log(newUserData)
         User.addUser(newUserData);
     }
 

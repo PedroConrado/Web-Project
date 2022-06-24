@@ -129,7 +129,11 @@ export default class User {
             phone: updatedUser.phone,
             address: updatedUser.address,
             profilePicture: updatedUser.profilePicture,
+            email: updatedUser.email,
+            password: updatedUser.password,
         }
+        console.log("updatin user");
+        console.log(updatedUserData)
         await fetch("http://localhost:3001/users/", {
             method: "PUT",
             headers: {
@@ -151,7 +155,7 @@ export default class User {
         resp = await resp.json();
         let newId=0;
         let i={}
-        for(i in resp){
+        for(const i of resp){
             if(i.id>newId) newId=i.newId;
         }
         newId+=1;
@@ -160,8 +164,19 @@ export default class User {
     }
 
     static async addUser(newUser) {
-        let newId=await User.nextID();
-        
+        console.log("creating user")
+        let resp = await fetch("http://localhost:3001/users/", {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
+        });   
+        resp = await resp.json();
+        let newId=0;
+        let i={}
+        for(const i of resp){
+            if(i.id>newId) newId=i.newId;
+        }
+        newId+=1;
+        console.log(newId)
         let newUserData={
             id: newId,
             name: newUser.name,
@@ -174,7 +189,7 @@ export default class User {
         }
         console.log("creating user")
         await fetch("http://localhost:3001/users/", {
-            method: "post",
+            method: "POST",
             headers: {
             "Content-Type": "application/json",
             },

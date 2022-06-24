@@ -73,7 +73,7 @@ controller.update=async (req, res) => {
     const user=new UserObj(req.body);
     try{
         console.log("update");
-        await UserObj.findOneAndUpdate({id: user.id}, {$set: {name: user.name, profilePicture: user.profilePicture, phone: user.phone, address: user.address}});
+        await UserObj.findOneAndUpdate({id: user.id}, {$set: {name: user.name, profilePicture: user.profilePicture, phone: user.phone, address: user.address, email: user.email, password: user.password}});
         res.status(201).send({message: "Produto cadastrado."});
     }
     catch(e){
@@ -98,8 +98,10 @@ controller.post=async (req, res) => {
     user.email=req.body.email;
     user.password=req.body.password;
     user.isAdmin=req.body.isAdmin;
+    console.log("creating");
+    console.log(user)
     try{
-        console.log("creating");
+        
         await user.save();
         res.status(201).send({message: "Produto cadastrado."});
     }

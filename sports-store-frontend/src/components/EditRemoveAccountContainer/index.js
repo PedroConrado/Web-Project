@@ -23,6 +23,7 @@ export default function EditRemoveAccountContainer({
 }){
     const [isOpenEdit, setIsOpenEdit] = useState(false);
     const [isOpenRemove, setIsOpenRemove] = useState(false);
+    const [isNotDeleted, setIsNotDeleted] = useState(true);
  
     const togglePopupEdit = () => {
         setIsOpenEdit(!isOpenEdit);
@@ -31,11 +32,13 @@ export default function EditRemoveAccountContainer({
         setIsOpenRemove(!isOpenRemove);
     }
     const togglePopupDelete = () => {
+        setIsNotDeleted(false);
         setIsOpenRemove(!isOpenRemove);
         User.removeUser(item.id);
     }
     return(
         <>
+            {isNotDeleted &&
             <div className='edit-remove-AccountContainer'>
                 <p className='font-extraBold'>{itemName}</p>
                 <Button orange onClick={togglePopupEdit}>
@@ -45,7 +48,7 @@ export default function EditRemoveAccountContainer({
                     <p className="font-bolder">Remove</p>
                 </Button>
             </div>
-
+            }
             {isOpenEdit && <AccountFormPopup handleClose={togglePopupEdit} accountData={item}/>}
             {isOpenRemove && <ConfirmCancelPopup title="Are you sure you want to delete this account?" handleDelete={togglePopupDelete} handleClose={togglePopupRemove} item={item}/>}
         </>
