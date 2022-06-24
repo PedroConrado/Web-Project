@@ -4,13 +4,13 @@ import DisplaPrice from '../DisplayPrice'
 import './styles.css'
 
 export default function PriceDisplayer({
-    subTotal = 0,
-    tax = 0,
-    shipping = 0,
-    //discount = "0.00",
+    subTotal = "",
+    tax = "",
+    shipping = "",
+    discount = "0.00",
 }) {
 
-    let total = subTotal + tax + shipping
+    let total = parseFloat(subTotal) + parseFloat(tax) + parseFloat(shipping)
     total = String(total)
 
     return (
@@ -19,10 +19,10 @@ export default function PriceDisplayer({
                 title="sub-total"
                 value={subTotal}
             />
-            {/* <DisplaPrice
+            <DisplaPrice
                 title="discount"
                 value={discount}
-            /> */}
+            />
             <DisplaPrice
                 title="tax"
                 value={tax}
