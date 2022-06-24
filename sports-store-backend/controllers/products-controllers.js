@@ -75,7 +75,10 @@ controller.getById=async(req, res) => {
 controller.post=async (req, res) => {
     console.log(req.body)
     console.log("recieved post request")
+    newId=ProductObj.find().sort({id:-1}).limit(1);
+    newId+=1;
     const product=new ProductObj(req.body);
+    product.id=newId
     try{
         console.log("creating");
         await product.save();

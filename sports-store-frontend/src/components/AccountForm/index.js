@@ -47,7 +47,7 @@ export default function AccountForm({
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         if(name=="" || email=="" || password=="") return null;
         let newUserData={
             name: name,
@@ -59,7 +59,7 @@ export default function AccountForm({
             isAdmin: isAdmin,
         }
         console.log(newUserData)
-        User.addUser(newUserData);
+        await User.addUser(newUserData);
     }
 
     return (

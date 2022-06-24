@@ -52,7 +52,7 @@ export default function AccountForm({
       loadAll();
     }, [])
     
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         if(name=="" || email=="" || password=="") return null;
         console.log("here")
         let newUserData={
@@ -66,7 +66,7 @@ export default function AccountForm({
             isAdmin: user.isAdmin,
         }
         console.log(newUserData)
-        User.updateUser(newUserData);
+        await User.updateUser(newUserData);
     }
 
     return (

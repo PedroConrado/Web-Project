@@ -88,9 +88,11 @@ controller.update=async (req, res) => {
 controller.post=async (req, res) => {
     console.log("creating a new product")
     console.log(req.body)
-    
+    newId=UserObj.find().sort({id:-1}).limit(1);
+    newId+=1;
+    console.log(newId)
     const user=new UserObj();
-    user.id=req.body.id;
+    user.id=newId;
     user.name=req.body.name;
     user.phone=req.body.phone;
     user.address=req.body.address;

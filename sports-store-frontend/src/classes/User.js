@@ -144,20 +144,7 @@ export default class User {
 
     static async addUser(newUser) {
         console.log("creating user")
-        let resp = await fetch("http://localhost:3001/users/", {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' }
-        });   
-        resp = await resp.json();
-        let newId=0;
-        let i={}
-        for(const i of resp){
-            if(i.id>newId) newId=i.newId;
-        }
-        newId+=1;
-        console.log(newId)
         let newUserData={
-            id: newId,
             name: newUser.name,
             email: newUser.email,
             password: newUser.password,
