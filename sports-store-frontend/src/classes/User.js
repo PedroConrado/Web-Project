@@ -45,27 +45,7 @@ export default class User {
     async delete() {
         //faz deleção do objeto no database
     }
-
-    static async login(email, password) {
-        let user = undefined;
-        let resp = await fetch("http://localhost:3001/users/", {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' }
-        });   
-        resp = await resp.json();
-        resp.forEach(obj => {
-            if(obj.email === email && obj.password === password) {
-                localStorage.setItem("user", JSON.stringify(obj));
-                user = new User(obj);
-                return;
-            }
-        })
-        if(user !== undefined)
-            return user;
-        else
-            throw new Error("Usuário não encontrado!");
-    }
-
+    
     static async logout() {
         localStorage.clear();
     }
@@ -124,7 +104,6 @@ export default class User {
 
     static async updateUser(updatedUser) {
         let updatedUserData={
-            id: updatedUser.id,
             name: updatedUser.name,
             phone: updatedUser.phone,
             address: updatedUser.address,
@@ -132,9 +111,9 @@ export default class User {
             email: updatedUser.email,
             password: updatedUser.password,
         }
-        console.log("updatin user");
-        console.log(updatedUserData)
-        await fetch("http://localhost:3001/users/", {
+        console.log("updating user");
+        console.log(updatedUser.id);
+        await fetch("http://localhost:3001/users/"+updatedUser.id, {
             method: "PUT",
             headers: {
             "Content-Type": "application/json",

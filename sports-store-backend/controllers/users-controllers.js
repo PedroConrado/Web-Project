@@ -73,7 +73,7 @@ controller.update=async (req, res) => {
     const user=new UserObj(req.body);
     try{
         console.log("update");
-        await UserObj.findOneAndUpdate({id: user.id}, {$set: {name: user.name, profilePicture: user.profilePicture, phone: user.phone, address: user.address, email: user.email, password: user.password}});
+        await UserObj.findOneAndUpdate({id: req.params.user}, {$set: {name: user.name, profilePicture: user.profilePicture, phone: user.phone, address: user.address, email: user.email, password: user.password}});
         res.status(201).send({message: "Produto cadastrado."});
     }
     catch(e){

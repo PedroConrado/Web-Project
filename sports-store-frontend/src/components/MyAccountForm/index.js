@@ -56,7 +56,7 @@ export default function AccountForm({
         if(name=="" || email=="" || password=="") return null;
         console.log("here")
         let newUserData={
-            id: user.id,
+            id: parseInt(params.userID),
             name: name,
             email: email,
             password: password,
