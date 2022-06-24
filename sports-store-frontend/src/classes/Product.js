@@ -58,23 +58,33 @@ export default class Product {
 
     static async getProducts() {
         let products = {}
-        products[male] = await Product.getMaleProducts()
-        products[female] = await Product.getFemaleProducts()
-        products[kids] = await Product.getKidsProducts()
+        products[male] = await Product.getMaleProducts();
+        products[female] = await Product.getFemaleProducts();
+        products[kids] = await Product.getKidsProducts();
         return products;
     }
 
     static async getMaleProducts() {
+        let resp = await fetch("http://localhost:3001/products/", {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
+        });   
+        resp = await resp.json();
         let products = []
-        for (const product of productsList.filter(obj => obj.category === male)) {
+        for (const product of resp.filter(obj => obj.category === male)) {
             const productObj = new Product(product);
             products.push(productObj);
         }
         return products;
     }
     static async getFemaleProducts() {
+        let resp = await fetch("http://localhost:3001/products/", {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
+        });   
+        resp = await resp.json();
         let products = []
-        for (const product of productsList.filter(obj => obj.category === female)) {
+        for (const product of resp.filter(obj => obj.category === female)) {
             const productObj = new Product(product);
             products.push(productObj);
         }
@@ -82,8 +92,13 @@ export default class Product {
     }
 
     static async getKidsProducts() {
+        let resp = await fetch("http://localhost:3001/products/", {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
+        });   
+        resp = await resp.json();
         let products = []
-        for (const product of productsList.filter(obj => obj.category === kids)) {
+        for (const product of resp.filter(obj => obj.category === kids)) {
             const productObj = new Product(product);
             products.push(productObj);
         }
@@ -93,29 +108,55 @@ export default class Product {
 
 
     static async getproductById(id) {
-        const products = productsList.filter(obj => obj.id === id);
-        if (products.length === 0)
-            return null;
+        let resp = await fetch("http://localhost:3001/products/"+id, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
+        });   
+        resp = await resp.json();
+        const products = resp[0];
         return new Product(products[0]);
     }
 
     static async updateProduct(updatedProduct) {
-        if(updatedProduct.id===undefined) return null;
-        const productIndex = productsList.findIndex(obj => obj.id == updatedProduct.id);
-        if(updatedProduct.name !==undefined) productsList[productIndex]=updatedProduct.name;
-        if(updatedProduct.description !==undefined) productsList[productIndex].description=updatedProduct.description;
-        if(updatedProduct.price !==undefined) productsList[productIndex].price=updatedProduct.price;
-        if(updatedProduct.quantityStock !==undefined) productsList[productIndex].quantityStock=updatedProduct.quantityStock;
-        if(updatedProduct.quantitySold !==undefined) productsList[productIndex].quantitySold=updatedProduct.quantitySold;
-        if(updatedProduct.image !==undefined) productsList[productIndex].image=updatedProduct.image;
-        if(updatedProduct.image3d !==undefined) productsList[productIndex].image3d=updatedProduct.image3d;
-        if(updatedProduct.category !==undefined) productsList[productIndex].category=updatedProduct.category;
+        let updatedProductData={
+            id: updatedProduct.id,
+            name: updatedProduct.name,
+            description: updatedProduct.description,
+            price: updatedProduct.price,
+            quantityStock: updatedProduct.quantityStock,
+            quantitySold: updatedProduct.quantitySold,
+            image: updatedProduct.image,
+            image3d: updatedProduct.image3d,
+            category: updatedProduct.category
+        }
+        await fetch("http://localhost:3001/products/", {
+            method: "PUT",
+            headers: {
+            "Content-Type": "application/json",
+            },
+            body: JSON.stringify(updatedProductData),
+        })
+        .catch(error => {
+            window.alert(error);
+            return;
+        });
     }
 
     static async addProduct(newProduct) {
-        let newID=productsList[productsList.length-1].id+1
+        let resp = await fetch("http://localhost:3001/products/", {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
+        });   
+        resp = await resp.json();
+        let newId=0;
+        let i={}
+        for(i in resp){
+            if(i.id>newId) newId=i.newId;
+        }
+        newId+=1;
+        console.log(newId);
         let newProductData={
-            id: newID,
+            id: newId, 
             name: newProduct.name,
             description: newProduct.description,
             price: newProduct.price,
@@ -125,8 +166,30 @@ export default class Product {
             image3d: newProduct.image3d,
             category: newProduct.category,
         }
-        console.log(newProductData.id)
-        if(newProduct!==undefined) productsList.push(newProductData);
+        await fetch("http://localhost:3001/products/", {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newProductData),
+        })
+        .catch(error => {
+            window.alert(error);
+            return;
+        });
+    }
+
+    static async removeProduct(id) {
+        await fetch("http://localhost:3001/products/"+id, {
+            method: "delete",
+            headers: {
+            "Content-Type": "application/json",
+            }
+        })
+        .catch(error => {
+            window.alert(error);
+            return;
+        });
     }
 }
 

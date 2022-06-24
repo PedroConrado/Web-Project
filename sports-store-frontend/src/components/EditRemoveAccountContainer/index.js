@@ -12,6 +12,7 @@ import './styles.css'
 import Button from '../Button';
 import AccountFormPopup from '../AccountFormPopup';
 import ConfirmCancelPopup from '../ConfirmCancelPopup';
+import User from "../../classes/User";
 
 
 export default function EditRemoveAccountContainer({
@@ -29,6 +30,10 @@ export default function EditRemoveAccountContainer({
     const togglePopupRemove = () => {
         setIsOpenRemove(!isOpenRemove);
     }
+    const togglePopupDelete = () => {
+        setIsOpenRemove(!isOpenRemove);
+        User.removeUser(item.id);
+    }
     return(
         <>
             <div className='edit-remove-AccountContainer'>
@@ -42,7 +47,7 @@ export default function EditRemoveAccountContainer({
             </div>
 
             {isOpenEdit && <AccountFormPopup handleClose={togglePopupEdit} accountData={item}/>}
-            {isOpenRemove && <ConfirmCancelPopup title="Are you sure you want to delete this account?" handleClose={togglePopupRemove} item={item}/>}
+            {isOpenRemove && <ConfirmCancelPopup title="Are you sure you want to delete this account?" handleDelete={togglePopupDelete} handleClose={togglePopupRemove} item={item}/>}
         </>
     );
 };
