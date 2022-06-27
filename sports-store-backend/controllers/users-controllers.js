@@ -69,10 +69,10 @@ controller.getById=async(req, res) => {
 };
 
 controller.update=async (req, res) => {
-    console.log(req.body)
+    console.log(req.body);
     const user=new UserObj(req.body);
+    console.log("update");
     try{
-        console.log("update");
         await UserObj.findOneAndUpdate({id: req.params.user}, {$set: {name: user.name, profilePicture: user.profilePicture, phone: user.phone, address: user.address, email: user.email, password: user.password}});
         res.status(201).send({message: "Produto cadastrado."});
     }
@@ -88,8 +88,7 @@ controller.update=async (req, res) => {
 controller.post=async (req, res) => {
     console.log("creating a new product")
     console.log(req.body)
-    newId=UserObj.find().sort({id:-1}).limit(1);
-    newId+=1;
+    newId=UserObj.find().sort({id:-1}).limit(1).id+1;
     console.log(newId)
     const user=new UserObj();
     user.id=newId;
