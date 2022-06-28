@@ -39,23 +39,6 @@ export default class Product {
         this.category = value;
     }
 
-
-    async create() {
-        //faz criação do objeto no database caso não exista
-        return this;
-    }
-
-
-    async update() {
-        //faz update no database aqui
-        //retorna objeto atualizado
-        return this;
-    }
-
-    async delete() {
-        //faz deleção do objeto no database
-    }
-
     static async getProducts() {
         let resp = await fetch("http://localhost:3001/products/", {
             method: 'GET',

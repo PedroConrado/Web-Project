@@ -30,21 +30,6 @@ export default class User {
         this.profilePicture = value;
     }
 
-    async create() {
-        //faz criação do objeto no database caso não exista
-        return this;
-    }
-
-
-    async update() {
-        //faz update no database aqui
-        //retorna objeto atualizado
-        return this;
-    }
-
-    async delete() {
-        //faz deleção do objeto no database
-    }
     
     static async logout() {
         localStorage.clear();
