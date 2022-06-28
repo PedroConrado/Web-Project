@@ -43,7 +43,7 @@ export default function AccountForm({
     const [image, setImage] = useState("");
     const [threeDModel, setThreeDModel] = useState("");
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         if(name=="" || category=="" || price=="") return null;
         console.log("adding new product")
         let newProductData={
@@ -53,11 +53,13 @@ export default function AccountForm({
             price: price,
             quantityStock: qtInStock,
             quantitySold: qtSold,
-            image: image,
-            image3d: threeDModel,
+            image: "default.png",
+            image3d: "default.stl",
 
         }
-        Product.addProduct(newProductData);
+        e.preventDefault();
+        await Product.addProduct(newProductData);
+        window.location.reload()
     }
 
     return (//recieve an account object and set values of form to that account

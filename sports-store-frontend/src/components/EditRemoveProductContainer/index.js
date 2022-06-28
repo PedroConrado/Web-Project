@@ -62,7 +62,6 @@ export default function EditRemoveProductContainer({
                 </Button>
             </div>
             }
-
             {isOpenEdit && <ProductFormPopup handleClose={togglePopupEdit} productData={item}/>}
             {isOpenRemove && <ConfirmCancelPopup title="Are you sure you want to delete this product?" handleDelete={togglePopupDelete} handleClose={togglePopupRemove} item={item}/>}
             {isOpen3dModel && <ThreeDPopup handleClose={togglePopup3d} productData={item}/>}

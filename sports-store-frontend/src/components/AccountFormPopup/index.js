@@ -26,7 +26,7 @@ export default function AccountFormPopup({
     const [phone, setPhone] = useState(accountData.phone);
     const [address, setAddress] = useState(accountData.address);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         if(name=="") return null;
         let newUserData={
             id: accountData.id,
@@ -35,11 +35,13 @@ export default function AccountFormPopup({
             password: accountData.password,
             phone: phone,
             address: address,
-            profilePicture: "",
+            profilePicture: "default.png",
             isAdmin: accountData.isAdmin,
         }
         console.log(newUserData)
-        User.updateUser(newUserData);
+        e.preventDefault();
+        await User.updateUser(newUserData);
+        window.location.reload()
     }
 
     return(
@@ -75,7 +77,7 @@ export default function AccountFormPopup({
                         type={"text"}
                     />
                     <div className='accountFormPopup-buttons-container'>
-                        <Button red onClick={handleClose} type="submit">
+                        <Button red onClick="handleSubmit(); handleClose()" type="submit">
                             <p className="font-bolder">Save Changes</p>
                         </Button>
                         <Button orange onClick={handleClose}>

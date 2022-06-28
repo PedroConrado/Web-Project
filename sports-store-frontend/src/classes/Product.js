@@ -57,10 +57,16 @@ export default class Product {
     }
 
     static async getProducts() {
-        let products = {}
-        products[male] = await Product.getMaleProducts();
-        products[female] = await Product.getFemaleProducts();
-        products[kids] = await Product.getKidsProducts();
+        let resp = await fetch("http://localhost:3001/products/", {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
+        });   
+        resp = await resp.json();
+        let products = []
+        for (const product of resp) {
+            const productObj = new Product(product);
+            products.push(productObj);
+        }
         return products;
     }
 
@@ -129,17 +135,20 @@ export default class Product {
             image3d: updatedProduct.image3d,
             category: updatedProduct.category
         }
-        await fetch("http://localhost:3001/products/", {
-            method: "PUT",
-            headers: {
-            "Content-Type": "application/json",
-            },
-            body: JSON.stringify(updatedProductData),
-        })
-        .catch(error => {
-            window.alert(error);
+        try{
+            await fetch("http://localhost:3001/products/"+updatedProductData.id, {
+                method: "PUT",
+                headers: { 
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json' 
+                },
+                body: JSON.stringify(updatedProductData),
+            })
+        }
+        catch(e) {
+            window.alert(e);
             return;
-        });
+        }
     }
 
     static async addProduct(newProduct) {

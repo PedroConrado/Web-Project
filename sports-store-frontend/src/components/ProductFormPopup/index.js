@@ -28,21 +28,25 @@ export default function ProductFormPopup({
     const [image, setImage] = useState("");
     const [threeDModel, setThreeDModel] = useState("");
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         if(name=="" || category=="" || price=="") return null;
         console.log("updating product")
         let newProductData={
+            id: productData.id,
             name: name,
             description: description,
             category: category,
             price: price,
             quantityStock: qtInStock,
             quantitySold: qtSold,
-            image: image,
-            image3d: threeDModel,
+            image: "default.png",
+            image3d: "default.stl",
 
         }
-        Product.addProduct(newProductData);
+        console.log(newProductData)
+        e.preventDefault();
+        await Product.updateProduct(newProductData);
+        window.location.reload();
     }
 
     return(
@@ -107,7 +111,7 @@ export default function ProductFormPopup({
                     />
                     
                     <div className='productFormPopup-buttons-container' type="submit">
-                        <Button red onClick={handleClose}>
+                        <Button red onClick="handleSubmit(); handleClose()">
                             <p className="font-bolder">Save Changes</p>
                         </Button>
                         <Button orange onClick={handleClose} >

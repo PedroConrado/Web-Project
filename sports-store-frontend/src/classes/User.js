@@ -51,7 +51,7 @@ export default class User {
     }
 
     static async getUsers() {
-        let resp = await fetch("http://localhost:3001/users/", {
+        let resp = await fetch("http://localhost:3001/users", {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         });   
@@ -65,7 +65,7 @@ export default class User {
     }
 
     static async getClients() {
-        let resp = await fetch("http://localhost:3001/users/", {
+        let resp = await fetch("http://localhost:3001/users", {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         });   
@@ -79,7 +79,7 @@ export default class User {
     }
 
     static async getAdmins() {
-        let resp = await fetch("http://localhost:3001/users/", {
+        let resp = await fetch("http://localhost:3001/users", {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         });   
@@ -94,7 +94,7 @@ export default class User {
     }
 
     static async getUserById(id) {
-        let resp = await fetch("http://localhost:3001/users/"+id, {
+        let resp = await fetch('http://localhost:3001/users/'+id, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         });   
@@ -103,33 +103,39 @@ export default class User {
     }
 
     static async updateUser(updatedUser) {
-        let updatedUserData={
-            name: updatedUser.name,
-            phone: updatedUser.phone,
-            address: updatedUser.address,
-            profilePicture: updatedUser.profilePicture,
-            email: updatedUser.email,
-            password: updatedUser.password,
-        }
         console.log("updating user");
         console.log(updatedUser.id);
-        await fetch("http://localhost:3001/users/"+updatedUser.id, {
-            method: "PUT",
-            headers: {
-            "Content-Type": "application/json",
-            },
-            body: JSON.stringify(updatedUserData),
-        })
-        .catch(error => {
-            window.alert(error);
-            return;
-        });
+        try{
+            let resp = await fetch('http://localhost:3001/users/'+updatedUser.id, {
+                method: "put",
+                headers: { 
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json' 
+                },
+                body: JSON.stringify({
+                    id: updatedUser.id,
+                    name: updatedUser.name,
+                    phone: updatedUser.phone,
+                    address: updatedUser.address,
+                    profilePicture: updatedUser.profilePicture,
+                    email: updatedUser.email,
+                    password: updatedUser.password
+                }),
+            })
+        }
+        catch(e){
+            alert("Error: " + e);
+            console.log(e)
+        };
     }
     
     static async nextID() {
-        let resp = await fetch("http://localhost:3001/users/", {
+        let resp = await fetch("http://localhost:3001/users", {
             method: 'GET',
-            headers: { 'Content-Type': 'application/json' }
+            headers: { 
+                'Accept': 'application/json',
+                'Content-Type': 'application/json' 
+            }
         });   
         resp = await resp.json();
         let newId=0;
@@ -144,26 +150,27 @@ export default class User {
 
     static async addUser(newUser) {
         console.log("creating user")
-        let newUserData={
-            name: newUser.name,
-            email: newUser.email,
-            password: newUser.password,
-            phone: newUser.phone,
-            address: newUser.address,
-            profilePicture: newUser.profilePicture,
-            isAdmin: newUser.isAdmin,
-        }
-        console.log("creating user")
-        await fetch("http://localhost:3001/users/", {
-            method: "POST",
-            headers: {
-            "Content-Type": "application/json",
+        
+        let resp = await fetch('http://localhost:3001/users', {
+            method: "post",
+            headers: { 
+                'Accept': 'application/json',
+                'Content-Type': 'application/json' 
             },
-            body: JSON.stringify(newUserData),
+            body: JSON.stringify({
+                id: 0,
+                name: newUser.name,
+                email: newUser.email,
+                password: newUser.password,
+                phone: newUser.phone,
+                address: newUser.address,
+                profilePicture: newUser.profilePicture,
+                isAdmin: newUser.isAdmin
+            }),
         })
         .catch(error => {
-            window.alert(error);
-            return;
+            alert("Error: " + error);
+            console.log(error)
         });
     }
 

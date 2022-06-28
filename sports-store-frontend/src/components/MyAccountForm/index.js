@@ -62,11 +62,13 @@ export default function AccountForm({
             password: password,
             phone: phone,
             address: address,
-            profilePicture: "",
+            profilePicture: "default.png",
             isAdmin: user.isAdmin,
         }
         console.log(newUserData)
+        e.preventDefault();
         await User.updateUser(newUserData);
+        window.location.reload()
     }
 
     return (

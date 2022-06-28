@@ -55,11 +55,14 @@ export default function AccountForm({
             password: password,
             phone: phone,
             address: address,
-            profilePicture: "",
+            profilePicture: "default.png",
             isAdmin: isAdmin,
         }
         console.log(newUserData)
+
+        e.preventDefault();
         await User.addUser(newUserData);
+        window.location.reload()
     }
 
     return (
@@ -69,42 +72,42 @@ export default function AccountForm({
             <form className="AccountForm-form" onSubmit={handleSubmit}>
                 <FormInput
                     title="Name"
-                    placeholder='Current Name'
+                    placeholder='Name'
                     value={name}
                     setValue={setName}
                     type={"text"}
                 />
                 <FormInput
                     title={"Image"}
-                    placeholder={'Current File'}
+                    placeholder={'File'}
                     value={image}
                     setValue={setImage}
                     type={"image"}
                 />
                 <FormInput
                     title="Phone"
-                    placeholder='Current Phone Number'
+                    placeholder='Phone Number'
                     value={phone}
                     setValue={setPhone}
                     type={"text"}
                 />
                 <FormInput
                     title="Adress"
-                    placeholder='Current Address'
+                    placeholder='Address'
                     value={address}
                     setValue={setAddress}
                     type={"text"}
                 />
                 <FormInput
                     title="Email"
-                    placeholder='Current Email'
+                    placeholder='Email'
                     value={email}
                     setValue={setEmail}
                     type={"email"}
                 />
                 <FormInput
                     title="Password"
-                    placeholder='Current Password'
+                    placeholder='Password'
                     value={password}
                     setValue={setPassword}
                     type={"password"}
