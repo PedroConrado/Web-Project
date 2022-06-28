@@ -29,7 +29,7 @@ export default function ThreeDModelPopup({
                 <p className='font-extraBold'>{productData.name}</p>
 
                 <STLViewer
-                    model={"/assets/"+productData.image3d}
+                    model={productData.image3d}
                     width={400}
                     height={400}
                     modelColor='#FF9933'
