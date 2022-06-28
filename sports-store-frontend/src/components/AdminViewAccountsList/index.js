@@ -39,7 +39,7 @@ export default function AdminViewAccountsList({
                 <div key={key}>
                     <EditRemoveAccount
                         item={account}
-                        itemName={account.name} isAdmin={isAdmin}
+                        itemName={account.name} isAdmin={isAdmin} accountPreviewImageSrc={account.profilePicture}
                     />
                 </div>
             ))}

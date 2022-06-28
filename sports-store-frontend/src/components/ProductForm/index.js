@@ -45,6 +45,8 @@ export default function AccountForm({
 
     const handleSubmit = async (e) => {
         if(name=="" || category=="" || price=="") return null;
+        if(image=="") image="default.png";
+        if(threeDModel=="") threeDModel="default.stl";
         console.log("adding new product")
         let newProductData={
             name: name,
@@ -53,8 +55,8 @@ export default function AccountForm({
             price: price,
             quantityStock: qtInStock,
             quantitySold: qtSold,
-            image: "default.png",
-            image3d: "default.stl",
+            image: image,
+            image3d: threeDModel,
 
         }
         e.preventDefault();
@@ -112,17 +114,17 @@ export default function AccountForm({
                 />
                 <FormInput
                     title={"Image"}
-                    placeholder={'File'}
+                    placeholder={'File name in public/assets or link'}
                     value={image}
                     setValue={setImage}
-                    type={"image"}
+                    type={"text"}
                 />
                 <FormInput
                     title={"3dModel"}
-                    placeholder={'File'}
+                    placeholder={'Stl file name in public/assets or link'}
                     value={threeDModel}
                     setValue={setThreeDModel}
-                    type={"file"}
+                    type={"text"}
                 />
                 
                 

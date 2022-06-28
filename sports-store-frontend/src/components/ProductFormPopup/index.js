@@ -30,6 +30,8 @@ export default function ProductFormPopup({
 
     const handleSubmit = async (e) => {
         if(name=="" || category=="" || price=="") return null;
+        if(image=="") image="default.png";
+        if(threeDModel=="") threeDModel="default.stl";
         console.log("updating product")
         let newProductData={
             id: productData.id,
@@ -39,8 +41,8 @@ export default function ProductFormPopup({
             price: price,
             quantityStock: qtInStock,
             quantitySold: qtSold,
-            image: "default.png",
-            image3d: "default.stl",
+            image: image,
+            image3d: threeDModel,
 
         }
         console.log(newProductData)
@@ -97,17 +99,17 @@ export default function ProductFormPopup({
                     />
                     <FormInput
                         title={"Image"}
-                        placeholder={'Current File'}
+                        placeholder={'File name in public/assets or link'}
                         value={image}
                         setValue={setImage}
-                        type={"image"}
+                        type={"text"}
                     />
                     <FormInput
                         title={"3dModel"}
-                        placeholder={'Current File'}
+                        placeholder={'STL file name in public/assets or link'}
                         value={threeDModel}
                         setValue={setThreeDModel}
-                        type={"file"}
+                        type={"text"}
                     />
                     
                     <div className='productFormPopup-buttons-container' type="submit">

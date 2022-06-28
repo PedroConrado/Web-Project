@@ -18,7 +18,7 @@ export default function AddProduct() {
             <ProductForm 
                 isAdmin={true}
                 isRegister={true}
-                title="Register Administrator"
+                title="Register Product"
                 formDescription="Enter the information to register a product:"
                 buttonText="Register"
             />

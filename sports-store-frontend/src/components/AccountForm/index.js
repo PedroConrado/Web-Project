@@ -49,13 +49,14 @@ export default function AccountForm({
 
     const handleSubmit = async (e) => {
         if(name=="" || email=="" || password=="") return null;
+        if(image=="") image="defaultAccount.png";
         let newUserData={
             name: name,
             email: email,
             password: password,
             phone: phone,
             address: address,
-            profilePicture: "default.png",
+            profilePicture: image,
             isAdmin: isAdmin,
         }
         console.log(newUserData)
@@ -79,10 +80,10 @@ export default function AccountForm({
                 />
                 <FormInput
                     title={"Image"}
-                    placeholder={'File'}
+                    placeholder={'File name in public/assets or link'}
                     value={image}
                     setValue={setImage}
-                    type={"image"}
+                    type={"text"}
                 />
                 <FormInput
                     title="Phone"

@@ -13,6 +13,8 @@ import Button from '../Button';
 import AccountFormPopup from '../AccountFormPopup';
 import ConfirmCancelPopup from '../ConfirmCancelPopup';
 import User from "../../classes/User";
+import ImageContainer from '../ImageContainer';
+
 
 
 export default function EditRemoveAccountContainer({
@@ -20,6 +22,7 @@ export default function EditRemoveAccountContainer({
     itemName = "",
     isAdmin=false,
     item,
+    accountPreviewImageSrc,
 }){
     const [isOpenEdit, setIsOpenEdit] = useState(false);
     const [isOpenRemove, setIsOpenRemove] = useState(false);
@@ -41,6 +44,9 @@ export default function EditRemoveAccountContainer({
             {isNotDeleted &&
             <div className='edit-remove-AccountContainer'>
                 <p className='font-extraBold'>{itemName}</p>
+                <ImageContainer
+                    src={accountPreviewImageSrc}
+                />
                 <Button orange onClick={togglePopupEdit}>
                     <p className="font-bolder">Edit Data</p>
                 </Button>

@@ -91,7 +91,7 @@ export default class User {
         console.log("updating user");
         console.log(updatedUser.id);
         let imageLink=updatedUser.profilePicture;
-        if(imageLink.indexOf("/assests/")===-1) imageLink="/assets/"+imageLink;
+        if(imageLink.indexOf("/assests/")===-1  && imageLink.indexOf("http")===-1) imageLink="/assets/"+imageLink;
         try{
             let resp = await fetch('http://localhost:3001/users/'+updatedUser.id, {
                 method: "put",
@@ -138,7 +138,7 @@ export default class User {
     static async addUser(newUser) {
         console.log("creating user")
         let imageLink=newUser.profilePicture;
-        if(imageLink.indexOf("/assests/")===-1) imageLink="/assets/"+imageLink;
+        if(imageLink.indexOf("/assests/")===-1 && imageLink.indexOf("http")===-1) imageLink="/assets/"+imageLink;
         let resp = await fetch('http://localhost:3001/users', {
             method: "post",
             headers: { 

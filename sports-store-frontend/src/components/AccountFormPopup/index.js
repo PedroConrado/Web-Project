@@ -22,12 +22,13 @@ export default function AccountFormPopup({
 }) { //recieve an account object and set values of form to that account
     //onsubmit should call a function passed to this form that updates account
     const [name, setName] = useState(accountData.name);
-    const [image, setImage] = useState(accountData.image);
+    const [image, setImage] = useState(accountData.profilePicture.replace("/assets/", ''));
     const [phone, setPhone] = useState(accountData.phone);
     const [address, setAddress] = useState(accountData.address);
 
     const handleSubmit = async (e) => {
         if(name=="") return null;
+        if(image=="") image="defaultAccount.png";
         let newUserData={
             id: accountData.id,
             name: name,
@@ -35,7 +36,7 @@ export default function AccountFormPopup({
             password: accountData.password,
             phone: phone,
             address: address,
-            profilePicture: "default.png",
+            profilePicture: image,
             isAdmin: accountData.isAdmin,
         }
         console.log(newUserData)
@@ -57,10 +58,10 @@ export default function AccountFormPopup({
                     />
                     <FormInput
                         title={"Image"}
-                        placeholder={'Current File'}
+                        placeholder={'File name in public/assets or link'}
                         value={image}
                         setValue={setImage}
-                        type={"image"}
+                        type={"text"}
                     />
                     <FormInput
                         title="Phone"
