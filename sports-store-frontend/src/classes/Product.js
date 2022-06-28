@@ -40,16 +40,10 @@ export default class Product {
     }
 
     static async getProducts() {
-        let resp = await fetch("http://localhost:3001/products/", {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' }
-        });   
-        resp = await resp.json();
-        let products = []
-        for (const product of resp) {
-            const productObj = new Product(product);
-            products.push(productObj);
-        }
+        let products = {}
+        products[male] = await Product.getMaleProducts()
+        products[female] = await Product.getFemaleProducts()
+        products[kids] = await Product.getKidsProducts()
         return products;
     }
 
@@ -103,10 +97,14 @@ export default class Product {
         });   
         resp = await resp.json();
         const products = resp[0];
-        return new Product(products[0]);
+        return new Product(products);
     }
 
     static async updateProduct(updatedProduct) {
+        let imageLink=updatedProduct.image;
+        if(imageLink.indexOf("/assests/")===-1) imageLink="/assets/"+imageLink;
+        let imageLink3d=updatedProduct.image3d;
+        if(imageLink3d.indexOf("/assests/")===-1) imageLink3d="/assets/"+imageLink3d;
         let updatedProductData={
             id: updatedProduct.id,
             name: updatedProduct.name,
@@ -114,8 +112,8 @@ export default class Product {
             price: updatedProduct.price,
             quantityStock: updatedProduct.quantityStock,
             quantitySold: updatedProduct.quantitySold,
-            image: updatedProduct.image,
-            image3d: updatedProduct.image3d,
+            image: imageLink,
+            image3d: imageLink3d,
             category: updatedProduct.category
         }
         try{
@@ -135,6 +133,10 @@ export default class Product {
     }
 
     static async addProduct(newProduct) {
+        let imageLink=newProduct.image;
+        if(imageLink.indexOf("/assests/")===-1) imageLink="/assets/"+imageLink;
+        let imageLink3d=newProduct.image3d;
+        if(imageLink3d.indexOf("/assests/")===-1) imageLink3d="/assets/"+imageLink3d;
         let newProductData={
             id: 0, 
             name: newProduct.name,
@@ -142,8 +144,8 @@ export default class Product {
             price: newProduct.price,
             quantityStock: newProduct.quantityStock,
             quantitySold: newProduct.quantitySold,
-            image: newProduct.image,
-            image3d: newProduct.image3d,
+            image: imageLink,
+            image3d: imageLink3d,
             category: newProduct.category,
         }
         await fetch("http://localhost:3001/products/", {

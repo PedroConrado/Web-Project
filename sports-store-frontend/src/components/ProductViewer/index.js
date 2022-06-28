@@ -14,6 +14,7 @@ export default function ProductViewer({
     const [product, setProduct] = useState({})
     const [isOpen3dModel, setIsOpen3dModel] = useState(false);
 
+    const [user, setUser] = useState({})
     const togglePopup3d = () => {
         setIsOpen3dModel(!isOpen3dModel);
     }
@@ -25,14 +26,6 @@ export default function ProductViewer({
             const product = await Product.getproductById(parseInt(params.productID));
             setProduct(product);
             console.log(product)
-        }
-    
-      loadAll();
-    }, [])
-
-    const [user, setUser] = useState({})
-    useEffect(() => {
-        const loadAll = async () => {
             const user = await User.getUserById(parseInt(params.userID));
             setUser(user);
         }

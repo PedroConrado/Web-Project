@@ -6,7 +6,6 @@ import User from "../../classes/User";
 
 export default function ItemContainer({
     item,
-
 }) {
     const [user, setUser] = useState({})
     const params = useParams();

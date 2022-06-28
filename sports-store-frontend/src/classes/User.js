@@ -90,6 +90,8 @@ export default class User {
     static async updateUser(updatedUser) {
         console.log("updating user");
         console.log(updatedUser.id);
+        let imageLink=updatedUser.profilePicture;
+        if(imageLink.indexOf("/assests/")===-1) imageLink="/assets/"+imageLink;
         try{
             let resp = await fetch('http://localhost:3001/users/'+updatedUser.id, {
                 method: "put",
@@ -102,7 +104,7 @@ export default class User {
                     name: updatedUser.name,
                     phone: updatedUser.phone,
                     address: updatedUser.address,
-                    profilePicture: updatedUser.profilePicture,
+                    profilePicture: imageLink,
                     email: updatedUser.email,
                     password: updatedUser.password
                 }),
@@ -135,7 +137,8 @@ export default class User {
 
     static async addUser(newUser) {
         console.log("creating user")
-        
+        let imageLink=newUser.profilePicture;
+        if(imageLink.indexOf("/assests/")===-1) imageLink="/assets/"+imageLink;
         let resp = await fetch('http://localhost:3001/users', {
             method: "post",
             headers: { 
@@ -149,7 +152,7 @@ export default class User {
                 password: newUser.password,
                 phone: newUser.phone,
                 address: newUser.address,
-                profilePicture: newUser.profilePicture,
+                profilePicture: imageLink,
                 isAdmin: newUser.isAdmin
             }),
         })
