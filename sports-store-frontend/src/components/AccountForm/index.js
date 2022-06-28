@@ -10,6 +10,7 @@ import ImageContainer from '../ImageContainer';
 import Button from '../Button';
 import FormInput from '../FormInput';
 import User from "../../classes/User";
+import {Link, useNavigate} from 'react-router-dom';
 
 export default function AccountForm({
     title = "Default Title",
@@ -32,6 +33,7 @@ export default function AccountForm({
     style = {},
     isAdmin = false,
     isRegister = false,
+    isSignUp = false,
     onClick = () =>{},
     onSubmit = () =>{},
     accountData={},
@@ -46,6 +48,8 @@ export default function AccountForm({
     const [address, setAddress] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [linkTo, setLinkTo] = useState(to);
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         if(name=="" || email=="" || password=="") return null;
@@ -62,8 +66,30 @@ export default function AccountForm({
         console.log(newUserData)
 
         e.preventDefault();
-        await User.addUser(newUserData);
-        window.location.reload()
+        let newID=await User.addUser(newUserData);
+        console.log(newID)
+        if(isSignUp){
+            try {
+                let accounts = await User.getUsers();  
+                let user=undefined
+                for (const obj of accounts) {
+                    console.log(obj)
+                    if(obj.email === email && obj.password === password) {
+                        user = new User(obj);
+                    }
+                }
+                if(user===undefined){
+                    throw new Error("Usuário não encontrado!");
+                }
+                else{
+                    navigate("/client-homePage/"+user.id);
+                }
+    
+            } catch(err) {
+                alert(`Erro ao fazer login: ${err.message}`);
+            }
+        } 
+        else if(link) navigate(linkTo);
     }
 
     return (
@@ -114,7 +140,7 @@ export default function AccountForm({
                     type={"password"}
                 />
                 
-                <Button orange link={link} to={to} type="submit">
+                <Button orange type="submit">
                     <img src={"/assets/plus-circle.svg"} hidden={!isRegister}/>
                     <p className="font-bolder">{buttonText}</p>
                 </Button>

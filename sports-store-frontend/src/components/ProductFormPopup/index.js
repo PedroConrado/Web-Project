@@ -25,8 +25,8 @@ export default function ProductFormPopup({
     const [price, setPrice] = useState(productData.price);
     const [qtInStock, setQtInStock] = useState(productData.quantityStock);
     const [qtSold, setQtSold] = useState(productData.quantitySold);   
-    const [image, setImage] = useState("");
-    const [threeDModel, setThreeDModel] = useState("");
+    const [image, setImage] = useState(productData.image.replace("/assets/", ''));
+    const [threeDModel, setThreeDModel] = useState(productData.image3d.replace("/assets/", ''));
 
     const handleSubmit = async (e) => {
         if(name=="" || category=="" || price=="") return null;

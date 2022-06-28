@@ -115,26 +115,6 @@ export default class User {
             console.log(e)
         };
     }
-    
-    static async nextID() {
-        let resp = await fetch("http://localhost:3001/users", {
-            method: 'GET',
-            headers: { 
-                'Accept': 'application/json',
-                'Content-Type': 'application/json' 
-            }
-        });   
-        resp = await resp.json();
-        let newId=0;
-        let i={}
-        for(const i of resp){
-            if(i.id>newId) newId=i.newId;
-        }
-        newId+=1;
-        console.log(newId)
-        return newId;
-    }
-
     static async addUser(newUser) {
         console.log("creating user")
         let imageLink=newUser.profilePicture;
