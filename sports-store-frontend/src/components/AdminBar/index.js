@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 import './styles.css'
 import Button from '../Button';
 import User from "../../classes/User";
+import ImageContainer from '../ImageContainer';
 
 
 
@@ -31,7 +32,12 @@ export default function AdminBar({page=0}) {
     }, [])
     return (
         <div className="adminBar">
-            <h4 className='font-extraBold'>{user.name}</h4>
+            <div  className='centerImage'>
+            <ImageContainer
+                src={user.profilePicture}
+            /></div>
+            <h4 className='font-extraBold center'>{user.name}</h4>
+            
             <h5 className='font-extraBold color-orange'>Actions</h5>
             <Button adminBar orange={getButtonClass(0, page)} gray={!getButtonClass(0, page)} link to={"/admin-addAdmin/"+user.id}>
                 <p className="font-bolder">Add New Admin</p>

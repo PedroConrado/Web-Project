@@ -1,3 +1,5 @@
+import { FaNetworkWired } from "react-icons/fa";
+
 export default class User {
     constructor(data) {
         this.id = data.id;
@@ -28,44 +30,19 @@ export default class User {
         this.profilePicture = value;
     }
 
-    async create() {
-        //faz criação do objeto no database caso não exista
-        return this;
-    }
-
-
-    async update() {
-        //faz update no database aqui
-        //retorna objeto atualizado
-        return this;
-    }
-
-    async delete() {
-        //faz deleção do objeto no database
-    }
-
-    static async login(email, password) {
-        let user = undefined;
-        usersList.forEach(obj => {
-            if(obj.email === email && obj.password === password) {
-                localStorage.setItem("user", JSON.stringify(obj));
-                user = new User(obj);
-                return;
-            }
-        })
-        if(user !== undefined)
-            return user;
-        else
-            throw new Error("Usuário não encontrado!");
-    }
-
+    
     static async logout() {
         localStorage.clear();
     }
 
     static async getUsers() {
+        let resp = await fetch("http://localhost:3001/users", {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
+        });   
+        resp = await resp.json();
         let users = []
-        for (const user of usersList) {
+        for (const user of resp) {
             const userObj = new User(user);
             users.push(userObj);
         }
@@ -73,8 +50,13 @@ export default class User {
     }
 
     static async getClients() {
+        let resp = await fetch("http://localhost:3001/users", {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
+        });   
+        resp = await resp.json();
         let users = []
-        for (const user of usersList.filter(obj => !obj.isAdmin)) {
+        for (const user of resp.filter(obj => !obj.isAdmin)) {
             const userObj = new User(user);
             users.push(userObj);
         }
@@ -82,8 +64,14 @@ export default class User {
     }
 
     static async getAdmins() {
+        let resp = await fetch("http://localhost:3001/users", {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
+        });   
+        resp = await resp.json();
         let users = []
-        for (const user of usersList.filter(obj => obj.isAdmin)) {
+        
+        for (const user of resp.filter(obj => obj.isAdmin)) {
             const userObj = new User(user);
             users.push(userObj);
         }
@@ -91,36 +79,81 @@ export default class User {
     }
 
     static async getUserById(id) {
-        const users = usersList.filter(obj => obj.id == id);
-        if (users.length === 0)
-            return null;
-        return new User(users[0]);
+        let resp = await fetch('http://localhost:3001/users/'+id, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
+        });   
+        resp = await resp.json();
+        return new User(resp[0]);
     }
 
     static async updateUser(updatedUser) {
-        if(updatedUser.id===undefined) return null;
-        const userIndex = usersList.findIndex(obj => obj.id == updatedUser.id);
-        if(updatedUser.name !==undefined) usersList[userIndex].name=updatedUser.name;
-        if(updatedUser.profilePicture !==undefined) usersList[userIndex].profilePicture=updatedUser.profilePicture;
-        if(updatedUser.phone !==undefined) usersList[userIndex].phone=updatedUser.phone;
-        if(updatedUser.address !==undefined) usersList[userIndex].address=updatedUser.address;
-        if(updatedUser.email !==undefined) usersList[userIndex].email=updatedUser.email;
-        if(updatedUser.password !==undefined) usersList[userIndex].password=updatedUser.password;
+        console.log("updating user");
+        console.log(updatedUser.id);
+        let imageLink=updatedUser.profilePicture;
+        if(imageLink.indexOf("/assests/")===-1  && imageLink.indexOf("http")===-1) imageLink="/assets/"+imageLink;
+        try{
+            let resp = await fetch('http://localhost:3001/users/'+updatedUser.id, {
+                method: "put",
+                headers: { 
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json' 
+                },
+                body: JSON.stringify({
+                    id: updatedUser.id,
+                    name: updatedUser.name,
+                    phone: updatedUser.phone,
+                    address: updatedUser.address,
+                    profilePicture: imageLink,
+                    email: updatedUser.email,
+                    password: updatedUser.password
+                }),
+            })
+        }
+        catch(e){
+            alert("Error: " + e);
+            console.log(e)
+        };
+    }
+    static async addUser(newUser) {
+        console.log("creating user")
+        let imageLink=newUser.profilePicture;
+        if(imageLink.indexOf("/assests/")===-1 && imageLink.indexOf("http")===-1) imageLink="/assets/"+imageLink;
+        let resp = await fetch('http://localhost:3001/users', {
+            method: "post",
+            headers: { 
+                'Accept': 'application/json',
+                'Content-Type': 'application/json' 
+            },
+            body: JSON.stringify({
+                id: 0,
+                name: newUser.name,
+                email: newUser.email,
+                password: newUser.password,
+                phone: newUser.phone,
+                address: newUser.address,
+                profilePicture: imageLink,
+                isAdmin: newUser.isAdmin
+            }),
+        })
+        .catch(error => {
+            alert("Error: " + error);
+            console.log(error)
+        });
     }
 
-    static async addUser(newUser) {
-        let newID=usersList[usersList.length-1].id+1
-        let newUserData={
-            id: newID,
-            name: newUser.name,
-            email: newUser.email,
-            password: newUser.password,
-            phone: newUser.phone,
-            address: newUser.address,
-            profilePicture: newUser.profilePicture,
-            isAdmin: newUser.isAdmin,
-        }
-        if(newUser!==undefined) usersList.push(newUserData);
+    static async removeUser(id) {
+        console.log("deleting")
+        await fetch("http://localhost:3001/users/"+id, {
+            method: "delete",
+            headers: {
+            "Content-Type": "application/json",
+            }
+        })
+        .catch(error => {
+            window.alert(error);
+            return;
+        });
     }
 }
 

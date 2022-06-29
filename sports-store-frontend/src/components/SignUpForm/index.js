@@ -7,6 +7,7 @@
 import React from 'react';
 import AccountForm from '../AccountForm';
 import Button from '../Button';
+import User from '../../classes/User';
 
 import './styles.css'
 
@@ -26,8 +27,11 @@ export default function SignUpForm() {
                 title='Create Account'
                 description='Insert your personal data below'
                 buttonText='Create'
+                isSignUp={true}
+                iisAdmin={false}
+                isRegister={true}
                 link
-                to="/client-myAccount/1"
+                to={"/client-myAccount/0"}
                 />
             </div>
         </div>

@@ -98,15 +98,41 @@ Info saved on the server:
 * QuantitySold
 * Image
 * Image3d
+* Category
 
 # 3. Comments About the Code
+## Frontend:
+The code follows the structure below:
+* src
+    * classes (Manipulate users, products and the cart)
+    * components (UI components used within one or more pages)
+    * pages (The component that structure the final page displayed to the user)
+    * global.css (Styles that are kept unchanged throught the entire system)
+    * index.js (Loads the application)
+    * reset.css (Reset default css)
+    * routes.js (Declares the pages and respective routes)
+    * variables.css (Common styles that can be used in the components)
 
 # 4. Test Plan
 
 # 5. Test Results
 
 # 6. Build Procedures
+## Frontend
+To start the web application on localhost, run the following commands inside the folder ```sports-store-frontend```:
+* ```npm install```
+* ```npm start```
+
+This will install all dependencies and start a web server on port 3000, if available.
 
 # 7. Problems
+At this point of the project, all the funcionalities will not make any change because there is no database. After reload the app will go to default.
 
 # 8. Comments
+To log in as admin, use the following credentials:
+* email: admin@admin.com
+* password: admin
+
+To log in as user, use the following credentials:
+* gabriel_vr@usp.br
+* 123456

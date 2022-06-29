@@ -43,8 +43,10 @@ export default function AccountForm({
     const [image, setImage] = useState("");
     const [threeDModel, setThreeDModel] = useState("");
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         if(name=="" || category=="" || price=="") return null;
+        if(image=="") image="default.png";
+        if(threeDModel=="") threeDModel="default.stl";
         console.log("adding new product")
         let newProductData={
             name: name,
@@ -57,7 +59,9 @@ export default function AccountForm({
             image3d: threeDModel,
 
         }
-        Product.addProduct(newProductData);
+        e.preventDefault();
+        await Product.addProduct(newProductData);
+        window.location.reload()
     }
 
     return (//recieve an account object and set values of form to that account
@@ -110,17 +114,17 @@ export default function AccountForm({
                 />
                 <FormInput
                     title={"Image"}
-                    placeholder={'File'}
+                    placeholder={'File name in public/assets or link'}
                     value={image}
                     setValue={setImage}
-                    type={"image"}
+                    type={"text"}
                 />
                 <FormInput
                     title={"3dModel"}
-                    placeholder={'File'}
+                    placeholder={'Stl file name in public/assets or link'}
                     value={threeDModel}
                     setValue={setThreeDModel}
-                    type={"file"}
+                    type={"text"}
                 />
                 
                 
