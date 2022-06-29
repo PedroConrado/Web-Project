@@ -32,7 +32,7 @@ export default function ThreeDModelPopup({
                     model={productData.image3d}
                     width={400}
                     height={400}
-                    modelColor='#FF9933'
+                    modelColor='#7b61ff'
                     backgroundColor='#5DBF79'
                     rotate={false}
                     orbitControls={true}
