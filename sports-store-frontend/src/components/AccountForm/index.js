@@ -90,7 +90,6 @@ export default function AccountForm({
             }
         } 
         else if(link) navigate(linkTo);
-        window.location.reload();
     }
 
     return (
