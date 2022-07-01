@@ -23,11 +23,11 @@ export default function OrderDetails({
     }, [cartItems]);
 
 
-    const increaseItemQuantity = (itemIdx) => {
-        Cart.increaseQuantity(cartItems[itemIdx].id);
+    const increaseItemQuantity = async (itemIdx) => {
+        const q=await Cart.increaseQuantity(cartItems[itemIdx].id);
         setCartItems(oldItems => {
             const temp = [...oldItems]
-            temp[itemIdx].quantity++;
+            temp[itemIdx].quantity=q;
             return temp;
         })
     }
@@ -36,9 +36,10 @@ export default function OrderDetails({
         Cart.decreaseQuantity(cartItems[itemIdx].id);
         setCartItems(oldItems => {
             const temp = [...oldItems]
-            temp[itemIdx].quantity--;
-            if(temp[itemIdx].quantity == 0)
-            temp.splice(itemIdx, 1);
+            if(temp[itemIdx].quantity > 0)
+                temp[itemIdx].quantity--;
+            if(temp[itemIdx].quantity <= 0)
+                temp.splice(itemIdx, 1);
             return temp;
         })
     }
