@@ -34,20 +34,23 @@ class Cart {
         localStorage.setItem('cart', JSON.stringify(cartMap));
     }
 
-    increaseQuantity(itemId) {
+    async increaseQuantity(itemId) {
         let cartTxt = localStorage.getItem("cart");
         let cartMap = cartTxt === null ? {} : JSON.parse(cartTxt);
         if(itemId in cartMap){
-            cartMap[itemId]++;
+            const product = await Product.getproductById(parseInt(itemId));
+            if(product.quantityStock>cartMap[itemId])
+                cartMap[itemId]++;
             localStorage.setItem('cart', JSON.stringify(cartMap));
         }
+        return cartMap[itemId]
     }
     decreaseQuantity(itemId) {
         let cartTxt = localStorage.getItem("cart");
         let cartMap = cartTxt === null ? {} : JSON.parse(cartTxt);
         if(itemId in cartMap){
             cartMap[itemId]--;
-            if(cartMap[itemId] == 0)
+            if(cartMap[itemId] <= 0)
                delete cartMap[itemId];
             localStorage.setItem('cart', JSON.stringify(cartMap));
         }

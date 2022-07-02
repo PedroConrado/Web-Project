@@ -26,6 +26,9 @@ export default function ClientBar() {
     }, [])
     return (
         <div className="clientBar">
+            <ImageContainer
+                src={user.profilePicture}
+            />
             <h5 className='font-extraBold color-orange'>{user.name}</h5>
             <Button clientBar link to={"/client-homePage/"+user.id}>
                 <img className="clientBar-icon"

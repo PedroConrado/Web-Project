@@ -27,8 +27,11 @@ export default function SignUpForm() {
                 title='Create Account'
                 description='Insert your personal data below'
                 buttonText='Create'
+                isSignUp={true}
+                iisAdmin={false}
+                isRegister={true}
                 link
-                to={"/client-myAccount/"+User.nextID}
+                to={"/client-myAccount/0"}
                 />
             </div>
         </div>

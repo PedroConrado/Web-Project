@@ -3,7 +3,7 @@
 */
 
 
-import React, { useState } from 'react';
+import {React, useState, useEffect} from "react";
 import { useNavigate } from 'react-router-dom'
 import Button from '../Button';
 import Input from '../Input';
@@ -18,11 +18,32 @@ export default function LoginForm() {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [accounts, setAccounts] = useState([]);
+
+    useEffect(() => {
+        const loadAll = async () => {
+            let account = await User.getUsers();             
+            
+            setAccounts(account)
+        }
+    
+      loadAll();
+    }, [])
 
     async function login() {
+        console.log("logging in")
         try {
-            let user = await User.login(email, password);
-            if (user.isAdmin) {
+            let user=undefined
+            for (const obj of accounts) {
+                console.log(obj)
+                if(obj.email === email && obj.password === password) {
+                    user = new User(obj);
+                }
+            }
+            if(user===undefined){
+                throw new Error("Usuário não encontrado!");
+            }
+            else if (user.isAdmin) {
                 navigate("/admin-addAdmin/"+user.id);
             }
             else{

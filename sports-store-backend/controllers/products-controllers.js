@@ -9,6 +9,7 @@ const productSchema=new mongoose.Schema({
     name:{
         type: String,
         required: true,
+        unique: true
     },
     description:{
         type: String,
@@ -73,9 +74,21 @@ controller.getById=async(req, res) => {
 };
 
 controller.post=async (req, res) => {
-    console.log(req.body)
-    console.log("recieved post request")
-    const product=new ProductObj(req.body);
+    let newId=await ProductObj.find().sort({id:-1}).limit(1);
+    let product=new ProductObj();
+    if(newId[0]===undefined)
+        product.id=1;
+    else
+        product.id=newId[0].id+1;
+    product.name= req.body.name;
+    product.description=req.body.description;
+    product.price= req.body.price;
+    product.quantitySold= req.body.quantitySold;
+    product.quantityStock= req.body.quantityStock;
+    product.image= req.body.image;
+    product.image3d= req.body.image3d;
+    product.category= req.body.category;
+    console.log(product)
     try{
         console.log("creating");
         await product.save();
@@ -92,18 +105,18 @@ controller.post=async (req, res) => {
 
 controller.update=async (req, res) => {
     console.log(req.body)
-    const product=new ProductObj(req.body);
+    let product=new ProductObj(req.body);
     try{
         console.log("update");
-        await ProductObj.findOneAndUpdate({id: product.id}, {$set: {
+        await ProductObj.findOneAndUpdate({id: req.params.prod}, {$set: {
             name: product.name,
             description: product.description, 
-            category: product.category,
             price: product.price, 
             quantityStock: product.quantityStock, 
             quantitySold: product.quantitySold,
             image: product.image, 
-            image3d: product.image3d
+            image3d: product.image3d,
+            category: product.category
         }});
         res.status(201).send({message: "Produto cadastrado."});
     }

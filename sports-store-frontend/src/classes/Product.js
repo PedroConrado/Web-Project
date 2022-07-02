@@ -39,28 +39,11 @@ export default class Product {
         this.category = value;
     }
 
-
-    async create() {
-        //faz criação do objeto no database caso não exista
-        return this;
-    }
-
-
-    async update() {
-        //faz update no database aqui
-        //retorna objeto atualizado
-        return this;
-    }
-
-    async delete() {
-        //faz deleção do objeto no database
-    }
-
     static async getProducts() {
         let products = {}
-        products[male] = await Product.getMaleProducts();
-        products[female] = await Product.getFemaleProducts();
-        products[kids] = await Product.getKidsProducts();
+        products[male] = await Product.getMaleProducts()
+        products[female] = await Product.getFemaleProducts()
+        products[kids] = await Product.getKidsProducts()
         return products;
     }
 
@@ -114,10 +97,14 @@ export default class Product {
         });   
         resp = await resp.json();
         const products = resp[0];
-        return new Product(products[0]);
+        return new Product(products);
     }
 
     static async updateProduct(updatedProduct) {
+        let imageLink=updatedProduct.image;
+        if(imageLink.indexOf("/assests/")===-1 && imageLink.indexOf("http")===-1) imageLink="/assets/"+imageLink;
+        let imageLink3d=updatedProduct.image3d;
+        if(imageLink3d.indexOf("/assests/")===-1 && imageLink3d.indexOf("http")===-1) imageLink3d="/assets/"+imageLink3d;
         let updatedProductData={
             id: updatedProduct.id,
             name: updatedProduct.name,
@@ -125,45 +112,40 @@ export default class Product {
             price: updatedProduct.price,
             quantityStock: updatedProduct.quantityStock,
             quantitySold: updatedProduct.quantitySold,
-            image: updatedProduct.image,
-            image3d: updatedProduct.image3d,
+            image: imageLink,
+            image3d: imageLink3d,
             category: updatedProduct.category
         }
-        await fetch("http://localhost:3001/products/", {
-            method: "PUT",
-            headers: {
-            "Content-Type": "application/json",
-            },
-            body: JSON.stringify(updatedProductData),
-        })
-        .catch(error => {
-            window.alert(error);
+        try{
+            await fetch("http://localhost:3001/products/"+updatedProductData.id, {
+                method: "PUT",
+                headers: { 
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json' 
+                },
+                body: JSON.stringify(updatedProductData),
+            })
+        }
+        catch(e) {
+            window.alert(e);
             return;
-        });
+        }
     }
 
     static async addProduct(newProduct) {
-        let resp = await fetch("http://localhost:3001/products/", {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' }
-        });   
-        resp = await resp.json();
-        let newId=0;
-        let i={}
-        for(i in resp){
-            if(i.id>newId) newId=i.newId;
-        }
-        newId+=1;
-        console.log(newId);
+        let imageLink=newProduct.image;
+        if(imageLink.indexOf("/assests/")===-1 && imageLink.indexOf("http")===-1) imageLink="/assets/"+imageLink;
+        let imageLink3d=newProduct.image3d;
+        if(imageLink3d.indexOf("/assests/")===-1 && imageLink3d.indexOf("http")===-1) imageLink3d="/assets/"+imageLink3d;
         let newProductData={
-            id: newId, 
+            id: 0, 
             name: newProduct.name,
             description: newProduct.description,
             price: newProduct.price,
             quantityStock: newProduct.quantityStock,
             quantitySold: newProduct.quantitySold,
-            image: newProduct.image,
-            image3d: newProduct.image3d,
+            image: imageLink,
+            image3d: imageLink3d,
             category: newProduct.category,
         }
         await fetch("http://localhost:3001/products/", {

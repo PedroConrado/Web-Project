@@ -9,6 +9,7 @@ const userSchema=new mongoose.Schema({
     email:{
         type: String,
         required: true,
+        unique: true
     },
     password:{
         type: String,
@@ -44,10 +45,10 @@ const controller={};
 
 controller.getUsers=async(req, res) => {
     try{
-        console.log("getting all users");
+        //console.log("getting all users");
         const data=await UserObj.find();
         res.status(200).send(data);
-        console.log(data);
+        //console.log(data);
         return data;
     }
     catch(e){
@@ -57,10 +58,10 @@ controller.getUsers=async(req, res) => {
 
 controller.getById=async(req, res) => {
     try{
-        console.log("getting");
+        //console.log("getting by id");
         const data=await UserObj.find({id: req.params.user});
         res.status(200).send(data);
-        console.log(data);
+        //console.log(data);
         return data;
     }
     catch(e){
@@ -69,11 +70,11 @@ controller.getById=async(req, res) => {
 };
 
 controller.update=async (req, res) => {
-    console.log(req.body)
-    const user=new UserObj(req.body);
+    console.log("updating");
+    console.log(req.body);
+    let user=new UserObj(req.body);
     try{
-        console.log("update");
-        await UserObj.findOneAndUpdate({id: user.id}, {$set: {name: user.name, profilePicture: user.profilePicture, phone: user.phone, address: user.address}});
+        await UserObj.findOneAndUpdate({id: req.params.user}, {$set: {name: user.name, profilePicture: user.profilePicture, phone: user.phone, address: user.address, email: user.email, password: user.password}});
         res.status(201).send({message: "Produto cadastrado."});
     }
     catch(e){
@@ -86,11 +87,13 @@ controller.update=async (req, res) => {
 };
 
 controller.post=async (req, res) => {
-    console.log("creating a new product")
-    console.log(req.body)
+    let newId=await UserObj.find().sort({id:-1}).limit(1);
     
-    const user=new UserObj();
-    user.id=req.body.id;
+    let user=new UserObj();
+    if(newId[0]===undefined)
+        user.id=1;
+    else
+        user.id=newId[0].id+1;
     user.name=req.body.name;
     user.phone=req.body.phone;
     user.address=req.body.address;
@@ -99,7 +102,8 @@ controller.post=async (req, res) => {
     user.password=req.body.password;
     user.isAdmin=req.body.isAdmin;
     try{
-        console.log("creating");
+        console.log("creating a new product")
+        console.log(user)
         await user.save();
         res.status(201).send({message: "Produto cadastrado."});
     }

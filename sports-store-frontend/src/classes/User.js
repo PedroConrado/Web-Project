@@ -30,48 +30,13 @@ export default class User {
         this.profilePicture = value;
     }
 
-    async create() {
-        //faz criação do objeto no database caso não exista
-        return this;
-    }
-
-
-    async update() {
-        //faz update no database aqui
-        //retorna objeto atualizado
-        return this;
-    }
-
-    async delete() {
-        //faz deleção do objeto no database
-    }
-
-    static async login(email, password) {
-        let user = undefined;
-        let resp = await fetch("http://localhost:3001/users/", {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' }
-        });   
-        resp = await resp.json();
-        resp.forEach(obj => {
-            if(obj.email === email && obj.password === password) {
-                localStorage.setItem("user", JSON.stringify(obj));
-                user = new User(obj);
-                return;
-            }
-        })
-        if(user !== undefined)
-            return user;
-        else
-            throw new Error("Usuário não encontrado!");
-    }
-
+    
     static async logout() {
         localStorage.clear();
     }
 
     static async getUsers() {
-        let resp = await fetch("http://localhost:3001/users/", {
+        let resp = await fetch("http://localhost:3001/users", {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         });   
@@ -85,7 +50,7 @@ export default class User {
     }
 
     static async getClients() {
-        let resp = await fetch("http://localhost:3001/users/", {
+        let resp = await fetch("http://localhost:3001/users", {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         });   
@@ -99,7 +64,7 @@ export default class User {
     }
 
     static async getAdmins() {
-        let resp = await fetch("http://localhost:3001/users/", {
+        let resp = await fetch("http://localhost:3001/users", {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         });   
@@ -114,7 +79,7 @@ export default class User {
     }
 
     static async getUserById(id) {
-        let resp = await fetch("http://localhost:3001/users/"+id, {
+        let resp = await fetch('http://localhost:3001/users/'+id, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         });   
@@ -123,66 +88,57 @@ export default class User {
     }
 
     static async updateUser(updatedUser) {
-        let updatedUserData={
-            id: updatedUser.id,
-            name: updatedUser.name,
-            phone: updatedUser.phone,
-            address: updatedUser.address,
-            profilePicture: updatedUser.profilePicture,
+        console.log("updating user");
+        console.log(updatedUser.id);
+        let imageLink=updatedUser.profilePicture;
+        if(imageLink.indexOf("/assests/")===-1  && imageLink.indexOf("http")===-1) imageLink="/assets/"+imageLink;
+        try{
+            let resp = await fetch('http://localhost:3001/users/'+updatedUser.id, {
+                method: "put",
+                headers: { 
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json' 
+                },
+                body: JSON.stringify({
+                    id: updatedUser.id,
+                    name: updatedUser.name,
+                    phone: updatedUser.phone,
+                    address: updatedUser.address,
+                    profilePicture: imageLink,
+                    email: updatedUser.email,
+                    password: updatedUser.password
+                }),
+            })
         }
-        await fetch("http://localhost:3001/users/", {
-            method: "PUT",
-            headers: {
-            "Content-Type": "application/json",
-            },
-            body: JSON.stringify(updatedUserData),
-        })
-        .catch(error => {
-            window.alert(error);
-            return;
-        });
+        catch(e){
+            alert("Error: " + e);
+            console.log(e)
+        };
     }
-    
-    static async nextID() {
-        let resp = await fetch("http://localhost:3001/users/", {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' }
-        });   
-        resp = await resp.json();
-        let newId=0;
-        let i={}
-        for(i in resp){
-            if(i.id>newId) newId=i.newId;
-        }
-        newId+=1;
-        console.log(newId)
-        return newId;
-    }
-
     static async addUser(newUser) {
-        let newId=await User.nextID();
-        
-        let newUserData={
-            id: newId,
-            name: newUser.name,
-            email: newUser.email,
-            password: newUser.password,
-            phone: newUser.phone,
-            address: newUser.address,
-            profilePicture: newUser.profilePicture,
-            isAdmin: newUser.isAdmin,
-        }
         console.log("creating user")
-        await fetch("http://localhost:3001/users/", {
+        let imageLink=newUser.profilePicture;
+        if(imageLink.indexOf("/assests/")===-1 && imageLink.indexOf("http")===-1) imageLink="/assets/"+imageLink;
+        let resp = await fetch('http://localhost:3001/users', {
             method: "post",
-            headers: {
-            "Content-Type": "application/json",
+            headers: { 
+                'Accept': 'application/json',
+                'Content-Type': 'application/json' 
             },
-            body: JSON.stringify(newUserData),
+            body: JSON.stringify({
+                id: 0,
+                name: newUser.name,
+                email: newUser.email,
+                password: newUser.password,
+                phone: newUser.phone,
+                address: newUser.address,
+                profilePicture: imageLink,
+                isAdmin: newUser.isAdmin
+            }),
         })
         .catch(error => {
-            window.alert(error);
-            return;
+            alert("Error: " + error);
+            console.log(error)
         });
     }
 
