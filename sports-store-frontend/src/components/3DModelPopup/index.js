@@ -33,7 +33,7 @@ export default function ThreeDModelPopup({
                     width={400}
                     height={400}
                     modelColor='#7b61ff'
-                    backgroundColor='#5DBF79'
+                    backgroundColor='#00684A'
                     rotate={false}
                     orbitControls={true}
                 />
