@@ -7,6 +7,8 @@ export default class Product {
         this.id = data.id;
         this.name = data.name;
         this.description = data.description;
+        this.tamanho = data.tamanho;
+        this.marca = data.marca;
         this.price = data.price;
         this.quantityStock = data.quantityStock;
         this.quantitySold = data.quantitySold;
@@ -109,6 +111,8 @@ export default class Product {
             id: updatedProduct.id,
             name: updatedProduct.name,
             description: updatedProduct.description,
+            tamanho: updatedProduct.tamanho,
+            marca: updatedProduct.marca,
             price: updatedProduct.price,
             quantityStock: updatedProduct.quantityStock,
             quantitySold: updatedProduct.quantitySold,
@@ -141,6 +145,8 @@ export default class Product {
             id: 0, 
             name: newProduct.name,
             description: newProduct.description,
+            tamanho: newProduct.tamanho,
+            marca: newProduct.marca,
             price: newProduct.price,
             quantityStock: newProduct.quantityStock,
             quantitySold: newProduct.quantitySold,
@@ -174,42 +180,3 @@ export default class Product {
         });
     }
 }
-
-
-let productsList = [
-    {
-        id: 1,
-        name: "Nike Air Shoe",
-        description: "Nice shoe :)",
-        price: 100.00,
-        quantityStock: 50,
-        quantitySold: 10,
-        image: "/assets/NikeShoe.png",
-        image3d: "/assets/NikeShoe.stl",
-        category: male,
-    },
-    {
-        id: 2,
-        name: "Puma Ball",
-        description: "Nice ball :)",
-        price: 30.00,
-        quantityStock: 100,
-        quantitySold: 20,
-        image: "/assets/PumaBall.png",
-        image3d: "/assets/Shoe3.stl",
-        category: kids
-    },
-    {
-        id: 3,
-        name: "Asics Shoes",
-        price: 500,
-        description: "O tênis de tênis GEL-RESOLUTION ™ 8 promove um passo ágil com uma sensação de proximidade ao solo da quadra. A parte superior do FLEXION FIT ™ fornece suporte de ajuste de forma com a integração da tecnologia DYNAWALL ™, que oferece maior estabilidade no mediopé durante movimentos laterais e cobertura costa a costa.",
-        image: "AsicsShoes.png",
-        quantityStock: 500,
-        quantitySold: 100,
-        image: "/assets/AsicsShoes.png",
-        image3d: "/assets/Shoe2.stl",
-        category: female,
-    }
-
-]

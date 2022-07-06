@@ -21,6 +21,8 @@ export default function ProductFormPopup({
     //onsubmit should call a function passed to this form that updates account
     const [name, setName] = useState(productData.name);
     const [description, setDescription] = useState(productData.description);
+    const [tamanho, setTamanho] = useState(productData.tamanho);
+    const [marca, setMarca] = useState(productData.marca);
     const [category, setCategory] = useState(productData.category);
     const [price, setPrice] = useState(productData.price);
     const [qtInStock, setQtInStock] = useState(productData.quantityStock);
@@ -37,6 +39,8 @@ export default function ProductFormPopup({
             id: productData.id,
             name: name,
             description: description,
+            tamanho: tamanho,
+            marca: marca,
             category: category,
             price: price,
             quantityStock: qtInStock,
@@ -67,6 +71,20 @@ export default function ProductFormPopup({
                         placeholder='Current Description'
                         value={description}
                         setValue={setDescription}
+                        type={"text"}
+                    />
+                    <FormInput
+                        title="Tamanho"
+                        placeholder='Current Tamanho'
+                        value={tamanho}
+                        setValue={setTamanho}
+                        type={"text"}
+                    />
+                    <FormInput
+                        title="Marca"
+                        placeholder='Current Marca'
+                        value={marca}
+                        setValue={setMarca}
                         type={"text"}
                     />
                     <FormInput

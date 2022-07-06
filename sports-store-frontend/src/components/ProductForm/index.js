@@ -36,6 +36,8 @@ export default function AccountForm({
 }) { 
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
+    const [tamanho, setTamanho] = useState(productData.tamanho);
+    const [marca, setMarca] = useState(productData.marca);
     const [category, setCategory] = useState("");
     const [price, setPrice] = useState("");
     const [qtInStock, setQtInStock] = useState("");
@@ -51,6 +53,8 @@ export default function AccountForm({
         let newProductData={
             name: name,
             description: description,
+            tamanho: tamanho,
+            marca: marca,
             category: category,
             price: price,
             quantityStock: qtInStock,
@@ -82,6 +86,20 @@ export default function AccountForm({
                     placeholder='Description'
                     value={description}
                     setValue={setDescription}
+                    type={"text"}
+                />
+                <FormInput
+                    title="Tamanho"
+                    placeholder='Current Tamanho'
+                    value={tamanho}
+                    setValue={setTamanho}
+                    type={"text"}
+                />
+                <FormInput
+                    title="Marca"
+                    placeholder='Current Marca'
+                    value={marca}
+                    setValue={setMarca}
                     type={"text"}
                 />
                 <FormInput

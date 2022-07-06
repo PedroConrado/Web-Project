@@ -15,6 +15,14 @@ const productSchema=new mongoose.Schema({
         type: String,
         required: true,
     },
+    tamanho:{
+        type: String,
+        required: true,
+    },
+    marca:{
+        type: String,
+        required: true,
+    },
     price:{
         type: Number,
         required: true,
@@ -82,6 +90,8 @@ controller.post=async (req, res) => {
         product.id=newId[0].id+1;
     product.name= req.body.name;
     product.description=req.body.description;
+    product.tamanho= req.body.tamanho;
+    product.marca= req.body.marca;
     product.price= req.body.price;
     product.quantitySold= req.body.quantitySold;
     product.quantityStock= req.body.quantityStock;
@@ -111,6 +121,8 @@ controller.update=async (req, res) => {
         await ProductObj.findOneAndUpdate({id: req.params.prod}, {$set: {
             name: product.name,
             description: product.description, 
+            tamanho: product.tamanho,
+            marca: product.marca,
             price: product.price, 
             quantityStock: product.quantityStock, 
             quantitySold: product.quantitySold,

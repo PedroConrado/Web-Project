@@ -39,15 +39,18 @@ export default function ProductViewer({
                 <div className="client-productViewer-background">
                     <div className="client-productViewer-nameDescription">
                         <h3>{product.name}</h3>
-                        <p>{product.description}</p>
-                        <p>In Stock: {product.quantityStock}</p>
                     </div>
                     <div className="client-productViewer-imageContainer">
                         <div className="client-productViewer-imageContainer-wrapper">
                             <img src = {product.image}></img>
                         </div>
-                        <p>R$ {product.price}</p>
-                        
+                    </div>
+                    <p className='font-extraBold color-orange'>Preço: R$ {product.price}</p>
+                    <div className="client-productViewer-data">
+                        <p>Description: {product.description}</p>
+                        <p>Brand: {product.marca}</p>
+                        <p>Size: {product.tamanho}</p>
+                        <p>In Stock: {product.quantityStock}</p>
                     </div>
                     <Button gray onClick={setIsOpen3dModel}>
                         <p className="font-bolder">View 3D Model</p>
