@@ -1,4 +1,8 @@
 .ProductForm {
+    position: relative;
+    top: 100px;
+    margin: 10px;
+    padding: auto;
     background-color: var(--lightGreen);
     border-radius: 15px;
     display: flex;
