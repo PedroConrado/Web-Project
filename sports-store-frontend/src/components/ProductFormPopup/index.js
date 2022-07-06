@@ -74,15 +74,15 @@ export default function ProductFormPopup({
                         type={"text"}
                     />
                     <FormInput
-                        title="Tamanho"
-                        placeholder='Current Tamanho'
+                        title="Size"
+                        placeholder='Current Size'
                         value={tamanho}
                         setValue={setTamanho}
                         type={"text"}
                     />
                     <FormInput
-                        title="Marca"
-                        placeholder='Current Marca'
+                        title="Brand"
+                        placeholder='Current Brand'
                         value={marca}
                         setValue={setMarca}
                         type={"text"}
