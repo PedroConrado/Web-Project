@@ -57,7 +57,7 @@ export default function AccountForm({
         if(image=="") image="defaultAccount.png";
         console.log("here")
         let newUserData={
-            id: parseInt(params.userID),
+            id: user.id,
             name: name,
             email: email,
             password: password,
