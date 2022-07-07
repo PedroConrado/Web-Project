@@ -27,6 +27,10 @@ export default function AdminBar({page=0}) {
     useEffect(() => {
         const loadAll = async () => {
             const user = JSON.parse(localStorage.getItem('user'));
+            if(user===null){
+                navigate('/');
+                
+            }
             setUser(user);
         }
         
