@@ -67,9 +67,13 @@ export default function AccountForm({
             isAdmin: user.isAdmin,
         }
         console.log(newUserData)
-        localStorage.setItem("user", JSON.stringify(newUserData));
+        
         e.preventDefault();
         await User.updateUser(newUserData);
+        if(image.indexOf("http")==-1){
+            newUserData.profilePicture="/assets/"+image;
+        }
+        localStorage.setItem("user", JSON.stringify(newUserData));
         window.location.reload()
     }
 
