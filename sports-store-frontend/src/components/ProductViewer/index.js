@@ -56,10 +56,10 @@ export default function ProductViewer({
                         <p className="font-bolder">View 3D Model</p>
                     </Button>
                     <div className="client-productViewer-buttons">
-                        <Button purple link to={"/client-homePage/"+user.id}>
+                        <Button purple link to={"/client-homePage"}>
                             <p>Back</p>
                         </Button>
-                        <Button orange link to={"/client-shipping/"+user.id}>
+                        <Button orange link to={"/client-shipping"}>
                             <p>Add To Cart</p>
                         </Button>
                     </div>

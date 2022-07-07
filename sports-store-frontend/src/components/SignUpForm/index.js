@@ -31,7 +31,7 @@ export default function SignUpForm() {
                 iisAdmin={false}
                 isRegister={true}
                 link
-                to={"/client-myAccount/0"}
+                to={"/client-myAccount"}
                 />
             </div>
         </div>

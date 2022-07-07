@@ -75,6 +75,7 @@ export default function AccountForm({
                 for (const obj of accounts) {
                     console.log(obj)
                     if(obj.email === email && obj.password === password) {
+                        localStorage.setItem("user", JSON.stringify(obj));
                         user = new User(obj);
                     }
                 }
@@ -82,15 +83,13 @@ export default function AccountForm({
                     throw new Error("Usuário não encontrado!");
                 }
                 else{
-                    navigate("/client-homePage/"+user.id);
+                    navigate("/client-homePage");
                 }
     
             } catch(err) {
                 alert(`Erro ao fazer login: ${err.message}`);
             }
-        } 
-        else if(link) navigate(linkTo);
-        window.location.reload();
+        }
     }
 
     return (

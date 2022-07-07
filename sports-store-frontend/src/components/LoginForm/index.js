@@ -23,7 +23,6 @@ export default function LoginForm() {
     useEffect(() => {
         const loadAll = async () => {
             let account = await User.getUsers();             
-            
             setAccounts(account)
         }
     
@@ -37,6 +36,7 @@ export default function LoginForm() {
             for (const obj of accounts) {
                 console.log(obj)
                 if(obj.email === email && obj.password === password) {
+                    localStorage.setItem("user", JSON.stringify(obj));
                     user = new User(obj);
                 }
             }
@@ -44,10 +44,10 @@ export default function LoginForm() {
                 throw new Error("Usuário não encontrado!");
             }
             else if (user.isAdmin) {
-                navigate("/admin-addAdmin/"+user.id);
+                navigate("/admin-addAdmin");
             }
             else{
-                navigate("/client-homePage/"+user.id);
+                navigate("/client-homePage");
             }
 
         } catch(err) {

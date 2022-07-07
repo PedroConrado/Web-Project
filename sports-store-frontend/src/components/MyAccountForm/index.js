@@ -39,7 +39,7 @@ export default function AccountForm({
     const params = useParams();
     useEffect(() => {
         const loadAll = async () => {
-            const user = await User.getUserById(parseInt(params.userID));
+            const user = JSON.parse(localStorage.getItem('user'));
             setUser(user);
             setName(user.name)
             setImage(user.profilePicture.replace("/assets/", ''))
@@ -67,6 +67,7 @@ export default function AccountForm({
             isAdmin: user.isAdmin,
         }
         console.log(newUserData)
+        localStorage.setItem("user", JSON.stringify(newUserData));
         e.preventDefault();
         await User.updateUser(newUserData);
         window.location.reload()
