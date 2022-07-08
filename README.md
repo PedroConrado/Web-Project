@@ -93,6 +93,8 @@ Info saved on the server:
 * Id (PK)
 * Name
 * Description
+* Brand
+* Size
 * Price
 * QuantityStock
 * QuantitySold
