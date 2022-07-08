@@ -90,7 +90,11 @@ export default function AccountForm({
                 alert(`Erro ao fazer login: ${err.message}`);
             }
         }
+        else{
+            window.location.reload();
+        }
     }
+    
 
     return (
         <div className="AccountForm">
