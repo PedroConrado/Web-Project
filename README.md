@@ -125,6 +125,13 @@ To start the web application on localhost, run the following commands inside the
 
 This will install all dependencies and start a web server on port 3000, if available.
 
+## backend
+To start the server on localhost, run the following commands inside the folder ```sports-store-backend```:
+* ```npm install```
+* ```npx nodemon ./server.js```
+
+This will install all dependencies and run the server on port 3001, if available.
+
 # 7. Problems
 At this point of the project, all the funcionalities will not make any change because there is no database. After reload the app will go to default.
 
@@ -134,5 +141,5 @@ To log in as admin, use the following credentials:
 * password: admin
 
 To log in as user, use the following credentials:
-* gabriel_vr@usp.br
-* 123456
+* email: client@client.com
+* password: client
