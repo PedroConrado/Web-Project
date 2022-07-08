@@ -22,7 +22,8 @@ export default function ClientBar() {
     useEffect(() => {
         const loadAll = async () => {
             const user = JSON.parse(localStorage.getItem('user'));
-            if(user===null){
+            if(user===null  || user.isAdmin===true){
+                localStorage.clear();
                 navigate('/');
             }
             setUser(user);
