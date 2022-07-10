@@ -70,7 +70,11 @@ export default function AccountForm({
         if(isSignUp){
             navigate("/");
         }
+        else{
+            window.location.reload();
+        }
     }
+    
 
     return (
         <div className="AccountForm">
