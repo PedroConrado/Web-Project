@@ -4,7 +4,6 @@ import Button from "../Button"
 import { useParams } from "react-router-dom";
 import Product from "../../classes/Product";
 import ThreeDPopup from '../3DModelPopup';
-import User from "../../classes/User";
 
 
 export default function ProductViewer({
@@ -14,7 +13,6 @@ export default function ProductViewer({
     const [product, setProduct] = useState({})
     const [isOpen3dModel, setIsOpen3dModel] = useState(false);
 
-    const [user, setUser] = useState({})
     const togglePopup3d = () => {
         setIsOpen3dModel(!isOpen3dModel);
     }
@@ -26,8 +24,7 @@ export default function ProductViewer({
             const product = await Product.getproductById(parseInt(params.productID));
             setProduct(product);
             console.log(product)
-            const user = await User.getUserById(parseInt(params.userID));
-            setUser(user);
+
         }
     
       loadAll();
