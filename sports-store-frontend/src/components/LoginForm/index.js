@@ -18,38 +18,17 @@ export default function LoginForm() {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [accounts, setAccounts] = useState([]);
 
-    useEffect(() => {
-        const loadAll = async () => {
-            let account = await User.getUsers();             
-            setAccounts(account)
-        }
-    
-      loadAll();
-    }, [])
-
-    async function login() {
-        console.log("logging in")
+    async function login(e) {
+        e.preventDefault();
         try {
-            let user=undefined
-            for (const obj of accounts) {
-                console.log(obj)
-                if(obj.email === email && obj.password === password) {
-                    localStorage.setItem("user", JSON.stringify(obj));
-                    user = new User(obj);
-                }
-            }
-            if(user===undefined){
-                throw new Error("Usuário não encontrado!");
-            }
-            else if (user.isAdmin) {
+            const user = await User.login(email, password);
+            if (user.isAdmin) {
                 navigate("/admin-addAdmin");
             }
             else{
                 navigate("/client-homePage");
             }
-
         } catch(err) {
             alert(`Erro ao fazer login: ${err.message}`);
         }

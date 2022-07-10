@@ -53,6 +53,7 @@ export default function AccountForm({
     }, [])
     
     const handleSubmit = async (e) => {
+        e.preventDefault();
         if(name=="" || email=="" || password=="") return null;
         if(image=="") image="defaultAccount.png";
         console.log("here")
@@ -68,7 +69,6 @@ export default function AccountForm({
         }
         console.log(newUserData)
         
-        e.preventDefault();
         await User.updateUser(newUserData);
         if(image.indexOf("http")==-1){
             newUserData.profilePicture="/assets/"+image;

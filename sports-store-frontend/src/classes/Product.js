@@ -1,3 +1,4 @@
+import axios from 'axios';
 const male = "male";
 const female = "female";
 const kids = "kids";
@@ -50,11 +51,10 @@ export default class Product {
     }
 
     static async getMaleProducts() {
-        let resp = await fetch("http://localhost:3001/products/", {
-            method: 'GET',
+        let resp = await axios.get("http://localhost:3001/products/", {
             headers: { 'Content-Type': 'application/json' }
         });   
-        resp = await resp.json();
+        resp = resp.data;
         let products = []
         for (const product of resp.filter(obj => obj.category === male)) {
             const productObj = new Product(product);
@@ -63,11 +63,10 @@ export default class Product {
         return products;
     }
     static async getFemaleProducts() {
-        let resp = await fetch("http://localhost:3001/products/", {
-            method: 'GET',
+        let resp = await axios.get("http://localhost:3001/products/", {
             headers: { 'Content-Type': 'application/json' }
         });   
-        resp = await resp.json();
+        resp = resp.data;
         let products = []
         for (const product of resp.filter(obj => obj.category === female)) {
             const productObj = new Product(product);
@@ -77,11 +76,10 @@ export default class Product {
     }
 
     static async getKidsProducts() {
-        let resp = await fetch("http://localhost:3001/products/", {
-            method: 'GET',
+        let resp = await axios.get("http://localhost:3001/products/", {
             headers: { 'Content-Type': 'application/json' }
         });   
-        resp = await resp.json();
+        resp = resp.data;
         let products = []
         for (const product of resp.filter(obj => obj.category === kids)) {
             const productObj = new Product(product);
@@ -93,11 +91,10 @@ export default class Product {
 
 
     static async getproductById(id) {
-        let resp = await fetch("http://localhost:3001/products/"+id, {
-            method: 'GET',
+        let resp = await axios.get("http://localhost:3001/products/"+id, {
             headers: { 'Content-Type': 'application/json' }
         });   
-        resp = await resp.json();
+        resp = resp.data;
         const products = resp[0];
         return new Product(products);
     }
@@ -121,13 +118,13 @@ export default class Product {
             category: updatedProduct.category
         }
         try{
-            await fetch("http://localhost:3001/products/"+updatedProductData.id, {
-                method: "PUT",
+            await axios.put("http://localhost:3001/products/"+updatedProductData.id,
+            updatedProductData,
+            {
                 headers: { 
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json' 
-                },
-                body: JSON.stringify(updatedProductData),
+                'Accept': 'application/json',
+                'Content-Type': 'application/json' 
+                }
             })
         }
         catch(e) {
@@ -142,7 +139,6 @@ export default class Product {
         let imageLink3d=newProduct.image3d;
         if(imageLink3d.indexOf("/assests/")===-1 && imageLink3d.indexOf("http")===-1) imageLink3d="/assets/"+imageLink3d;
         let newProductData={
-            id: 0, 
             name: newProduct.name,
             description: newProduct.description,
             tamanho: newProduct.tamanho,
@@ -154,12 +150,12 @@ export default class Product {
             image3d: imageLink3d,
             category: newProduct.category,
         }
-        await fetch("http://localhost:3001/products/", {
-            method: "POST",
+        await axios.post("http://localhost:3001/products/",
+        newProductData,
+        {
             headers: {
             "Content-Type": "application/json",
-            },
-            body: JSON.stringify(newProductData),
+            }
         })
         .catch(error => {
             window.alert(error);
@@ -168,8 +164,7 @@ export default class Product {
     }
 
     static async removeProduct(id) {
-        await fetch("http://localhost:3001/products/"+id, {
-            method: "delete",
+        await axios.delete("http://localhost:3001/products/"+id, {
             headers: {
             "Content-Type": "application/json",
             }

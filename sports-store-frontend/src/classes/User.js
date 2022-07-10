@@ -1,3 +1,4 @@
+import axios from "axios";
 import { FaNetworkWired } from "react-icons/fa";
 
 export default class User {
@@ -36,11 +37,10 @@ export default class User {
     }
 
     static async getUsers() {
-        let resp = await fetch("http://localhost:3001/users", {
-            method: 'GET',
+        let resp = await axios.get("http://localhost:3001/users", {
             headers: { 'Content-Type': 'application/json' }
         });   
-        resp = await resp.json();
+        resp = resp.data;
         let users = []
         for (const user of resp) {
             const userObj = new User(user);
@@ -50,11 +50,10 @@ export default class User {
     }
 
     static async getClients() {
-        let resp = await fetch("http://localhost:3001/users", {
-            method: 'GET',
+        let resp = await axios.get("http://localhost:3001/users", {
             headers: { 'Content-Type': 'application/json' }
         });   
-        resp = await resp.json();
+        resp = resp.data;
         let users = []
         for (const user of resp.filter(obj => !obj.isAdmin)) {
             const userObj = new User(user);
@@ -64,11 +63,10 @@ export default class User {
     }
 
     static async getAdmins() {
-        let resp = await fetch("http://localhost:3001/users", {
-            method: 'GET',
+        let resp = await axios.get("http://localhost:3001/users", {
             headers: { 'Content-Type': 'application/json' }
         });   
-        resp = await resp.json();
+        resp = resp.data;
         let users = []
         
         for (const user of resp.filter(obj => obj.isAdmin)) {
@@ -79,11 +77,10 @@ export default class User {
     }
 
     static async getUserById(id) {
-        let resp = await fetch('http://localhost:3001/users/'+id, {
-            method: 'GET',
+        let resp = await axios.get('http://localhost:3001/users/'+id, {
             headers: { 'Content-Type': 'application/json' }
         });   
-        resp = await resp.json();
+        resp =  resp.data;
         return new User(resp[0]);
     }
 
@@ -93,13 +90,8 @@ export default class User {
         let imageLink=updatedUser.profilePicture;
         if(imageLink.indexOf("/assests/")===-1  && imageLink.indexOf("http")===-1) imageLink="/assets/"+imageLink;
         try{
-            let resp = await fetch('http://localhost:3001/users/'+updatedUser.id, {
-                method: "put",
-                headers: { 
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json' 
-                },
-                body: JSON.stringify({
+            let resp = await axios.put('http://localhost:3001/users/'+updatedUser.id, {
+                
                     id: updatedUser.id,
                     name: updatedUser.name,
                     phone: updatedUser.phone,
@@ -107,7 +99,11 @@ export default class User {
                     profilePicture: imageLink,
                     email: updatedUser.email,
                     password: updatedUser.password
-                }),
+            }, {
+                headers: { 
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json' 
+                },
             })
         }
         catch(e){
@@ -119,33 +115,31 @@ export default class User {
         console.log("creating user")
         let imageLink=newUser.profilePicture;
         if(imageLink.indexOf("/assests/")===-1 && imageLink.indexOf("http")===-1) imageLink="/assets/"+imageLink;
-        let resp = await fetch('http://localhost:3001/users', {
-            method: "post",
+        let resp = await axios.post('http://localhost:3001/users',{
+            name: newUser.name,
+            email: newUser.email,
+            password: newUser.password,
+            phone: newUser.phone,
+            address: newUser.address,
+            profilePicture: imageLink,
+            isAdmin: newUser.isAdmin
+            
+        },{
             headers: { 
                 'Accept': 'application/json',
                 'Content-Type': 'application/json' 
             },
-            body: JSON.stringify({
-                id: 0,
-                name: newUser.name,
-                email: newUser.email,
-                password: newUser.password,
-                phone: newUser.phone,
-                address: newUser.address,
-                profilePicture: imageLink,
-                isAdmin: newUser.isAdmin
-            }),
         })
         .catch(error => {
             alert("Error: " + error);
             console.log(error)
         });
+        console.log(resp);
     }
 
     static async removeUser(id) {
         console.log("deleting")
-        await fetch("http://localhost:3001/users/"+id, {
-            method: "delete",
+        await axios.delete("http://localhost:3001/users/"+id, {
             headers: {
             "Content-Type": "application/json",
             }
@@ -154,6 +148,16 @@ export default class User {
             window.alert(error);
             return;
         });
+    }
+
+    static async login(email, password) {
+            const response = await axios.post("http://localhost:3001/users/login", {
+                email, password
+            });
+            console.log(response);
+            localStorage.setItem("user", JSON.stringify(response.data));
+            localStorage.setItem("token", JSON.stringify(response.data.token))
+            return response.data;
     }
 }
 

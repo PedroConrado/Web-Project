@@ -52,43 +52,23 @@ export default function AccountForm({
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
+        e.preventDefault();
         if(name=="" || email=="" || password=="") return null;
-        if(image=="") image="defaultAccount.png";
         let newUserData={
             name: name,
             email: email,
             password: password,
             phone: phone,
             address: address,
-            profilePicture: image,
+            profilePicture: image === "" ? "defaultAccount.png" : image,
             isAdmin: isAdmin,
         }
         console.log(newUserData)
 
-        e.preventDefault();
         let newID=await User.addUser(newUserData);
         console.log(newID)
         if(isSignUp){
-            try {
-                let accounts = await User.getUsers();  
-                let user=undefined
-                for (const obj of accounts) {
-                    console.log(obj)
-                    if(obj.email === email && obj.password === password) {
-                        localStorage.setItem("user", JSON.stringify(obj));
-                        user = new User(obj);
-                    }
-                }
-                if(user===undefined){
-                    throw new Error("Usuário não encontrado!");
-                }
-                else{
-                    navigate("/client-homePage");
-                }
-    
-            } catch(err) {
-                alert(`Erro ao fazer login: ${err.message}`);
-            }
+            navigate("/");
         }
     }
 

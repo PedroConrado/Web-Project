@@ -46,9 +46,8 @@ export default function AccountForm({
     const [threeDModel, setThreeDModel] = useState("");
 
     const handleSubmit = async (e) => {
+        e.preventDefault();
         if(name=="" || category=="" || price=="") return null;
-        if(image=="") image="default.png";
-        if(threeDModel=="") threeDModel="default.stl";
         console.log("adding new product")
         let newProductData={
             name: name,
@@ -59,11 +58,10 @@ export default function AccountForm({
             price: price,
             quantityStock: qtInStock,
             quantitySold: qtSold,
-            image: image,
-            image3d: threeDModel,
+            image: image === "" ? "default.png" : image,
+            image3d: threeDModel === "" ? "default.stl" : threeDModel,
 
         }
-        e.preventDefault();
         await Product.addProduct(newProductData);
         window.location.reload()
     }
