@@ -1,14 +1,15 @@
 import express from 'express'
 import controller from '../controllers/products-controllers.js'
+import auth from '../middlewares/auth.js';
 
-const router=express.Router();
-router.get('/', controller.getProducts);
-router.get('/:prod', controller.getById);
+const router=express.Router({mergeParams: true});
+router.get('/', auth.isLogged,controller.getProducts);
+router.get('/:prod', auth.isLogged,controller.getById);
 
-router.post('/', controller.post);
+router.post('/', auth.isAdmin,controller.post);
 
-router.put('/:prod', controller.update);
+router.put('/:prod', auth.isAdmin,controller.update);
 
-router.delete('/:prod', controller.delete);
+router.delete('/:prod', auth.isAdmin,controller.delete);
 
 export default router;

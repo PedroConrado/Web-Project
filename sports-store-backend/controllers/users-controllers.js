@@ -1,52 +1,12 @@
-import mongoose from "mongoose";
-const userSchema=new mongoose.Schema({
-    id:{
-        type: Number,
-        required: true,
-        index: true,
-        unique: true
-    },
-    email:{
-        type: String,
-        required: true,
-        unique: true
-    },
-    password:{
-        type: String,
-        required: true,
-    },
-    name:{
-        type: String,
-        required: true,
-    },
-    phone:{
-        type: String,
-        required: true,
-    },
-    address:{
-        type: String,
-        required: true,
-    },
-    profilePicture:{
-        type: String,
-        required: true,
-    },
-    isAdmin:{
-        type: Boolean,
-        required: true,
-    }
-});
-
-mongoose.model('User', userSchema);
-
-const UserObj=mongoose.model('User');
+import UserObj from '../models/user.js';
+import { getToken } from '../services/auth.js';
 
 const controller={};
 
 controller.getUsers=async(req, res) => {
     try{
         //console.log("getting all users");
-        const data=await UserObj.find();
+        const data= (await UserObj.find()).filter(obj => obj.id != req.user.id);
         res.status(200).send(data);
         //console.log(data);
         return data;
@@ -75,7 +35,7 @@ controller.update=async (req, res) => {
     let user=new UserObj(req.body);
     try{
         await UserObj.findOneAndUpdate({id: req.params.user}, {$set: {name: user.name, profilePicture: user.profilePicture, phone: user.phone, address: user.address, email: user.email, password: user.password}});
-        res.status(201).send({message: "Produto cadastrado."});
+        return res.status(201).send({message: "Usuário modificado."});
     }
     catch(e){
         console.log(e)
@@ -87,6 +47,8 @@ controller.update=async (req, res) => {
 };
 
 controller.post=async (req, res) => {
+    console.log("Entrei aqui");
+    console.log(req.body);
     let newId=await UserObj.find().sort({id:-1}).limit(1);
     
     let user=new UserObj();
@@ -105,7 +67,7 @@ controller.post=async (req, res) => {
         console.log("creating a new product")
         console.log(user)
         await user.save();
-        res.status(201).send({message: "Produto cadastrado."});
+        res.status(201).send({message: "Usuário cadastrado."});
     }
     catch(e){
         console.log(e)
@@ -121,7 +83,7 @@ controller.delete=async (req, res) => {
     try{
         console.log("deleting");
         await UserObj.findOneAndRemove({id: req.params.user});
-        res.status(201).send({message: "Produto apagado."});
+        res.status(201).send({message: "Usuário apagado."});
     }
     catch(e){
         res.status(400).send({
@@ -130,5 +92,21 @@ controller.delete=async (req, res) => {
         })
     }
 };
+
+
+controller.login = async (req, res) => {
+    const data = req.body
+    try {
+        const user = await UserObj.findOne({email: data.email, password: data.password});
+        if(!user)
+            return res.status(404).send({error: "User not found!"});
+        else{
+            const token = getToken({id: user.id});
+            return res.send({...user._doc, token});
+        }
+    } catch(err) {
+        return res.status(400).send(err);
+    }
+}
 
 export default controller;
