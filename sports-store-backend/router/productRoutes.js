@@ -8,7 +8,7 @@ router.get('/:prod', auth.isLogged,controller.getById);
 
 router.post('/', auth.isAdmin,controller.post);
 
-router.put('/:prod', auth.isAdmin,controller.update);
+router.put('/:prod', auth.isLogged,controller.update);
 
 router.delete('/:prod', auth.isAdmin,controller.delete);
 

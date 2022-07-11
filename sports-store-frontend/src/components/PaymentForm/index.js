@@ -26,13 +26,8 @@ export default function PaymentForm({
     const [cvc, setCvc] = useState("");
 
     const onOrder =async () =>{
-        try {
             await Cart.buyProducts();
             navigate('/client-homePage');
-            
-        } catch(e) {
-            alert("Unable to order products");
-        }
     }
 
     return (

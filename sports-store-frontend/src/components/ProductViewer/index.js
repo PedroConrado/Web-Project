@@ -5,11 +5,14 @@ import { useParams } from "react-router-dom";
 import Product from "../../classes/Product";
 import ThreeDPopup from '../3DModelPopup';
 
+import { useNavigate } from "react-router-dom";
+import Cart from "../../classes/Cart";
 
 export default function ProductViewer({
 
     
 }) {
+    const navigate = useNavigate();
     const [product, setProduct] = useState({})
     const [isOpen3dModel, setIsOpen3dModel] = useState(false);
 
@@ -29,6 +32,11 @@ export default function ProductViewer({
     
       loadAll();
     }, [])
+
+    const addItemCart = () => {
+        Cart.insertItem(product.id);
+        navigate(`/client-shipping`);
+    }
 
     return (
         <>
@@ -56,7 +64,7 @@ export default function ProductViewer({
                         <Button purple link to={"/client-homePage"}>
                             <p>Back</p>
                         </Button>
-                        <Button orange link to={"/client-shipping"}>
+                        <Button orange onClick={addItemCart}>
                             <p>Add To Cart</p>
                         </Button>
                     </div>

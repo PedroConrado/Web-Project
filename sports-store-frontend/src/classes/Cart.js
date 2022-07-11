@@ -64,6 +64,26 @@ class Cart {
     }
 
     async buyProducts() {
+        const cartMap = this.getCart();
+        for(const itemId of Object.keys(cartMap)) {
+            const productData = await Product.getproductById(parseInt(itemId));
+            let newProductData={
+                id: productData.id,
+                name: productData.name,
+                description: productData.description,
+                tamanho: productData.tamanho,
+                marca: productData.marca,
+                category: productData.category,
+                price: productData.price,
+                quantityStock: productData.quantityStock-cartMap[itemId],
+                quantitySold: productData.quantitySold+cartMap[itemId],
+                image: productData.image,
+                image3d: productData.image3d,
+    
+            }
+            console.log(newProductData)
+            await Product.updateProduct(newProductData);
+        }
         this.emptyCart();
     }
 
