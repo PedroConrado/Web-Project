@@ -1,3 +1,4 @@
+import axios from 'axios';
 const male = "male";
 const female = "female";
 const kids = "kids";
@@ -7,6 +8,8 @@ export default class Product {
         this.id = data.id;
         this.name = data.name;
         this.description = data.description;
+        this.tamanho = data.tamanho;
+        this.marca = data.marca;
         this.price = data.price;
         this.quantityStock = data.quantityStock;
         this.quantitySold = data.quantitySold;
@@ -39,23 +42,6 @@ export default class Product {
         this.category = value;
     }
 
-
-    async create() {
-        //faz criação do objeto no database caso não exista
-        return this;
-    }
-
-
-    async update() {
-        //faz update no database aqui
-        //retorna objeto atualizado
-        return this;
-    }
-
-    async delete() {
-        //faz deleção do objeto no database
-    }
-
     static async getProducts() {
         let products = {}
         products[male] = await Product.getMaleProducts()
@@ -65,16 +51,24 @@ export default class Product {
     }
 
     static async getMaleProducts() {
+        let resp = await axios.get("http://localhost:3001/products/", {
+            headers: { 'Content-Type': 'application/json' }
+        });   
+        resp = resp.data;
         let products = []
-        for (const product of productsList.filter(obj => obj.category === male)) {
+        for (const product of resp.filter(obj => obj.category === male)) {
             const productObj = new Product(product);
             products.push(productObj);
         }
         return products;
     }
     static async getFemaleProducts() {
+        let resp = await axios.get("http://localhost:3001/products/", {
+            headers: { 'Content-Type': 'application/json' }
+        });   
+        resp = resp.data;
         let products = []
-        for (const product of productsList.filter(obj => obj.category === female)) {
+        for (const product of resp.filter(obj => obj.category === female)) {
             const productObj = new Product(product);
             products.push(productObj);
         }
@@ -82,8 +76,12 @@ export default class Product {
     }
 
     static async getKidsProducts() {
+        let resp = await axios.get("http://localhost:3001/products/", {
+            headers: { 'Content-Type': 'application/json' }
+        });   
+        resp = resp.data;
         let products = []
-        for (const product of productsList.filter(obj => obj.category === kids)) {
+        for (const product of resp.filter(obj => obj.category === kids)) {
             const productObj = new Product(product);
             products.push(productObj);
         }
@@ -93,78 +91,87 @@ export default class Product {
 
 
     static async getproductById(id) {
-        const products = productsList.filter(obj => obj.id === id);
-        if (products.length === 0)
-            return null;
-        return new Product(products[0]);
+        let resp = await axios.get("http://localhost:3001/products/"+id, {
+            headers: { 'Content-Type': 'application/json' }
+        });   
+        resp = resp.data;
+        const products = resp[0];
+        return new Product(products);
     }
 
     static async updateProduct(updatedProduct) {
-        if(updatedProduct.id===undefined) return null;
-        const productIndex = productsList.findIndex(obj => obj.id == updatedProduct.id);
-        if(updatedProduct.name !==undefined) productsList[productIndex]=updatedProduct.name;
-        if(updatedProduct.description !==undefined) productsList[productIndex].description=updatedProduct.description;
-        if(updatedProduct.price !==undefined) productsList[productIndex].price=updatedProduct.price;
-        if(updatedProduct.quantityStock !==undefined) productsList[productIndex].quantityStock=updatedProduct.quantityStock;
-        if(updatedProduct.quantitySold !==undefined) productsList[productIndex].quantitySold=updatedProduct.quantitySold;
-        if(updatedProduct.image !==undefined) productsList[productIndex].image=updatedProduct.image;
-        if(updatedProduct.image3d !==undefined) productsList[productIndex].image3d=updatedProduct.image3d;
-        if(updatedProduct.category !==undefined) productsList[productIndex].category=updatedProduct.category;
+        let imageLink=updatedProduct.image;
+        if(imageLink.indexOf("/assests/")===-1 && imageLink.indexOf("http")===-1) imageLink="/assets/"+imageLink;
+        let imageLink3d=updatedProduct.image3d;
+        if(imageLink3d.indexOf("/assests/")===-1 && imageLink3d.indexOf("http")===-1) imageLink3d="/assets/"+imageLink3d;
+        let updatedProductData={
+            id: updatedProduct.id,
+            name: updatedProduct.name,
+            description: updatedProduct.description,
+            tamanho: updatedProduct.tamanho,
+            marca: updatedProduct.marca,
+            price: updatedProduct.price,
+            quantityStock: updatedProduct.quantityStock,
+            quantitySold: updatedProduct.quantitySold,
+            image: imageLink,
+            image3d: imageLink3d,
+            category: updatedProduct.category
+        }
+        try{
+            await axios.put("http://localhost:3001/products/"+updatedProductData.id,
+            updatedProductData,
+            {
+                headers: { 
+                'Accept': 'application/json',
+                'Content-Type': 'application/json' 
+                }
+            })
+        }
+        catch(e) {
+            window.alert(e);
+            return;
+        }
     }
 
     static async addProduct(newProduct) {
-        let newID=productsList[productsList.length-1].id+1
+        let imageLink=newProduct.image;
+        if(imageLink.indexOf("/assests/")===-1 && imageLink.indexOf("http")===-1) imageLink="/assets/"+imageLink;
+        let imageLink3d=newProduct.image3d;
+        if(imageLink3d.indexOf("/assests/")===-1 && imageLink3d.indexOf("http")===-1) imageLink3d="/assets/"+imageLink3d;
         let newProductData={
-            id: newID,
             name: newProduct.name,
             description: newProduct.description,
+            tamanho: newProduct.tamanho,
+            marca: newProduct.marca,
             price: newProduct.price,
             quantityStock: newProduct.quantityStock,
             quantitySold: newProduct.quantitySold,
-            image: newProduct.image,
-            image3d: newProduct.image3d,
+            image: imageLink,
+            image3d: imageLink3d,
             category: newProduct.category,
         }
-        console.log(newProductData.id)
-        if(newProduct!==undefined) productsList.push(newProductData);
+        await axios.post("http://localhost:3001/products/",
+        newProductData,
+        {
+            headers: {
+            "Content-Type": "application/json",
+            }
+        })
+        .catch(error => {
+            window.alert(error);
+            return;
+        });
+    }
+
+    static async removeProduct(id) {
+        await axios.delete("http://localhost:3001/products/"+id, {
+            headers: {
+            "Content-Type": "application/json",
+            }
+        })
+        .catch(error => {
+            window.alert(error);
+            return;
+        });
     }
 }
-
-
-let productsList = [
-    {
-        id: 1,
-        name: "Nike Air Shoe",
-        description: "Nice shoe :)",
-        price: 100.00,
-        quantityStock: 50,
-        quantitySold: 10,
-        image: "/assets/NikeShoe.png",
-        image3d: "/assets/NikeShoe.stl",
-        category: male,
-    },
-    {
-        id: 2,
-        name: "Puma Ball",
-        description: "Nice ball :)",
-        price: 30.00,
-        quantityStock: 100,
-        quantitySold: 20,
-        image: "/assets/PumaBall.png",
-        image3d: "/assets/Shoe3.stl",
-        category: kids
-    },
-    {
-        id: 3,
-        name: "Asics Shoes",
-        price: 500,
-        description: "O tênis de tênis GEL-RESOLUTION ™ 8 promove um passo ágil com uma sensação de proximidade ao solo da quadra. A parte superior do FLEXION FIT ™ fornece suporte de ajuste de forma com a integração da tecnologia DYNAWALL ™, que oferece maior estabilidade no mediopé durante movimentos laterais e cobertura costa a costa.",
-        image: "AsicsShoes.png",
-        quantityStock: 500,
-        quantitySold: 100,
-        image: "/assets/AsicsShoes.png",
-        image3d: "/assets/Shoe2.stl",
-        category: female,
-    }
-
-]

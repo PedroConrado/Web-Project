@@ -13,7 +13,7 @@ export default function ShippingPayment() {
     const [user, setUser] = useState({})
     useEffect(() => {
         const loadAll = async () => {
-            const user = await User.getUserById(parseInt(params.userID));
+            const user = await JSON.parse(localStorage.getItem('user'));
             setUser(user);
         }
     

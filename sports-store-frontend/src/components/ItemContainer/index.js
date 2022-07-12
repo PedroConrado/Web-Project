@@ -10,20 +10,9 @@ export default function ItemContainer({
 
 }) {
     const navigate = useNavigate();
-    const [user, setUser] = useState({})
-    const params = useParams();
-    useEffect(() => {
-        const loadAll = async () => {
-            const user = await User.getUserById(parseInt(params.userID));
-            setUser(user);
-        }
-    
-      loadAll();
-    }, [])
-
     const addItemCart = () => {
         Cart.insertItem(item.id);
-        navigate(`/client-shipping/${parseInt(params.userID)}`);
+        navigate(`/client-shipping`);
     }
 
     return (
@@ -35,7 +24,7 @@ export default function ItemContainer({
                 <Button orange onClick={addItemCart}>
                     ADD TO CART
                 </Button>
-                <Button purple link to={"/client-productPage/"+user.id+"/"+item.id}>
+                <Button purple link to={"/client-productPage/"+item.id}>
                     <h5>
                         View
                     </h5>

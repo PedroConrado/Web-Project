@@ -26,13 +26,8 @@ export default function PaymentForm({
     const [cvc, setCvc] = useState("");
 
     const onOrder =async () =>{
-        try {
             await Cart.buyProducts();
-            navigate(`/client-homePage/${params.userID}`);
-            
-        } catch(e) {
-            alert("Unable to order products");
-        }
+            navigate('/client-homePage');
     }
 
     return (
@@ -95,7 +90,7 @@ export default function PaymentForm({
                 </div>
             </form>
             <div className = 'payment-form-button'>
-                <Button gray link to = {"/client-homePage/"+user.id}>
+                <Button gray link to = {"/client-homePage"}>
                     <p className="font-bolder">cancel order</p>
                 </Button >
                 <Button

@@ -21,19 +21,26 @@ export default function ProductFormPopup({
     //onsubmit should call a function passed to this form that updates account
     const [name, setName] = useState(productData.name);
     const [description, setDescription] = useState(productData.description);
+    const [tamanho, setTamanho] = useState(productData.tamanho);
+    const [marca, setMarca] = useState(productData.marca);
     const [category, setCategory] = useState(productData.category);
     const [price, setPrice] = useState(productData.price);
     const [qtInStock, setQtInStock] = useState(productData.quantityStock);
     const [qtSold, setQtSold] = useState(productData.quantitySold);   
-    const [image, setImage] = useState("");
-    const [threeDModel, setThreeDModel] = useState("");
+    const [image, setImage] = useState(productData.image.replace("/assets/", ''));
+    const [threeDModel, setThreeDModel] = useState(productData.image3d.replace("/assets/", ''));
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         if(name=="" || category=="" || price=="") return null;
+        if(image=="") image="default.png";
+        if(threeDModel=="") threeDModel="default.stl";
         console.log("updating product")
         let newProductData={
+            id: productData.id,
             name: name,
             description: description,
+            tamanho: tamanho,
+            marca: marca,
             category: category,
             price: price,
             quantityStock: qtInStock,
@@ -42,7 +49,10 @@ export default function ProductFormPopup({
             image3d: threeDModel,
 
         }
-        Product.addProduct(newProductData);
+        console.log(newProductData)
+        e.preventDefault();
+        await Product.updateProduct(newProductData);
+        window.location.reload();
     }
 
     return(
@@ -61,6 +71,20 @@ export default function ProductFormPopup({
                         placeholder='Current Description'
                         value={description}
                         setValue={setDescription}
+                        type={"text"}
+                    />
+                    <FormInput
+                        title="Size"
+                        placeholder='Current Size'
+                        value={tamanho}
+                        setValue={setTamanho}
+                        type={"text"}
+                    />
+                    <FormInput
+                        title="Brand"
+                        placeholder='Current Brand'
+                        value={marca}
+                        setValue={setMarca}
                         type={"text"}
                     />
                     <FormInput
@@ -93,21 +117,21 @@ export default function ProductFormPopup({
                     />
                     <FormInput
                         title={"Image"}
-                        placeholder={'Current File'}
+                        placeholder={'File name in public/assets or link'}
                         value={image}
                         setValue={setImage}
-                        type={"image"}
+                        type={"text"}
                     />
                     <FormInput
                         title={"3dModel"}
-                        placeholder={'Current File'}
+                        placeholder={'STL file name in public/assets or link'}
                         value={threeDModel}
                         setValue={setThreeDModel}
-                        type={"file"}
+                        type={"text"}
                     />
                     
                     <div className='productFormPopup-buttons-container' type="submit">
-                        <Button red onClick={handleClose}>
+                        <Button red onClick="handleSubmit(); handleClose()">
                             <p className="font-bolder">Save Changes</p>
                         </Button>
                         <Button orange onClick={handleClose} >

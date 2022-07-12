@@ -20,7 +20,7 @@ export default function ItemOrder({
                 </div>
                 <div className="row-div right-align">
                     <button onClick={() => decreaseItemQuantity()}>
-                        <img src={"/assets/plus-circle.svg"}></img>
+                        <img src={"/assets/minus-circle.png"} width="26"></img>
                     </button>
                     <h6 className='font-bolder order-details-value'>{noItems}</h6>
                     <button onClick={() => increaseItemQuantity()}>

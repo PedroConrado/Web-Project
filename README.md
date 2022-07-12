@@ -94,6 +94,8 @@ Info saved on the server:
 * Name
 * Description
 * Price
+* Brand
+* Size
 * QuantityStock
 * QuantitySold
 * Image
@@ -125,8 +127,13 @@ To start the web application on localhost, run the following commands inside the
 
 This will install all dependencies and start a web server on port 3000, if available.
 
+To start the server on localhost, run the following commands inside the folder ```sports-store-backend```:
+* ```npm install```
+* ```npm start```
+
+This will install all dependencies and start a server on port 3001, if available.
+
 # 7. Problems
-At this point of the project, all the funcionalities will not make any change because there is no database. After reload the app will go to default.
 
 # 8. Comments
 To log in as admin, use the following credentials:

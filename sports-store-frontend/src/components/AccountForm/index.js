@@ -10,6 +10,7 @@ import ImageContainer from '../ImageContainer';
 import Button from '../Button';
 import FormInput from '../FormInput';
 import User from "../../classes/User";
+import {Link, useNavigate} from 'react-router-dom';
 
 export default function AccountForm({
     title = "Default Title",
@@ -32,6 +33,7 @@ export default function AccountForm({
     style = {},
     isAdmin = false,
     isRegister = false,
+    isSignUp = false,
     onClick = () =>{},
     onSubmit = () =>{},
     accountData={},
@@ -46,8 +48,11 @@ export default function AccountForm({
     const [address, setAddress] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [linkTo, setLinkTo] = useState(to);
+    const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
+        e.preventDefault();
         if(name=="" || email=="" || password=="") return null;
         let newUserData={
             name: name,
@@ -55,11 +60,21 @@ export default function AccountForm({
             password: password,
             phone: phone,
             address: address,
-            profilePicture: image,
+            profilePicture: image === "" ? "defaultAccount.png" : image,
             isAdmin: isAdmin,
         }
-        User.addUser(newUserData);
+        console.log(newUserData)
+
+        let newID=await User.addUser(newUserData);
+        console.log(newID)
+        if(isSignUp){
+            navigate("/");
+        }
+        else{
+            window.location.reload();
+        }
     }
+    
 
     return (
         <div className="AccountForm">
@@ -68,48 +83,48 @@ export default function AccountForm({
             <form className="AccountForm-form" onSubmit={handleSubmit}>
                 <FormInput
                     title="Name"
-                    placeholder='Current Name'
+                    placeholder='Name'
                     value={name}
                     setValue={setName}
                     type={"text"}
                 />
                 <FormInput
                     title={"Image"}
-                    placeholder={'Current File'}
+                    placeholder={'File name in public/assets or link'}
                     value={image}
                     setValue={setImage}
-                    type={"image"}
+                    type={"text"}
                 />
                 <FormInput
                     title="Phone"
-                    placeholder='Current Phone Number'
+                    placeholder='Phone Number'
                     value={phone}
                     setValue={setPhone}
                     type={"text"}
                 />
                 <FormInput
                     title="Adress"
-                    placeholder='Current Address'
+                    placeholder='Address'
                     value={address}
                     setValue={setAddress}
                     type={"text"}
                 />
                 <FormInput
                     title="Email"
-                    placeholder='Current Email'
+                    placeholder='Email'
                     value={email}
                     setValue={setEmail}
                     type={"email"}
                 />
                 <FormInput
                     title="Password"
-                    placeholder='Current Password'
+                    placeholder='Password'
                     value={password}
                     setValue={setPassword}
                     type={"password"}
                 />
                 
-                <Button orange link={link} to={to} type="submit">
+                <Button orange type="submit">
                     <img src={"/assets/plus-circle.svg"} hidden={!isRegister}/>
                     <p className="font-bolder">{buttonText}</p>
                 </Button>

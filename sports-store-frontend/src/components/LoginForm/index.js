@@ -3,7 +3,7 @@
 */
 
 
-import React, { useState } from 'react';
+import {React, useState, useEffect} from "react";
 import { useNavigate } from 'react-router-dom'
 import Button from '../Button';
 import Input from '../Input';
@@ -19,16 +19,16 @@ export default function LoginForm() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    async function login() {
+    async function login(e) {
+        e.preventDefault();
         try {
-            let user = await User.login(email, password);
+            const user = await User.login(email, password);
             if (user.isAdmin) {
-                navigate("/admin-addAdmin/"+user.id);
+                navigate("/admin-addAdmin");
             }
             else{
-                navigate("/client-homePage/"+user.id);
+                navigate("/client-homePage");
             }
-
         } catch(err) {
             alert(`Erro ao fazer login: ${err.message}`);
         }

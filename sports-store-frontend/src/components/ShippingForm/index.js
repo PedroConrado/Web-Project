@@ -70,7 +70,7 @@ export default function ShippingForm({
             </form>
 
             <div className = 'shipping-form-button'>
-                <Button gray link to = {"/client-homePage/"+user.id}>
+                <Button gray link to = {"/client-homePage"}>
                     <p className="font-bolder">cancel order</p>
                 </Button >
                 <Button 

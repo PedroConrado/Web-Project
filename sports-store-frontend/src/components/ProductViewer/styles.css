@@ -24,16 +24,28 @@
     margin-top: 30px;
 }
 
+.client-productViewer-data{
+    padding: 10px;
+    word-wrap: break-word;
+    align-self: flex-start;
+}
+.client-productViewer-data p{
+    margin-bottom: 20px;
+}
+
+
 .client-productViewer-imageContainer-wrapper{
     width: 80%;
-    max-width: 300px;
-    margin: auto;
 }
 
 .client-productViewer-imageContainer-wrapper img{
-    height: 100%;
-    width: 100%;
-    margin: auto;
+    width: 600px;
+    max-width: 600px;
+    max-height: 350px;
+    margin: 20px;
+    object-fit: cover;
+    overflow: hidden;
+    align-items: center;
 }
 
 .client-productViewer-imageContainer{

@@ -39,10 +39,10 @@ export default function AccountForm({
     const params = useParams();
     useEffect(() => {
         const loadAll = async () => {
-            const user = await User.getUserById(parseInt(params.userID));
+            const user = JSON.parse(localStorage.getItem('user'));
             setUser(user);
             setName(user.name)
-            setImage(user.image)
+            setImage(user.profilePicture.replace("/assets/", ''))
             setPhone(user.phone)
             setAddress(user.address)
             setEmail(user.email)
@@ -52,8 +52,10 @@ export default function AccountForm({
       loadAll();
     }, [])
     
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
+        e.preventDefault();
         if(name=="" || email=="" || password=="") return null;
+        if(image=="") image="defaultAccount.png";
         console.log("here")
         let newUserData={
             id: user.id,
@@ -66,7 +68,13 @@ export default function AccountForm({
             isAdmin: user.isAdmin,
         }
         console.log(newUserData)
-        User.updateUser(newUserData);
+        
+        await User.updateUser(newUserData);
+        if(image.indexOf("http")==-1){
+            newUserData.profilePicture="/assets/"+image;
+        }
+        localStorage.setItem("user", JSON.stringify(newUserData));
+        window.location.reload()
     }
 
     return (
@@ -83,10 +91,10 @@ export default function AccountForm({
                 />
                 <FormInput
                     title={"Image"}
-                    placeholder={'Current File'}
+                    placeholder={'File name in public/assets or link'}
                     value={image}
                     setValue={setImage}
-                    type={"image"}
+                    type={"text"}
                 />
                 <FormInput
                     title="Phone"

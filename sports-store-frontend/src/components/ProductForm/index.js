@@ -36,6 +36,8 @@ export default function AccountForm({
 }) { 
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
+    const [tamanho, setTamanho] = useState(productData.tamanho);
+    const [marca, setMarca] = useState(productData.marca);
     const [category, setCategory] = useState("");
     const [price, setPrice] = useState("");
     const [qtInStock, setQtInStock] = useState("");
@@ -43,21 +45,25 @@ export default function AccountForm({
     const [image, setImage] = useState("");
     const [threeDModel, setThreeDModel] = useState("");
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
+        e.preventDefault();
         if(name=="" || category=="" || price=="") return null;
         console.log("adding new product")
         let newProductData={
             name: name,
             description: description,
+            tamanho: tamanho,
+            marca: marca,
             category: category,
             price: price,
             quantityStock: qtInStock,
             quantitySold: qtSold,
-            image: image,
-            image3d: threeDModel,
+            image: image === "" ? "default.png" : image,
+            image3d: threeDModel === "" ? "default.stl" : threeDModel,
 
         }
-        Product.addProduct(newProductData);
+        await Product.addProduct(newProductData);
+        window.location.reload()
     }
 
     return (//recieve an account object and set values of form to that account
@@ -78,6 +84,20 @@ export default function AccountForm({
                     placeholder='Description'
                     value={description}
                     setValue={setDescription}
+                    type={"text"}
+                />
+                <FormInput
+                    title="Size"
+                    placeholder='Current Size'
+                    value={tamanho}
+                    setValue={setTamanho}
+                    type={"text"}
+                />
+                <FormInput
+                    title="Brand"
+                    placeholder='Current Brand'
+                    value={marca}
+                    setValue={setMarca}
                     type={"text"}
                 />
                 <FormInput
@@ -110,17 +130,17 @@ export default function AccountForm({
                 />
                 <FormInput
                     title={"Image"}
-                    placeholder={'File'}
+                    placeholder={'File name in public/assets or link'}
                     value={image}
                     setValue={setImage}
-                    type={"image"}
+                    type={"text"}
                 />
                 <FormInput
                     title={"3dModel"}
-                    placeholder={'File'}
+                    placeholder={'Stl file name in public/assets or link'}
                     value={threeDModel}
                     setValue={setThreeDModel}
-                    type={"file"}
+                    type={"text"}
                 />
                 
                 
