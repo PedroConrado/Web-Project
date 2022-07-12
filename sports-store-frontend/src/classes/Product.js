@@ -101,9 +101,9 @@ export default class Product {
 
     static async updateProduct(updatedProduct) {
         let imageLink=updatedProduct.image;
-        if(imageLink.indexOf("/assests/")===-1 && imageLink.indexOf("http")===-1) imageLink="/assets/"+imageLink;
+        if(imageLink.indexOf("/assets/")===-1 && imageLink.indexOf("http")===-1) imageLink="/assets/"+imageLink;
         let imageLink3d=updatedProduct.image3d;
-        if(imageLink3d.indexOf("/assests/")===-1 && imageLink3d.indexOf("http")===-1) imageLink3d="/assets/"+imageLink3d;
+        if(imageLink3d.indexOf("/assets/")===-1 && imageLink3d.indexOf("http")===-1) imageLink3d="/assets/"+imageLink3d;
         let updatedProductData={
             id: updatedProduct.id,
             name: updatedProduct.name,

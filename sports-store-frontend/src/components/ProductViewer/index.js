@@ -1,12 +1,10 @@
+
 import {React, useState, useEffect} from "react";
 import './styles.css'
 import Button from "../Button"
 import { useParams } from "react-router-dom";
 import Product from "../../classes/Product";
 import ThreeDPopup from '../3DModelPopup';
-import User from "../../classes/User";
-import Cart from "../../classes/Cart";
-import {useNavigate} from "react-router-dom";
 
 import { useNavigate } from "react-router-dom";
 import Cart from "../../classes/Cart";
@@ -18,7 +16,6 @@ export default function ProductViewer({
     const navigate = useNavigate();
     const [product, setProduct] = useState({})
     const [isOpen3dModel, setIsOpen3dModel] = useState(false);
-    const navigate = useNavigate();
 
     const togglePopup3d = () => {
         setIsOpen3dModel(!isOpen3dModel);
@@ -35,12 +32,7 @@ export default function ProductViewer({
         }
     
       loadAll();
-    }, []);
-
-    const addItemCart = () => {
-        Cart.insertItem(product.id);
-        navigate(`/client-shipping/${parseInt(params.userID)}`);
-    }
+    }, [])
 
     const addItemCart = () => {
         Cart.insertItem(product.id);
