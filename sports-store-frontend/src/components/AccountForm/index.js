@@ -68,7 +68,8 @@ export default function AccountForm({
         let newID=await User.addUser(newUserData);
         console.log(newID)
         if(isSignUp){
-            navigate("/");
+            await User.login(email, password);
+            navigate("/client-homePage");
         }
         else{
             window.location.reload();
