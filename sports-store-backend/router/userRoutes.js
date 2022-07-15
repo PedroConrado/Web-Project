@@ -6,7 +6,7 @@ const router=express.Router({mergeParams: true});
 router.get('/', auth.isAdmin ,controller.getUsers);
 router.get('/:user', auth.isUser ,controller.getById);
 
-router.post('/', auth.isUser ,controller.post);
+router.post('/', controller.post);
 
 router.put('/:user', auth.isUser ,controller.update);
 
