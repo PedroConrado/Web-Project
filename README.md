@@ -100,7 +100,7 @@ Info saved on the server:
 * QuantitySold
 * Image
 * Image3d
-* Category
+* Category (insira produtos com a categoria "male", "female" ou "kids")
 
 # 3. Comments About the Code
 ## Frontend:
